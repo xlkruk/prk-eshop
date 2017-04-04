@@ -17,7 +17,10 @@
 <!-- Bootstrap core CSS -->
 <link href="<c:url value="/resources/css/bootstrap.min.css"/>"
 	rel="stylesheet">
-<link href="<c:url value="/resources/css/sklep.css"/>"
+<link href="<c:url value="/resources/css/carousel.css"/>"
 	rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Quicksand:300,500,700&subset=latin-ext,latin" rel="stylesheet"> 
+<link href="<c:url value="/resources/css/sklep.css"/>" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Quicksand:300,500,700&subset=latin-ext,latin"
+	rel="stylesheet">
 </head>

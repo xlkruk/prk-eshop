@@ -37,7 +37,7 @@ public class ProductDaoImpl implements ProductDao {
 		Session session = sessionFactory.getCurrentSession();
 		Product product = (Product) session.get(Product.class, id);
 		ProductInfo productInfo = new ProductInfo();
-		
+
 		return product;
 	}
 
@@ -60,6 +60,15 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Override
 	public void addProduct(ProductInfo productInfo) {
+		Product product = productInfoToProduct(productInfo);
+
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(product);
+		session.flush();
+
+	}
+
+	private Product productInfoToProduct(ProductInfo productInfo) {
 		Product product = new Product();
 		product.setCategory(productInfo.getCategory());
 		product.setCondition(productInfo.getCondition());
@@ -69,16 +78,26 @@ public class ProductDaoImpl implements ProductDao {
 		product.setManufacturer(productInfo.getManufacturer());
 		product.setName(productInfo.getName());
 		product.setPrice(productInfo.getPrice());
-		product.setProductImage(productInfo.getProductImageAsArray());
 		product.setStatus(productInfo.getStatus());
 		product.setStock(productInfo.getStock());
-		
+		if (productInfo.getProductImageAsArray() != null && productInfo.getProductImageAsArray().length > 0) {
+			product.setProductImage(productInfo.getProductImageAsArray());
+		}
+		return product;
+	}
+
+	@Override
+	public void editProduct(ProductInfo productInfo) {
+		byte[] oldImage = getProductById(productInfo.getId()).getProductImage();
+		Product product = productInfoToProduct(productInfo);
+		if (product.getProductImage() == null) {
+			product.setProductImage(oldImage);
+		}
 		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(product);
+		//session.saveOrUpdate(product);
+		session.merge(product);
 		session.flush();
 
-		
 	}
-	
 
 }

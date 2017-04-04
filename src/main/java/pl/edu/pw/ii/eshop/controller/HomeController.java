@@ -81,14 +81,9 @@ public class HomeController {
 	public String addProductPost(@ModelAttribute("product") ProductInfo product, HttpServletRequest request) {
 
 		MultipartFile productImage = product.getProductImage();
-		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-		path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + product.getId() + ".png");
-		System.out.println("-----------------------------");
-		System.out.println(path);
 
 		if (productImage != null && !productImage.isEmpty()) {
 			try {
-				// productImage.transferTo(new File(path.toString()));
 				product.setProductImageAsArray(productImage.getBytes());
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -131,4 +126,29 @@ public class HomeController {
 		}
 		response.getOutputStream().close();
 	}
+
+	@RequestMapping("/admin/productInventory/editProduct/{id}")
+	public String editProduct(@PathVariable("id") int id, Model model) {
+		Product product = productDao.getProductById(id);
+		model.addAttribute(product);
+
+		return "editProduct";
+	}
+
+	@RequestMapping(value = "/admin/productInventory/editProduct", method = RequestMethod.POST)
+	public String editProduct(@ModelAttribute("product") ProductInfo product, HttpServletRequest request) {
+		MultipartFile productImage = product.getProductImage();
+		if (productImage != null && !productImage.isEmpty()) {
+			try {
+				product.setProductImageAsArray(productImage.getBytes());
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new RuntimeException("Product image saving failed", e);
+			}
+		}
+		productDao.editProduct(product);
+		return "redirect:/admin/productInventory";
+
+	}
+
 }
