@@ -31,10 +31,10 @@
 					<td>${product.price}PLN</td>
 					<td><a
 						href="<spring:url value="/productList/viewProduct/${product.id }" />"><span
-							class="glyphicon glyphicon-info-sign"></span></a>
+							class="glyphicon glyphicon-info-sign btn btn-info"></span></a>
 							<a
 						href="<spring:url value="/admin/productInventory/deleteProduct/${product.id }" />"><span
-							class="glyphicon glyphicon-remove danger"></span></a>
+							class="glyphicon glyphicon-remove btn btn-danger"></span></a>
 							</td>
 				</tr>
 			</c:forEach>
