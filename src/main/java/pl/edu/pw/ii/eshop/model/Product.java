@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Transient;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -34,9 +35,13 @@ public class Product {
 	private String manufacturer;
 	@Column(name = "DISCOUNT")
 	private int discount;
-	
-	@Transient
-	private MultipartFile productImage;
+
+	/*
+	 * @Transient private MultipartFile productImage;
+	 */
+	@Lob
+	@Column(name = "Image", length = Integer.MAX_VALUE, nullable = true)
+	private byte[] productImage;
 
 	public Product() {
 	}
@@ -120,12 +125,12 @@ public class Product {
 	public void setManufacturer(String manufacturer) {
 		this.manufacturer = manufacturer;
 	}
-	
-	public MultipartFile getProductImage() {
+
+	public byte[] getProductImage() {
 		return productImage;
 	}
-	
-	public void setProductImage(MultipartFile productImage) {
+
+	public void setProductImage(byte[] productImage) {
 		this.productImage = productImage;
 	}
 
@@ -135,7 +140,5 @@ public class Product {
 				+ ", price=" + price + ", condition=" + condition + ", status=" + status + ", stock=" + stock
 				+ ", manufacturer=" + manufacturer + ", discount=" + discount + ", productImage=" + productImage + "]";
 	}
-	
-	
 
 }

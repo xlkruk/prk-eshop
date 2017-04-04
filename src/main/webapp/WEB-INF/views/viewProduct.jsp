@@ -13,7 +13,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5">
-					<img src="#" alt="image" style="width: 100%; height: 300px;" />
+					<img src="${pageContext.request.contextPath}/productImage?id=${product.id}"  alt="image" style="width: 100%; height: 300px;" />
 				</div>
 
 				<div class="col-md-5">

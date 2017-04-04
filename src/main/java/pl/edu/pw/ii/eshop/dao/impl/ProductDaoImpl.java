@@ -1,5 +1,8 @@
 package pl.edu.pw.ii.eshop.dao.impl;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -8,9 +11,11 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import pl.edu.pw.ii.eshop.dao.ProductDao;
 import pl.edu.pw.ii.eshop.model.Product;
+import pl.edu.pw.ii.eshop.model.ProductInfo;
 
 @Repository
 @Transactional
@@ -31,6 +36,8 @@ public class ProductDaoImpl implements ProductDao {
 	public Product getProductById(int id) {
 		Session session = sessionFactory.getCurrentSession();
 		Product product = (Product) session.get(Product.class, id);
+		ProductInfo productInfo = new ProductInfo();
+		
 		return product;
 	}
 
@@ -50,5 +57,28 @@ public class ProductDaoImpl implements ProductDao {
 		session.delete(getProductById(id));
 		session.flush();
 	}
+
+	@Override
+	public void addProduct(ProductInfo productInfo) {
+		Product product = new Product();
+		product.setCategory(productInfo.getCategory());
+		product.setCondition(productInfo.getCondition());
+		product.setDescription(productInfo.getDescription());
+		product.setDiscount(productInfo.getDiscount());
+		product.setId(productInfo.getId());
+		product.setManufacturer(productInfo.getManufacturer());
+		product.setName(productInfo.getName());
+		product.setPrice(productInfo.getPrice());
+		product.setProductImage(productInfo.getProductImageAsArray());
+		product.setStatus(productInfo.getStatus());
+		product.setStock(productInfo.getStock());
+		
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(product);
+		session.flush();
+
+		
+	}
+	
 
 }
