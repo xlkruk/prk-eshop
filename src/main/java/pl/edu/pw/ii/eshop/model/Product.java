@@ -6,9 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
-import javax.persistence.Transient;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
-import org.springframework.web.multipart.MultipartFile;
+import org.hibernate.validator.constraints.NotEmpty;
+
 
 @Entity
 public class Product {
@@ -18,22 +20,28 @@ public class Product {
 	@Column(name = "ID")
 	private int id;
 	@Column(name = "NAME")
+	@NotEmpty(message="Nazwa produktu nie mo¿e byæ pusta.")
 	private String name;
 	@Column(name = "CATEGORY")
 	private String category;
 	@Column(name = "DESCRIPTION")
 	private String description;
 	@Column(name = "PRICE")
+	@Min(value=0, message="Cena musi byæ wiêksza lub równa zero.")
 	private double price;
 	@Column(name = "PRODUCT_CONDITION")
 	private String condition;
 	@Column(name = "STATUS")
 	private String status;
 	@Column(name = "STOCK")
+	@Min(value=0, message="Liczba sztuk musi byæ wiêksza lub równa zero.")
 	private int stock;
 	@Column(name = "MANUFACTURER")
 	private String manufacturer;
+	
 	@Column(name = "DISCOUNT")
+	@Min(value=0, message="Rabat musi byæ wiêksza lub równy zero.")
+	@Max(value=0, message="Rabat nie mo¿e byæ wiêkszy ni¿ 100%.")
 	private int discount;
 
 	/*

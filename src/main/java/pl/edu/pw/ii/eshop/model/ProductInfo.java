@@ -4,29 +4,38 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 public class ProductInfo {
 
 	private int id;
-
+	@NotEmpty(message="Nazwa produktu nie mo¿e byæ pusta.")
 	private String name;
 
 	private String category;
 
 	private String description;
 
+	@Min(value=0, message="Cena musi byæ wiêksza lub równa zero.")
+	@DecimalMax(value = "99999.99", message = "Cena nie mo¿e byæ wiêksza ni¿ 99999.99 PLN")
 	private double price;
 
 	private String condition;
 
 	private String status;
-
+	@Min(value=0, message="Liczba sztuk musi byæ wiêksza lub równa zero.")
 	private int stock;
 
 	private String manufacturer;
-
+	@Min(value=0, message="Rabat musi byæ wiêksza lub równy zero.")
+	@Max(value=0, message="Rabat nie mo¿e byæ wiêkszy ni¿ 100%.")
 	private int discount;
 
 	private MultipartFile productImage;
