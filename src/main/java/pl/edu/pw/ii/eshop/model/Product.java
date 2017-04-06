@@ -24,7 +24,7 @@ public class Product {
 	private String name;
 	@Column(name = "CATEGORY")
 	private String category;
-	@Column(name = "DESCRIPTION")
+	@Column(name = "DESCRIPTION", length = 10000)
 	private String description;
 	@Column(name = "PRICE")
 	@Min(value=0, message="Cena musi byæ wiêksza lub równa zero.")
@@ -41,7 +41,7 @@ public class Product {
 	
 	@Column(name = "DISCOUNT")
 	@Min(value=0, message="Rabat musi byæ wiêksza lub równy zero.")
-	@Max(value=0, message="Rabat nie mo¿e byæ wiêkszy ni¿ 100%.")
+	@Max(value=100, message="Rabat nie mo¿e byæ wiêkszy ni¿ 100%.")
 	private int discount;
 
 	/*

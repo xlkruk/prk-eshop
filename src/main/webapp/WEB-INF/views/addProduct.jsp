@@ -13,7 +13,8 @@
 			action="${pageContext.request.contextPath}/admin/productInventory/addProduct"
 			method="post" commandName="product" enctype="multipart/form-data">
 			<div class="form-group">
-				<label for="name">Nazwa:</label><form:errors path="name" cssStyle="color: red;"/>
+				<label for="name">Nazwa:</label>
+				<form:errors path="name" cssStyle="color: red;" />
 				<form:input path="name" id="name" class="form-control" />
 			</div>
 			<div class="form-group">
@@ -45,12 +46,14 @@
 			</div>
 
 			<div class="form-group">
-				<label for="price">Cena:</label><form:errors path="price" cssStyle="color: red;"/>
+				<label for="price">Cena:</label>
+				<form:errors path="price" cssStyle="color: red;" />
 				<form:input path="price" id="price" class="form-control" />
 			</div>
 
 			<div class="form-group">
-				<label for="discount">Rabat:</label><form:errors path="discount" cssStyle="color: red;"/>
+				<label for="discount">Rabat:</label>
+				<form:errors path="discount" cssStyle="color: red;" />
 				<form:input path="discount" id="discount" class="form-control" />
 			</div>
 
@@ -61,10 +64,11 @@
 						id="status" value="inactive" />Nieaktywny</label>
 			</div>
 			<div class="form-group">
-				<label for="stock">Stan magazynu:</label><form:errors path="stock" cssStyle="color: red;"/>
+				<label for="stock">Stan magazynu:</label>
+				<form:errors path="stock" cssStyle="color: red;" />
 				<form:input path="stock" id="stock" class="form-control" />
 			</div>
-			
+
 			<div class="form-group">
 				<label class="control-label" for="productImage">Dodaj
 					obrazek:</label>
@@ -76,6 +80,8 @@
 			<input type="submit" value="Dodaj" class="btn btn-default">
 			<a href="<c:url value="/admin/productInventory"/>"
 				class="btn btn-default">Anuluj</a>
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token }">
 		</form:form>
 
 

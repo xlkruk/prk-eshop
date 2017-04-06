@@ -35,7 +35,7 @@ public class ProductInfo {
 
 	private String manufacturer;
 	@Min(value=0, message="Rabat musi byæ wiêksza lub równy zero.")
-	@Max(value=0, message="Rabat nie mo¿e byæ wiêkszy ni¿ 100%.")
+	@Max(value=100, message="Rabat nie mo¿e byæ wiêkszy ni¿ 100%.")
 	private int discount;
 
 	private MultipartFile productImage;

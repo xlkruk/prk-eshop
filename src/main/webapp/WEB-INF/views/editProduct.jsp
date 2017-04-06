@@ -5,15 +5,17 @@
 <div class="container-wrapper">
 	<div class="container">
 		<div class="page-header">
-			<h1>Nowy produkt</h1>
+			<h1>Edytuj produkt</h1>
 
 			<p class="lead">Podaj informacje o produkcie:</p>
 		</div>
 		<form:form
 			action="${pageContext.request.contextPath}/admin/productInventory/editProduct"
-			method="post" commandName="product" enctype="multipart/form-data">
+			method="post" commandName="product" enctype="multipart/form-data"
+			accept-charset="UTF-8">
 			<div class="form-group">
-				<label for="name">Nazwa:</label><form:errors path="name" cssStyle="color: red;"/>
+				<label for="name">Nazwa:</label>
+				<form:errors path="name" cssStyle="color: red;" />
 				<form:input path="name" id="name" class="form-control"
 					value="${product.name}" />
 				<form:hidden path="id" value="${product.id}" />
@@ -47,13 +49,15 @@
 			</div>
 
 			<div class="form-group">
-				<label for="price">Cena:</label><form:errors path="price" cssStyle="color: red;"/>
+				<label for="price">Cena:</label>
+				<form:errors path="price" cssStyle="color: red;" />
 				<form:input path="price" id="price" class="form-control"
 					value="${product.price}" />
 			</div>
 
 			<div class="form-group">
-				<label for="discount">Rabat:</label><form:errors path="discount" cssStyle="color: red;"/>
+				<label for="discount">Rabat:</label>
+				<form:errors path="discount" cssStyle="color: red;" />
 				<form:input path="discount" id="discount" class="form-control"
 					value="${product.discount}" />
 			</div>
@@ -65,7 +69,8 @@
 						id="status" value="inactive" />Nieaktywny</label>
 			</div>
 			<div class="form-group">
-				<label for="stock">Stan magazynu:</label><form:errors path="stock" cssStyle="color: red;"/>
+				<label for="stock">Stan magazynu:</label>
+				<form:errors path="stock" cssStyle="color: red;" />
 				<form:input path="stock" id="stock" class="form-control"
 					value="${product.stock}" />
 			</div>
@@ -81,9 +86,12 @@
 			<input type="submit" value="Zapisz" class="btn btn-default">
 			<a href="<c:url value="/admin/productInventory"/>"
 				class="btn btn-default">Anuluj</a>
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token }">
 		</form:form>
+	</div>
+</div>
 
 
 
-
-		<%@include file="/WEB-INF/views/template/footer.jsp"%>
+<%@include file="/WEB-INF/views/template/footer.jsp"%>

@@ -1,12 +1,14 @@
 ﻿</br>
 </br>
 <!-- FOOTER -->
-<footer id="footer" >
-	<p class="pull-right">
-		<a href="#">Do góry</a>
-	</p>
-	<p class="text-center">2017 PRP, Agnieszka Świderska, Krzysztof
-		Trybus, Łukasz Kruk. &middot;</p>
+<footer>
+	<div class="container">
+		<p class="pull-right">
+			<a href="#">Do góry</a>
+		</p>
+		<p class="text-center">2017 PRP, Agnieszka Świderska, Krzysztof
+			Trybus, Łukasz Kruk</p>
+	</div>
 </footer>
 </div>
 
