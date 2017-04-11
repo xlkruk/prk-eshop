@@ -41,24 +41,23 @@
 		<property name="maxUploadSize" value="5024000" />
 	</bean>
 
-    <security:http auto-config="true">
-        <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_USER')" />
-        <security:form-login
-            login-page="/login"
-            default-target-url="/admin/"
-            login-processing-url="/j_spring_security_check"
-            authentication-failure-url="/login?error"
-            username-parameter="username"
-            password-parameter="password" />
-        <security:logout
-            logout-success-url="/login?logout" />
-    </security:http>
+	<security:http auto-config="true">
+		<security:csrf disabled="true" />
+		<security:intercept-url pattern="/admin/**"
+			access="hasRole('ROLE_USER')" />
+		<security:form-login login-page="/login"
+			default-target-url="/admin/" login-processing-url="/j_spring_security_check"
+			authentication-failure-url="/login?error" username-parameter="username"
+			password-parameter="password" />
+		<security:logout logout-success-url="/login?logout" />
+	</security:http>
 
-    <security:authentication-manager>
-        <security:authentication-provider>
-            <security:jdbc-user-service data-source-ref="dataSource"
-                                        authorities-by-username-query="SELECT username, authority From authorities WHERE username = ?"
-                                        users-by-username-query="SELECT username, password, enabled FROM users WHERE username = ?" />
-        </security:authentication-provider>
-    </security:authentication-manager>
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:jdbc-user-service
+				data-source-ref="dataSource"
+				authorities-by-username-query="SELECT username, authority From authorities WHERE username = ?"
+				users-by-username-query="SELECT username, password, enabled FROM users WHERE username = ?" />
+		</security:authentication-provider>
+	</security:authentication-manager>
 </beans>

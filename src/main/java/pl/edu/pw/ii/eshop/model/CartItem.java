@@ -9,11 +9,11 @@ public class CartItem {
 	public CartItem() {
 	}
 
-	public CartItem(Product product, int quantity, double totalPrice) {
+	public CartItem(Product product) {
 		super();
 		this.product = product;
-		this.quantity = quantity;
-		this.totalPrice = totalPrice;
+		this.quantity = 1;
+		this.totalPrice = product.getPrice() * (100 - product.getDiscount() / 100);
 	}
 
 	public Product getProduct() {
