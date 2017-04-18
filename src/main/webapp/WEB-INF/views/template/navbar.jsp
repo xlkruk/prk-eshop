@@ -19,7 +19,7 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="<c:url value="/" /> ">Strona domowa</a></li>
-                        <li><a href="<c:url value="/productList" />">Oferta</a></li>
+                        <li><a href="<c:url value="/product/productList" />">Oferta</a></li>
                         <li><a href="#contact">Kontakt</a></li>
                     </ul>
                     <ul class="nav navbar-nav pull-right">

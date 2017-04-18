@@ -1,19 +1,43 @@
 package pl.edu.pw.ii.eshop.model;
 
-public class CartItem {
+import java.io.Serializable;
 
-	private Product product;
-	private int quantity;
-	private double totalPrice;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
-	public CartItem() {
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+public class CartItem implements Serializable {
+
+	private static final long serialVersionUID = 1031671822500452085L;
+
+	@Id
+	@GeneratedValue
+	private int cartItemId;
+
+	@ManyToOne
+	@JoinColumn(name = "cartId")
+	@JsonIgnore // potrzebne aby nie zapêtlaæ budowy JSOna
+	private Cart cart;
+
+	public int getCartItemId() {
+		return cartItemId;
 	}
 
-	public CartItem(Product product) {
-		super();
-		this.product = product;
-		this.quantity = 1;
-		this.totalPrice = product.getPrice() * (100 - product.getDiscount() / 100);
+	public void setCartItemId(int cartItemId) {
+		this.cartItemId = cartItemId;
+	}
+
+	public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
 	}
 
 	public Product getProduct() {
@@ -39,5 +63,12 @@ public class CartItem {
 	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
+
+	@ManyToOne
+	@JoinColumn(name = "productId")
+	private Product product;
+
+	private int quantity;
+	private double totalPrice;
 
 }

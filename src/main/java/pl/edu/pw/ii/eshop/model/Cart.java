@@ -1,73 +1,70 @@
 package pl.edu.pw.ii.eshop.model;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.Serializable;
+import java.util.List;
 
-public class Cart {
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
-	private String CartId;
-	private Map<Integer, CartItem> cartItems;
-	private double grandTotal;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-	public Cart() {
-		cartItems = new HashMap<Integer, CartItem>();
-		grandTotal = 0;
+@Entity
+public class Cart implements Serializable {
+
+	private static final long serialVersionUID = -2776944850978772811L;
+	
+	@Id
+	@GeneratedValue
+	private int cartId;
+	
+	@OneToMany(mappedBy="cart", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	private List<CartItem> cartItems;
+	
+	@OneToOne
+	@JoinColumn(name="customerId")
+	@JsonIgnore
+	private Customer customer;
+	
+	private double grantTotal;
+
+	public int getCartId() {
+		return cartId;
 	}
 
-	public Cart(String id) {
-		this();
-		this.CartId = id;
+	public void setCartId(int cartId) {
+		this.cartId = cartId;
 	}
 
-	public String getCartId() {
-		return CartId;
-	}
-
-	public void setCartId(String cartId) {
-		CartId = cartId;
-	}
-
-	public Map<Integer, CartItem> getCartItems() {
+	public List<CartItem> getCartItems() {
 		return cartItems;
 	}
 
-	public void setCartItems(Map<Integer, CartItem> cartItems) {
+	public void setCartItems(List<CartItem> cartItems) {
 		this.cartItems = cartItems;
 	}
 
-	public double getGrandTotal() {
-		return grandTotal;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setGrandTotal(double grandTotal) {
-		this.grandTotal = grandTotal;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
-	public void addCartItem(CartItem cartItem) {
-		int productId = cartItem.getProduct().getId();
-		if (cartItems.containsKey(productId)) {
-			CartItem existingCartItem = cartItems.get(productId);
-			existingCartItem.setQuantity(existingCartItem.getQuantity() + cartItem.getQuantity());
-			cartItems.put(productId, existingCartItem);
-		} else {
-			cartItems.put(productId, cartItem);
-		}
-
-		updateGrantTotal();
+	public double getGrantTotal() {
+		return grantTotal;
 	}
 
-	public void removeCartItem(CartItem cartItem) {
-		int productId = cartItem.getProduct().getId();
-		cartItems.remove(productId);
-		updateGrantTotal();
+	public void setGrantTotal(double grantTotal) {
+		this.grantTotal = grantTotal;
 	}
-
-	public void updateGrantTotal() {
-		grandTotal = 0;
-		for (CartItem cartItem : cartItems.values()) {
-			grandTotal=grandTotal+cartItem.getTotalPrice();
-		}
-	};
+	
 	
 	
 }

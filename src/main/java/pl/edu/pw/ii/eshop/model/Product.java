@@ -1,20 +1,30 @@
 package pl.edu.pw.ii.eshop.model;
 
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
-public class Product {
+public class Product implements Serializable{
 
+	private static final long serialVersionUID = -8098965355899698609L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
@@ -44,12 +54,14 @@ public class Product {
 	@Max(value=100, message="Rabat nie mo¿e byæ wiêkszy ni¿ 100%.")
 	private int discount;
 
-	/*
-	 * @Transient private MultipartFile productImage;
-	 */
 	@Lob
 	@Column(name = "Image", length = Integer.MAX_VALUE, nullable = true)
 	private byte[] productImage;
+	
+	//ustawiam FetchType.EAGER aby mieæ pod rêk¹ dla JSONa
+	@OneToMany(mappedBy="product", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JsonIgnore // potrzebne aby nie zapêtlaæ budowy JSOna
+	private List<CartItem> cartItems;
 
 	public Product() {
 	}
@@ -140,6 +152,16 @@ public class Product {
 
 	public void setProductImage(byte[] productImage) {
 		this.productImage = productImage;
+	}
+	
+	
+
+	public List<CartItem> getCartItems() {
+		return cartItems;
+	}
+
+	public void setCartItems(List<CartItem> cartItems) {
+		this.cartItems = cartItems;
 	}
 
 	@Override

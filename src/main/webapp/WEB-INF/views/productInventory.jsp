@@ -45,6 +45,6 @@
 			</tbody>
 		</table>
 		<a class="btn btn-default"
-			href="<spring:url value="/admin/productInventory/addProduct"/>">Dodaj
+			href="<spring:url value="/admin/product/addProduct"/>">Dodaj
 			produkt</a>
 		<%@include file="/WEB-INF/views/template/footer.jsp"%>
