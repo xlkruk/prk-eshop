@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import pl.edu.pw.ii.eshop.dao.ProductDao;
 import pl.edu.pw.ii.eshop.model.Product;
@@ -46,12 +47,25 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public void editProduct(ProductInfo productInfo) {
+		importImage(productInfo);		
 		byte[] oldImage = getProductById(productInfo.getId()).getProductImage();
 		Product product = productInfoToProduct(productInfo);
 		if (product.getProductImage() == null) {
 			product.setProductImage(oldImage);
 		}
 		productDao.editProduct(product);		
+	}
+
+	private void importImage(ProductInfo productInfo) {
+		MultipartFile productImage = productInfo.getProductImage();
+		if (productImage != null && !productImage.isEmpty()) {
+			try {
+				productInfo.setProductImageAsArray(productImage.getBytes());
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new RuntimeException("Product image saving failed", e);
+			}
+		}
 	}
 	
 	private Product productInfoToProduct(ProductInfo productInfo) {
@@ -74,6 +88,7 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public void addProduct(ProductInfo productInfo) {
+		importImage(productInfo);
 		addProduct(productInfoToProduct(productInfo));		
 	}
 

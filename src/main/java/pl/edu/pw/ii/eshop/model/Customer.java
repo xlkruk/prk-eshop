@@ -1,4 +1,4 @@
-package pl.edu.pw.ii.eshop.model;
+ï»¿package pl.edu.pw.ii.eshop.model;
 
 import java.io.Serializable;
 
@@ -21,17 +21,20 @@ public class Customer implements Serializable {
 	@GeneratedValue
 	private int customerId;
 
-	@NotEmpty(message = "Imiê nie mo¿e byæ puste.")
-	private String customerName;
+	@NotEmpty(message = "ImiÄ™ nie moÅ¼e byÄ‡ puste.")
+	private String customerFirstName;
+	
+	@NotEmpty(message = "Nazwisko nie moÅ¼e byÄ‡ puste.")
+	private String customerLastName;
 
-	@NotEmpty(message = "Email nie mo¿e byæ pusty.")
+	@NotEmpty(message = "Email nie moÅ¼e byÄ‡ pusty.")
 	private String customerEmail;
 
 	private String customerPhone;
 
-	@NotEmpty(message = "Nazwa u¿ytkownika nie mo¿e byæ pusta.")
+	@NotEmpty(message = "Nazwa uÅ¼ytkownika nie moÅ¼e byÄ‡ pusta.")
 	private String username;
-	@NotEmpty(message = "Has³o nie mo¿e byæ puste.")
+	@NotEmpty(message = "HasÅ‚o nie moÅ¼e byÄ‡ puste.")
 	private String password;
 
 	private boolean enabled;
@@ -41,13 +44,19 @@ public class Customer implements Serializable {
 	private BillingAddress billingAddress;
 	
 	@OneToOne
-	@JoinColumn(name="shippingingAddressId")
-	private ShippingAddress shippingingAddress;
+	@JoinColumn(name="shippingAddressId")
+	private ShippingAddress shippingAddress;
 	
 	@OneToOne
 	@JoinColumn(name="cartId")
 	@JsonIgnore
 	private Cart cart;
+	
+	public Customer() {
+		billingAddress=new BillingAddress();
+		shippingAddress=new ShippingAddress();
+		enabled=true;
+	}
 
 	public int getCustomerId() {
 		return customerId;
@@ -57,12 +66,21 @@ public class Customer implements Serializable {
 		this.customerId = customerId;
 	}
 
-	public String getCustomerName() {
-		return customerName;
+
+	public String getCustomerFirstName() {
+		return customerFirstName;
 	}
 
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
+	public void setCustomerFirstName(String customerFirstName) {
+		this.customerFirstName = customerFirstName;
+	}
+
+	public String getCustomerLastName() {
+		return customerLastName;
+	}
+
+	public void setCustomerLastName(String customerLastName) {
+		this.customerLastName = customerLastName;
 	}
 
 	public String getCustomerEmail() {
@@ -113,12 +131,12 @@ public class Customer implements Serializable {
 		this.billingAddress = billingAddress;
 	}
 
-	public ShippingAddress getShippingingAddress() {
-		return shippingingAddress;
+	public ShippingAddress getShippingAddress() {
+		return shippingAddress;
 	}
 
-	public void setShippingingAddress(ShippingAddress shippingingAddress) {
-		this.shippingingAddress = shippingingAddress;
+	public void setShippingAddress(ShippingAddress shippingingAddress) {
+		this.shippingAddress = shippingingAddress;
 	}
 
 	public Cart getCart() {

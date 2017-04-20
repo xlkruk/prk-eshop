@@ -34,11 +34,11 @@
 						<td>${product.stock}</td>
 						<td>${product.price}PLN</td>
 						<td><a
-							href="<spring:url value="/productList/viewProduct/${product.id }" />"><span
+							href="<spring:url value="/product/viewProduct/${product.id }" />"><span
 								class="glyphicon glyphicon-info-sign btn btn-info"></span></a> <a
-							href="<spring:url value="/admin/productInventory/editProduct/${product.id }" />"><span
+							href="<spring:url value="/admin/product/editProduct/${product.id }" />"><span
 								class="glyphicon glyphicon-edit btn btn-warning"></span></a> <a
-							href="<spring:url value="/admin/productInventory/deleteProduct/${product.id }" />"><span
+							href="<spring:url value="/admin/product/deleteProduct/${product.id }" />"><span
 								class="glyphicon glyphicon-remove btn btn-danger"></span></a></td>
 					</tr>
 				</c:forEach>

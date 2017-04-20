@@ -30,7 +30,7 @@
 					<td>${product.stock}</td>
 					<td>${product.price}PLN</td>
 					<td><a
-						href="<spring:url value="/productList/viewProduct/${product.id }" />"><span
+						href="<spring:url value="/product/viewProduct/${product.id }" />"><span
 							class="glyphicon glyphicon-info-sign btn btn-info"></span></a></td>
 				</tr>
 			</c:forEach>

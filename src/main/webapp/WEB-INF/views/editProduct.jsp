@@ -10,7 +10,7 @@
 			<p class="lead">Podaj informacje o produkcie:</p>
 		</div>
 		<form:form
-			action="${pageContext.request.contextPath}/admin/productInventory/editProduct"
+			action="${pageContext.request.contextPath}/admin/product/editProduct"
 			method="post" commandName="product" enctype="multipart/form-data"
 			accept-charset="UTF-8">
 			<div class="form-group">

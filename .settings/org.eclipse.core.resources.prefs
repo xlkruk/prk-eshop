@@ -4,5 +4,7 @@ encoding//src/main/webapp/WEB-INF/views/cart.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/login.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/productInventory.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/productList.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/registerCustomer.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/registerSuccess.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/template/footer.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/viewProduct.jsp=UTF-8

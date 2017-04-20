@@ -24,6 +24,7 @@
                     </ul>
                     <ul class="nav navbar-nav pull-right">
                         <li><a href="<c:url value="/admin/" />">Administrator</a></li>
+                        <li><a href="<c:url value="/register" />">Zarejestruj</a></li>
                     </ul>
                 </div>
             </div>
