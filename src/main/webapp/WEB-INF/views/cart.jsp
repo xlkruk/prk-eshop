@@ -46,12 +46,12 @@
 						<th></th>
 						<th></th>
 						<th>Cena brutto</th>
-						<th>{{cart.grandTotal}}</th>
+						<th>{{calculateGrandTotal()}}</th>
 						<th></th>
 					</tr>
 				</table>
 
-				<a href="<spring:url value="/productList"/>" class="btn btn-info">Kontynuuj
+				<a href="<spring:url value="/product/productList"/>" class="btn btn-info">Kontynuuj
 					zakupy</a>
 			</div>
 		</section>

@@ -3,13 +3,18 @@
 
 <div class="container-wrapper">
 	<div class="container ">
-		<div id="login-box" class="col-md-4">
-			<h2>Zaloguj się</h2>
-			<c:if test="${not empty msg}">
-				<div class="msg">${msg}</div>
-			</c:if>
+		<c:if test="${not empty msg}">
 
-			<form name="loginForm" action="<c:url value="/j_spring_security_check" />" method="post">
+			<div class="msg">
+				<h1>${msg}</h1>
+			</div>
+
+		</c:if>
+		<div id="login-box" class="col-md-4">
+
+			<h2>Zaloguj się</h2>
+			<form name="loginForm"
+				action="<c:url value="/j_spring_security_check" />" method="post">
 				<c:if test="${not empty error}">
 					<div class="error" style="color: red;">${error}</div>
 				</c:if>

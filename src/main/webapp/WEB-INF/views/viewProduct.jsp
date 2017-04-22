@@ -40,9 +40,12 @@
 				<a href="<c:url value="${url}" />" class="btn btn-default">Powrót</a>
 				<a href="#" class="btn btn-warning btn-large"
 					ng-click="addToCart('${product.id}')"><span
-					class="glyphicon glyphicon-shopping-cart"></span>Dodaj do koszyka</a> <a
+					class="glyphicon glyphicon-shopping-cart"></span>Dodaj do koszyka</a>
+					
+					<!--   <a
 					href="<spring:url value="/cart" />" class="btn btn-default"><span
 					class="glyphicon glyphicon-hand-right"></span>Pokaż koszyk</a>
+					-->
 			</p>
 			<br />
 			<div class="panel-group">
