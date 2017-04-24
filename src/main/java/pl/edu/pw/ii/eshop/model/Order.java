@@ -2,36 +2,52 @@ package pl.edu.pw.ii.eshop.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-@Entity(name="ORDERS")
-public class Order implements Serializable{
+@Entity(name = "ORDERS")
+public class Order implements Serializable {
 
 	private static final long serialVersionUID = -3298918499516179338L;
-	
+
 	@Id
 	@GeneratedValue
 	private int orderId;
-	
+
+	@Column(name = "STATUS")
+	private String status;
+
 	@OneToOne
-	@JoinColumn(name="cartId")
+	@JoinColumn(name = "cartId")
 	private Cart cart;
-	
+
 	@OneToOne
-	@JoinColumn(name="customerId")
+	@JoinColumn(name = "customerId")
 	private Customer customer;
-	
+
 	@OneToOne
-	@JoinColumn(name="billingAddressId")
+	@JoinColumn(name = "billingAddressId")
 	private BillingAddress billingAddress;
-	
+
 	@OneToOne
-	@JoinColumn(name="shippingingAddressId")
-	private ShippingAddress shippingingAddress;
+	@JoinColumn(name = "shippingingAddressId")
+	private ShippingAddress shippingAddress;
+
+	public Order() {
+		status="Nowe";
+	}
+	
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public int getOrderId() {
 		return orderId;
@@ -65,13 +81,12 @@ public class Order implements Serializable{
 		this.billingAddress = billingAddress;
 	}
 
-	public ShippingAddress getShippingingAddress() {
-		return shippingingAddress;
+	public ShippingAddress getShippingAddress() {
+		return shippingAddress;
 	}
 
-	public void setShippingingAddress(ShippingAddress shippingingAddress) {
-		this.shippingingAddress = shippingingAddress;
+	public void setShippingAddress(ShippingAddress shippingingAddress) {
+		this.shippingAddress = shippingingAddress;
 	}
 
-	
 }

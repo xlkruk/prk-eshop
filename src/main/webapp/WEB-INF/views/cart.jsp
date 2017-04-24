@@ -17,10 +17,12 @@
 		<section class="container" ng-app="cartApp">
 			<div ng-controller="cartCtrl" ng-init="initCartId('${cartId}')">
 				<div>
-					<a class="btn btn-danger pull-left" ng-click="clearCart()"><span
+					<a class="btn btn-warning pull-left" ng-click="clearCart()"><span
 						class="glyphicon glyphicon-remove-sign"></span>Wyczyść koszyk</a>
 				</div>
-
+                <a href="<spring:url value="/order/${cartId}"/>"
+                   class="btn btn-default pull-right"><span class="glyphicon-shopping-cart glyphicon"></span> Złóż zamówienie
+                </a>
 
 				<table class="table table-hover">
 					<tr>

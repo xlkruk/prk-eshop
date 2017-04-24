@@ -17,7 +17,7 @@
 					<th>Miniaturka</th>
 					<th>Nazwa produktu</th>
 					<th>Kategoria</th>
-					<th>Dostępność (szt.)</th>
+					<!-- <th>Dostępność (szt.)</th> -->
 					<th>Cena</th>
 					<th></th>
 				</tr>
@@ -27,8 +27,8 @@
 					<td><img src="${pageContext.request.contextPath}/productImage?id=${product.id}"  alt="image" style="width: 100%;" /></td>
 					<td>${product.name}</td>
 					<td>${product.category}</td>
-					<td>${product.stock}</td>
-					<td>${product.price}PLN</td>
+				<!-- 	<td>${product.stock}</td> -->
+					<td><h2><strong>${product.price} PLN</strong></h2></td>
 					<td><a
 						href="<spring:url value="/product/viewProduct/${product.id }" />"><span
 							class="glyphicon glyphicon-info-sign btn btn-info"></span></a></td>

@@ -1,4 +1,10 @@
 eclipse.preferences.version=1
+encoding//src/main/webapp/WEB-INF/flows/checkout/checkOutCancelled.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/flows/checkout/collectCustomerInfo.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/flows/checkout/collectShippingDetail.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/flows/checkout/invalidCartWarning.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/flows/checkout/orderConfirmation.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/flows/checkout/thankCustomer.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/admin.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/cart.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/login.jsp=UTF-8
