@@ -3,6 +3,7 @@ package pl.edu.pw.ii.eshop.dao;
 import java.util.List;
 
 import pl.edu.pw.ii.eshop.model.Customer;
+import pl.edu.pw.ii.eshop.model.Status;
 
 public interface CustomerDao {
 
@@ -13,4 +14,6 @@ public interface CustomerDao {
 	List<Customer> getAllCustomers();
 
 	Customer getCustomerByUsername(String username);
+	
+
 }

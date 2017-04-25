@@ -23,6 +23,13 @@ public class CartItem implements Serializable {
 	@JoinColumn(name = "cartId")
 	@JsonIgnore // potrzebne aby nie zapêtlaæ budowy JSOna
 	private Cart cart;
+	
+	@ManyToOne
+	@JoinColumn(name = "productId")
+	private Product product;
+
+	private int quantity;
+	private double totalPrice;
 
 	public int getCartItemId() {
 		return cartItemId;
@@ -64,11 +71,6 @@ public class CartItem implements Serializable {
 		this.totalPrice = totalPrice;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "productId")
-	private Product product;
 
-	private int quantity;
-	private double totalPrice;
 
 }

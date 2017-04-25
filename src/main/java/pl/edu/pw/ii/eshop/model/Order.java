@@ -1,12 +1,18 @@
 package pl.edu.pw.ii.eshop.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity(name = "ORDERS")
@@ -20,6 +26,12 @@ public class Order implements Serializable {
 
 	@Column(name = "STATUS")
 	private String status;
+
+	@Column(name = "CREATION_DATE")
+	private Date creationDate;
+
+	@Column(name = "STATUS_CHANGE_DATE")
+	private Date statusChangeDate;
 
 	@OneToOne
 	@JoinColumn(name = "cartId")
@@ -37,10 +49,25 @@ public class Order implements Serializable {
 	@JoinColumn(name = "shippingingAddressId")
 	private ShippingAddress shippingAddress;
 
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<OrderItem> orderItems;
+
 	public Order() {
-		status="Nowe";
+		status = Status.NEW.getDescription();
+		creationDate = new Date();
+		statusChangeDate = new Date();
+		orderItems = new ArrayList<>();
 	}
-	
+
+	public Order(Cart cart) {
+		this();
+		List<CartItem> cartItems = cart.getCartItems();
+		for (CartItem cartItem : cartItems) {
+			OrderItem orderItem = new OrderItem(this, cartItem);
+			this.orderItems.add(orderItem);
+		}
+	}
+
 	public String getStatus() {
 		return status;
 	}
@@ -87,6 +114,30 @@ public class Order implements Serializable {
 
 	public void setShippingAddress(ShippingAddress shippingingAddress) {
 		this.shippingAddress = shippingingAddress;
+	}
+
+	public Date getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public Date getStatusChangeDate() {
+		return statusChangeDate;
+	}
+
+	public void setStatusChangeDate(Date statusChangeDate) {
+		this.statusChangeDate = statusChangeDate;
+	}
+
+	public List<OrderItem> getOrderItems() {
+		return orderItems;
+	}
+
+	public void setOrderItems(List<OrderItem> orderItems) {
+		this.orderItems = orderItems;
 	}
 
 }
