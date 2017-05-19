@@ -32,6 +32,10 @@
 									<li><a href="<c:url value="/customer/cart" />">Koszyk</a></li>
 								</c:if>
 								<c:if
+									test="${pageContext.request.userPrincipal.name != 'admin'}">
+									<li><a href="<c:url value="/customer/${pageContext.request.userPrincipal.name}" />">Konto</a></li>
+								</c:if>
+								<c:if
 									test="${pageContext.request.userPrincipal.name == 'admin'}">
 									<li><a href="<c:url value="/admin" />">Administrator</a></li>
 								</c:if>

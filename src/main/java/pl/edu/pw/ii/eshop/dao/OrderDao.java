@@ -15,4 +15,6 @@ public interface OrderDao {
 	
 	void updateOrder(Order order);
 
+	Order getOrderById(int id);
+
 }

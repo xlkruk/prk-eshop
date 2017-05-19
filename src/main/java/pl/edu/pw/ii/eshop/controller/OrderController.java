@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,10 +14,12 @@ import pl.edu.pw.ii.eshop.model.CartItem;
 import pl.edu.pw.ii.eshop.model.Customer;
 import pl.edu.pw.ii.eshop.model.Order;
 import pl.edu.pw.ii.eshop.model.OrderItem;
+import pl.edu.pw.ii.eshop.model.Product;
 import pl.edu.pw.ii.eshop.service.CartService;
 import pl.edu.pw.ii.eshop.service.OrderService;
 
 @Controller
+@RequestMapping("/order")
 public class OrderController {
 
 	@Autowired
@@ -25,7 +28,7 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 
-	@RequestMapping("/order/{cartId}")
+	@RequestMapping("{cartId}")
 	public String createOrder(@PathVariable("cartId") int cartId) {
 		Cart cart = cartService.getCartById(cartId);
 		Order customerOrder = new Order(cart);
@@ -39,5 +42,13 @@ public class OrderController {
 		orderService.addOrder(customerOrder);
 
 		return "redirect:/checkout?cartId=" + cartId;
+	}
+	
+	@RequestMapping("viewOrder/{id}")
+	public String viewOrder(@PathVariable int id, Model model) throws Exception {
+		Order order = orderService.getOrderById(id);
+		model.addAttribute("order", order);
+		
+		return "viewOrder";
 	}
 }

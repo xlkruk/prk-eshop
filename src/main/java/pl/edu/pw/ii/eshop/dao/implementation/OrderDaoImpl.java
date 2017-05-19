@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import pl.edu.pw.ii.eshop.dao.OrderDao;
 import pl.edu.pw.ii.eshop.model.Order;
+import pl.edu.pw.ii.eshop.model.Product;
 
 
 @Repository
@@ -29,7 +30,7 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public List<Order> getAllOrders() {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("from Orders");
+		Query query = session.createQuery("from ORDERS");
 		List<Order> orders = query.list();
 		session.flush();
 		return orders;
@@ -38,7 +39,7 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public List<Order> getOrdersByStatus(String status) {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("from Orders where status=?");
+		Query query = session.createQuery("from ORDERS where status=?");
 		query.setString(0, status);
 		List<Order> orders = query.list();
 		session.flush();
@@ -48,7 +49,7 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public List<Order> getOrdersByCustomerId(int customerId) {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("from Orders where customerId=?");
+		Query query = session.createQuery("from ORDERS where customerId=?");
 		query.setInteger(0, customerId);
 		List<Order> orders = query.list();
 		session.flush();
@@ -61,6 +62,14 @@ public class OrderDaoImpl implements OrderDao {
 		session.saveOrUpdate(order);
 		session.flush();
 
+	}
+
+	@Override
+	public Order getOrderById(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		Order order = (Order) session.get(Order.class, id);
+		session.flush();
+		return order;
 	}
 
 }

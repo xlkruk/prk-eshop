@@ -25,6 +25,7 @@ public class OrderItem implements Serializable {
 
 	private String productName;
 	private int quantity;
+	private double price;
 	private double totalPrice;
 
 	public OrderItem(Order order, CartItem cartItem) {
@@ -32,7 +33,22 @@ public class OrderItem implements Serializable {
 		this.productName = cartItem.getProduct().getName();
 		this.quantity=cartItem.getQuantity();
 		this.totalPrice=cartItem.getTotalPrice();
+		this.price=cartItem.getProduct().getPrice();
 	}
+	
+	
+
+	public double getPrice() {
+		return price;
+	}
+
+
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+
 
 	public int getOrderItemId() {
 		return orderItemId;
@@ -72,6 +88,9 @@ public class OrderItem implements Serializable {
 
 	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;
+	}
+	
+	public OrderItem() {
 	}
 
 }
