@@ -16,7 +16,7 @@
 
 				<form:form commandName="order" class="form-horizontal">
 					<div
-						class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+						class="well col-xs-10 col-sm-10 col-md-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1">
 
 						<div class="text-center">
 							<h1>Zamówienie</h1>
@@ -26,10 +26,9 @@
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<address>
 									<strong>Adres dostawy</strong><br>
-									${order.cart.customer.shippingAddress.street} <br>
-									${order.cart.customer.shippingAddress.apartmentNumber} <br>
-									${order.cart.customer.shippingAddress.city},
-									${order.cart.customer.shippingAddress.zipCode} <br>
+									${order.cart.customer.shippingAddress.street} ${order.cart.customer.shippingAddress.apartmentNumber} <br>
+									
+									${order.cart.customer.shippingAddress.zipCode} ${order.cart.customer.shippingAddress.city} <br>
 								</address>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6 text-right">
@@ -44,10 +43,8 @@
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<address>
 									<strong>Adres do faktury</strong><br>
-									${order.cart.customer.billingAddress.street} <br>
-									${order.cart.customer.billingAddress.apartmentNumber} <br>
-									${order.cart.customer.billingAddress.city},
-									${order.cart.customer.billingAddress.zipCode} <br>
+									${order.cart.customer.billingAddress.street} ${order.cart.customer.billingAddress.apartmentNumber} <br>
+									${order.cart.customer.billingAddress.zipCode} ${order.cart.customer.billingAddress.city} <br>
 								</address>
 							</div>
 						</div>

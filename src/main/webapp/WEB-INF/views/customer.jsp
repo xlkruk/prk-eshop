@@ -19,7 +19,7 @@
 		</div>
 		<div class="container">
 			<h3>
-				<a href="<c:url value="/customer/customerManagement/${customer.customerId }"/>">Zarządzanie
+				<a href="<c:url value="/customer/editCustomer/${customer.customerId}"/>">Zarządzanie
 					kontem</a>
 			</h3>
 			<p>Umożliwia aktualizację danych.</p>

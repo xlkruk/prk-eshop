@@ -13,6 +13,7 @@ import pl.edu.pw.ii.eshop.dao.CustomerDao;
 import pl.edu.pw.ii.eshop.model.Authorities;
 import pl.edu.pw.ii.eshop.model.Cart;
 import pl.edu.pw.ii.eshop.model.Customer;
+import pl.edu.pw.ii.eshop.model.Product;
 import pl.edu.pw.ii.eshop.model.Users;
 
 @Repository
@@ -74,6 +75,16 @@ public class CustomerDaoImpl implements CustomerDao {
 		query.setString(0, username);
 		
 		return (Customer) query.uniqueResult();
+	}
+	
+	@Override
+	public void editCustomer(Customer customer) {
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(customer);
+		session.saveOrUpdate(customer.getBillingAddress());
+		session.saveOrUpdate(customer.getShippingAddress());
+		session.flush();
+
 	}
 
 }
