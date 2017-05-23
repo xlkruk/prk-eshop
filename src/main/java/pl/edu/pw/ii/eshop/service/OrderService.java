@@ -7,22 +7,23 @@ import pl.edu.pw.ii.eshop.model.Product;
 
 public interface OrderService {
 
-    void addOrder(Order customerOrder);
+	void addOrder(Order customerOrder);
 
-    double getOrderGrandTotal(int cartId);
-    
-    List<Order> getAllOrders();
-    
-    List<Order> getOrdersByStatus(String status);
-    
-    List<Order> getOrdersByCustomerId(int customerId);
-    
-    void setPaymentReceivedStatus(Order customerOrder);
-    
-    void setSentStatus(Order customerOrder);
-    
-    void setCompletedStaus(Order customerOrder);
-    
-    Order getOrderById(int id);
+	double getOrderGrandTotal(int cartId);
+
+	List<Order> getAllOrders();
+
+	List<Order> getOrdersByStatus(String status);
+
+	List<Order> getOrdersByCustomerId(int customerId);
+
+	void setPaymentReceivedStatus(Order customerOrder);
+
+	void setSentStatus(Order customerOrder);
+
+	void setCompletedStaus(Order customerOrder);
+
+	void setNewStaus(Order customerOrder);
+
+	Order getOrderById(int id);
 }
-

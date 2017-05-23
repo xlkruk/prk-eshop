@@ -1,5 +1,7 @@
 package pl.edu.pw.ii.eshop.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -12,8 +14,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import pl.edu.pw.ii.eshop.model.Order;
 import pl.edu.pw.ii.eshop.model.Product;
 import pl.edu.pw.ii.eshop.model.ProductInfo;
+import pl.edu.pw.ii.eshop.model.Status;
+import pl.edu.pw.ii.eshop.service.OrderService;
 import pl.edu.pw.ii.eshop.service.ProductService;
 
 @Controller
@@ -22,6 +27,9 @@ public class AdminProductController {
 
 	@Autowired
 	private ProductService productService;
+
+	@Autowired
+	private OrderService orderService;
 
 	@RequestMapping("/product/addProduct")
 	public String addProduct(Model model) {
@@ -72,5 +80,31 @@ public class AdminProductController {
 		productService.deleteProduct(productService.getProductById(id));
 
 		return "redirect:/admin/productInventory";
+	}
+
+	@RequestMapping(value = "/order/changeStatus", method = RequestMethod.POST)
+	public String changeOrderStatus(@Valid @ModelAttribute("order") Order order, BindingResult result,
+			HttpServletRequest request) {
+		Order ord = orderService.getOrderById(order.getOrderId());
+		System.out.println("%%%%%%%%%%%%%"+order.getOrderId());
+		String status = order.getStatus();
+
+		switch (status) {
+		case "NOWY":
+			orderService.setNewStaus(ord);
+			break;
+		case "ZAP£ACONE":
+			orderService.setPaymentReceivedStatus(ord);
+			break;
+		case "WYS£ANE":
+			orderService.setSentStatus(ord);
+			break;
+		case "ZAKOÑCZONE":
+			orderService.setCompletedStaus(ord);
+			break;
+		default:
+			break;
+		}
+		return "redirect:/order/viewOrder/" + order.getOrderId();
 	}
 }

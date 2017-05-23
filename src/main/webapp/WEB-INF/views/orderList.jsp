@@ -7,7 +7,11 @@
 	<div class="container">
 		<div class="page-header">
 			<h1>Zamówienia</h1>
-
+			<a href="<spring:url value="/admin/orderList" />">Wszystkie</a>
+			| <a href="<spring:url value="/admin/orderListByStatus/NOWE" />">Nowe</a>
+			| <a href="<spring:url value="/admin/orderListByStatus/ZAPŁACONE" />">Opłacone</a>
+			| <a href="<spring:url value="/admin/orderListByStatus/WYSŁANE" />">Wysłane</a>
+			| <a href="<spring:url value="/admin/orderListByStatus/ZAKOŃCZONE" />">Zakończone</a>
 			<p class="lead">Zarządzanie zamówieniami</p>
 		</div>
 
@@ -27,13 +31,11 @@
 					<td>${order.orderId}</td>
 					<td>${order.creationDate}</td>
 					<td>${order.statusChangeDate}</td>
-				<!-- 	<td>${product.stock}</td> -->
+					<!-- 	<td>${product.stock}</td> -->
 					<td>${order.status}</td>
-					<td> <a
+					<td><a
 						href="<spring:url value="/order/viewOrder/${order.orderId }" />"><span
-							class="glyphicon glyphicon-info-sign btn btn-info"></span></a>
-							
-							</td>
+							class="glyphicon glyphicon-info-sign btn btn-info"></span></a></td>
 				</tr>
 			</c:forEach>
 		</table>

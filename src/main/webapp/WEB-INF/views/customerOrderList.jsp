@@ -19,7 +19,7 @@
 					<!-- <th>Dostępność (szt.)</th> -->
 					<th>Status</th>
 					<th></th>
-					<th></th>
+
 				</tr>
 			</thead>
 			<c:forEach items="${orders}" var="order">
@@ -30,10 +30,12 @@
 					<td>${order.status}</td>
 					<td><a
 						href="<spring:url value="/order/viewOrder/${order.orderId }" />"><span
-							class="glyphicon glyphicon-info-sign btn btn-info"></span></a></td>
-					<td><a
-						href="<spring:url value="/order/viewOrder/${order.orderId }" />"><span
-							class="btn btn-info">zapłać</span></a></td>
+							class="glyphicon glyphicon-info-sign btn btn-info"></span></a> <c:if
+							test="${order.status=='NOWY'}">
+							<a
+								href="<spring:url value="/customer/pay/${order.orderId }" />"><span
+								class="btn btn-info">zapłać</span></a>
+						</c:if></td>
 				</tr>
 			</c:forEach>
 		</table>

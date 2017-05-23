@@ -83,4 +83,11 @@ public class OrderServiceImpl implements OrderService {
 	public Order getOrderById(int id) {
 		return customerOrderDao.getOrderById(id);
 	}
+
+	@Override
+	public void setNewStaus(Order customerOrder) {
+		customerOrder.setStatus(Status.NEW.getDescription());
+		customerOrderDao.updateOrder(customerOrder);
+		
+	}
 }
