@@ -50,7 +50,7 @@ public class Product implements Serializable{
 	private String manufacturer;
 	
 	@Column(name = "DISCOUNT")
-	@Min(value=0, message="Rabat musi byæ wiêksza lub równy zero.")
+	@Min(value=0, message="Rabat musi byæ wiêkszy lub równy zero.")
 	@Max(value=100, message="Rabat nie mo¿e byæ wiêkszy ni¿ 100%.")
 	private int discount;
 

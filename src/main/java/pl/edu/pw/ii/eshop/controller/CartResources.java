@@ -63,7 +63,7 @@ public class CartResources {
 			if (product.getId() == cartItems.get(i).getProduct().getId()) {
 				CartItem cartItem = cartItems.get(i);
 				cartItem.setQuantity(cartItem.getQuantity() + 1);
-				cartItem.setTotalPrice(product.getPrice() * cartItem.getQuantity());
+				cartItem.setTotalPrice(Math.round(((100-product.getDiscount())*100)/100f*product.getPrice())/100f * cartItem.getQuantity());
 				cartItemService.addCartItem(cartItem);
 				return;
 			}
@@ -72,7 +72,8 @@ public class CartResources {
 		CartItem cartItem = new CartItem();
 		cartItem.setProduct(product);
 		cartItem.setQuantity(1);
-		cartItem.setTotalPrice(product.getPrice() * cartItem.getQuantity());
+		cartItem.setTotalPrice( Math.round(((100-product.getDiscount())*100)/100f*product.getPrice())/100f * cartItem.getQuantity());
+		System.out.println("@@@@@@@ = " + Math.round(((100-product.getDiscount())*100)/100f*product.getPrice())/100f);
 		cartItem.setCart(cart);
 		cartItemService.addCartItem(cartItem);
 

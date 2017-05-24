@@ -68,12 +68,13 @@
 					class="checkbox-inline"><form:radiobutton path="status"
 						id="status" value="inactive" />Nieaktywny</label>
 			</div>
+			<!--
 			<div class="form-group">
 				<label for="stock">Stan magazynu:</label>
 				<form:errors path="stock" cssStyle="color: red;" />
 				<form:input path="stock" id="stock" class="form-control"
 					value="${product.stock}" />
-			</div>
+			</div>-->
 
 			<div class="form-group">
 				<label class="control-label" for="productImage">Dodaj

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import pl.edu.pw.ii.eshop.dao.CartDao;
 import pl.edu.pw.ii.eshop.model.Cart;
+import pl.edu.pw.ii.eshop.service.OrderService;
 
 @Repository
 @Transactional
@@ -18,6 +19,9 @@ public class CartDaoImpl implements CartDao {
 
 	@Autowired
 	private SessionFactory sesionFactory;
+	
+	@Autowired
+	private OrderService orderService;
 
 	@Override
 	public Cart getCartById(int cartId) {
@@ -29,9 +33,11 @@ public class CartDaoImpl implements CartDao {
 	@Override
 	public void update(Cart cart) {
 		int cartId = cart.getCartId();
+		double grandTotal=orderService.getOrderGrandTotal(cartId);
+		cart.setGrantTotal(grandTotal);
 
 		Session session = sesionFactory.getCurrentSession();
-
+session.saveOrUpdate(cart);
 	}
 
 	@Override

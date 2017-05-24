@@ -1,5 +1,7 @@
 package pl.edu.pw.ii.eshop.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -33,7 +35,21 @@ public class RegisterController {
 		if (result.hasErrors()) {
 			return "registerCustomer";
 		}
+		
+		List<Customer> customers = customerService.getAllCustomers();
+		for(Customer cust : customers){
+			if(customer.getCustomerEmail().equals(cust.getCustomerEmail())){
+				model.addAttribute("emailMsg", "Istnieje u¿ytkownik z tym adresem email.");
+				return "registerCustomer";
+			}
+			
+			if(customer.getUsername().equals(cust.getUsername())){
+				model.addAttribute("usernameMsg", "Istnieje u¿ytkownik z takim loginem.");
+				return "registerCustomer";
+			}
+		}
 		customerService.addCustomer(customer);
+
 		return "registerSuccess";
 	}
 }

@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -28,6 +29,7 @@ public class Customer implements Serializable {
 	private String customerLastName;
 
 	@NotEmpty(message = "Email nie może być pusty.")
+	@Email(message = "niepoprawny format")
 	private String customerEmail;
 
 	private String customerPhone;

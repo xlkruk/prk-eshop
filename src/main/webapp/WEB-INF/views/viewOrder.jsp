@@ -70,8 +70,8 @@
 					<tr>
 						<th>Produkty</th>
 						<th>#</th>
-						<th class="text-center">Cena</th>
-						<th class="text-center">Łącznie</th>
+						<th class="text-center">Cena jednostkowa</th>
+						<th class="text-center">Cena po naliczeniu rabatu</th>
 					</tr>
 				</thead>
 				<tbody>

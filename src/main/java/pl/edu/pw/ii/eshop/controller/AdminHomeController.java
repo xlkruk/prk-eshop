@@ -8,8 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import pl.edu.pw.ii.eshop.model.Customer;
 import pl.edu.pw.ii.eshop.model.Order;
 import pl.edu.pw.ii.eshop.model.Product;
+import pl.edu.pw.ii.eshop.service.CustomerService;
 import pl.edu.pw.ii.eshop.service.OrderService;
 import pl.edu.pw.ii.eshop.service.ProductService;
 
@@ -22,6 +24,9 @@ public class AdminHomeController {
 	
 	@Autowired
 	private OrderService orderService;
+	
+	@Autowired
+	private CustomerService customerService;
 
 	@RequestMapping
 	public String adminPage(){
@@ -35,9 +40,11 @@ public class AdminHomeController {
 		return "productInventory";
 	}
 	
-	@RequestMapping("/customerManagement")
-	public String customerManagement(Model model){
-		return "customerManagement";
+	@RequestMapping("/customer")
+	public String customerInfo(Model model){
+		List<Customer> customers = customerService.getAllCustomers();
+		model.addAttribute("customers", customers);
+		return "customerInfo";
 	}
 	
 	@RequestMapping("/orderList")

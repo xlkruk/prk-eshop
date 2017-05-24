@@ -12,6 +12,7 @@ import pl.edu.pw.ii.eshop.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -60,6 +61,7 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public void setPaymentReceivedStatus(Order customerOrder) {
+		customerOrder.setStatusChangeDate(new Date());
 		customerOrder.setStatus(Status.PAYMENT_RECEIVED.getDescription());
 		customerOrderDao.updateOrder(customerOrder);
 		
@@ -67,6 +69,7 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public void setSentStatus(Order customerOrder) {
+		customerOrder.setStatusChangeDate(new Date());
 		customerOrder.setStatus(Status.SENT.getDescription());
 		customerOrderDao.updateOrder(customerOrder);
 		
@@ -74,6 +77,7 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public void setCompletedStaus(Order customerOrder) {
+		customerOrder.setStatusChangeDate(new Date());
 		customerOrder.setStatus(Status.COMPLETED.getDescription());
 		customerOrderDao.updateOrder(customerOrder);
 		
@@ -86,6 +90,7 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public void setNewStaus(Order customerOrder) {
+		customerOrder.setStatusChangeDate(new Date());
 		customerOrder.setStatus(Status.NEW.getDescription());
 		customerOrderDao.updateOrder(customerOrder);
 		

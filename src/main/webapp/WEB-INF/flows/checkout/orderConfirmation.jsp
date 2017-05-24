@@ -54,7 +54,8 @@
 									<tr>
 										<th>Produkty</th>
 										<th>#</th>
-										<th class="text-center">Cena</th>
+										<th class="text-center">Rabat</th>
+										<th class="text-center">Cena jednostkowa</th>
 										<th class="text-center">Łącznie</th>
 									</tr>
 								</thead>
@@ -63,12 +64,14 @@
 										<tr>
 											<td class="col-md-9"><em>${cartItem.product.name}</em></td>
 											<td class="col-md-1" style="text-align: center">${cartItem.quantity}</td>
-											<td class="col-md-1" style="text-align: center">${cartItem.product.price}</td>
+											<td class="col-md-1" style="text-align: center">${cartItem.product.discount}%</td>
+											<td class="col-md-1" style="text-align: center">${cartItem.product.price} PLN</td>
 											<td class="col-md-1" style="text-align: center">${cartItem.totalPrice}</td>
 										</tr>
 									</c:forEach>
 
 									<tr>
+										<td></td>
 										<td></td>
 										<td></td>
 										<td class="text-right">

@@ -28,7 +28,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="email">Email:</label>
+				<label for="email">Email:</label><span style="color:red">${emailMsg}</span>
 				<form:errors path="customerEmail" cssStyle="color: red;" />
 				<form:input path="customerEmail" id="email" class="form-control" />
 			</div>
@@ -40,7 +40,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="username">Nazwa użytkownika:</label>
+				<label for="username">Nazwa użytkownika:</label><span style="color:red">${usernameMsg}</span>
 				<form:errors path="username" cssStyle="color: red;" />
 				<form:input path="username" id="username" class="form-control" />
 			</div>

@@ -31,5 +31,12 @@
 			</h3>
 			<p>Zarządzanie zamówieniami.</p>
 		</div>
+		
+				<div class="container">
+			<h3>
+				<a href="<c:url value="/admin/customer"/>">Klienci</a>
+			</h3>
+			<p>Zarządzanie klientami.</p>
+		</div>
 
 		<%@include file="/WEB-INF/views/template/footer.jsp"%>
