@@ -49,8 +49,6 @@ public class CustomerHomeController {
 	public String editProduct(@PathVariable("id") int id, Model model) {
 		Customer customer = customerService.getCustomerById(id);
 		CustomerInfo customerInfo = new CustomerInfo(customer);
-		System.out.println("@@@@@@@@@@@$$$$$$" + customer.getCustomerId());
-		System.out.println("@@@@@@@@@@@$$$$$$" + customerInfo.getCustomerId());
 		model.addAttribute("customer", customerInfo);
 		return "editCustomer";
 	}

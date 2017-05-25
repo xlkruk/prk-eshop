@@ -9,7 +9,7 @@
 			<div class="jumbotron">
 				<div class="container">
 					<h1>Dziękujemy za złożenie zamówienia.</h1>
-					<p>Przewidywany czas dostawy to 3 dni robocze od momentu zaksięgowania opłaty.</p>
+					<p>Przewidywany czas dostawy to 3 dni robocze od momentu zaksięgowania wpłaty.</p>
 				</div>
 			</div>
 		</section>

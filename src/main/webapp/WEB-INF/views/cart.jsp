@@ -38,7 +38,7 @@
 						<td>{{item.product.price}}</td>
 						<td>{{item.product.discount}}</td>
 						<td>{{item.quantity}}</td>
-						<td>{{item.totalPrice}}</td>
+						<td>{{item.totalPrice| number : 2}}</td>
 						<td><a href="#" class="label label-warning"
 							ng-click="removeFromCart(item.product.id)"><span
 								class="glyphicon glyphicon-remove"></span>Usuń</a></td>
@@ -48,7 +48,7 @@
 						<th></th>
 						<th></th>
 						<th>Cena brutto</th>
-						<th>{{calculateGrandTotal()}}</th>
+						<th>{{calculateGrandTotal()| number : 2}}</th>
 						<th></th>
 					</tr>
 				</table>

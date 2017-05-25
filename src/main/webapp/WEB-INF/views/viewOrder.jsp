@@ -79,8 +79,8 @@
 						<tr>
 							<td class="col-md-9"><em>${orderItem.productName}</em></td>
 							<td class="col-md-1" style="text-align: center">${orderItem.quantity}</td>
-							<td class="col-md-1" style="text-align: center">${orderItem.price}</td>
-							<td class="col-md-1" style="text-align: center">${orderItem.totalPrice}</td>
+							<td class="col-md-1" style="text-align: center"><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${orderItem.price}" /> PLN</td>
+							<td class="col-md-1" style="text-align: center"><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${orderItem.totalPrice}" /> PLN</td>
 						</tr>
 					</c:forEach>
 
@@ -94,7 +94,7 @@
 						</td>
 						<td class="text-center text-danger">
 							<h4>
-								<strong>${order.cart.grantTotal} zł</strong>
+								<strong><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${order.cart.grantTotal}" /> PLN</strong>
 							</h4>
 						</td>
 					</tr>

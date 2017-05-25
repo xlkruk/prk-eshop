@@ -65,8 +65,8 @@
 											<td class="col-md-9"><em>${cartItem.product.name}</em></td>
 											<td class="col-md-1" style="text-align: center">${cartItem.quantity}</td>
 											<td class="col-md-1" style="text-align: center">${cartItem.product.discount}%</td>
-											<td class="col-md-1" style="text-align: center">${cartItem.product.price} PLN</td>
-											<td class="col-md-1" style="text-align: center">${cartItem.totalPrice}</td>
+											<td class="col-md-1" style="text-align: center"><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${cartItem.product.price}" /> PLN</td>
+											<td class="col-md-1" style="text-align: center"><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${cartItem.totalPrice}" /> PLN</td>
 										</tr>
 									</c:forEach>
 
@@ -81,7 +81,7 @@
 										</td>
 										<td class="text-center text-danger">
 											<h4>
-												<strong>${order.cart.grantTotal} zł</strong>
+												<strong><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${order.cart.grantTotal}" />PLN</strong>
 											</h4>
 										</td>
 									</tr>

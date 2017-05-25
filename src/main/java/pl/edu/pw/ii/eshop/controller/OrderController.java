@@ -16,6 +16,7 @@ import pl.edu.pw.ii.eshop.model.Order;
 import pl.edu.pw.ii.eshop.model.OrderItem;
 import pl.edu.pw.ii.eshop.model.Product;
 import pl.edu.pw.ii.eshop.service.CartService;
+import pl.edu.pw.ii.eshop.service.MailService;
 import pl.edu.pw.ii.eshop.service.OrderService;
 
 @Controller
@@ -27,6 +28,9 @@ public class OrderController {
 
 	@Autowired
 	private OrderService orderService;
+
+	@Autowired
+	private MailService mailService;
 
 	@RequestMapping("{cartId}")
 	public String createOrder(@PathVariable("cartId") int cartId) {
@@ -40,15 +44,14 @@ public class OrderController {
 		customerOrder.setShippingAddress(customer.getShippingAddress());
 
 		orderService.addOrder(customerOrder);
-
 		return "redirect:/checkout?cartId=" + cartId;
 	}
-	
+
 	@RequestMapping("viewOrder/{id}")
 	public String viewOrder(@PathVariable int id, Model model) throws Exception {
 		Order order = orderService.getOrderById(id);
 		model.addAttribute("order", order);
-		
+
 		return "viewOrder";
 	}
 }

@@ -1,4 +1,5 @@
 ﻿<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@include file="/WEB-INF/views/template/header.jsp"%>
 <%@include file="/WEB-INF/views/template/navbar.jsp"%>
@@ -26,7 +27,11 @@
 					<p>
 						<strong>Kategoria:</strong>${product.category}</p>
 
-					<h4>${product.price}PLN</h4>
+					<h4>
+						<fmt:formatNumber type="number" maxFractionDigits="2"
+							minFractionDigits="2" value="${product.price}" />
+						PLN
+					</h4>
 				</div>
 			</div>
 			<br />
@@ -38,11 +43,15 @@
 
 			<p ng-controller="cartCtrl">
 				<a href="<c:url value="${url}" />" class="btn btn-default">Powrót</a>
-				<a href="#" class="btn btn-warning btn-large"
-					ng-click="addToCart('${product.id}')"><span
-					class="glyphicon glyphicon-shopping-cart"></span>Dodaj do koszyka</a>
-					
-					<!--   <a
+				<c:if test="${pageContext.request.userPrincipal.name != null}">
+					<c:if test="${pageContext.request.userPrincipal.name != 'admin'}">
+						<a href="#" class="btn btn-warning btn-large"
+							ng-click="addToCart('${product.id}')"><span
+							class="glyphicon glyphicon-shopping-cart"></span>Dodaj do koszyka</a>
+					</c:if>
+				</c:if>
+				
+				<!--   <a
 					href="<spring:url value="/cart" />" class="btn btn-default"><span
 					class="glyphicon glyphicon-hand-right"></span>Pokaż koszyk</a>
 					-->
@@ -61,6 +70,7 @@
 		</div>
 	</div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 <script src="<c:url value="/resources/js/controller.js"/>"></script>
 <%@include file="/WEB-INF/views/template/footer.jsp"%>

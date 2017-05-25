@@ -15,6 +15,13 @@
 			<h3>Informacje podstawowe</h3>
 			<h2>${customer.customerFirstName} ${customer.customerLastName}</h2>
 			<div class="form-group">
+				<label for="email">Nowe hasło:</label>
+				<form:errors path="password" cssStyle="color: red;" />
+				<form:password path="password" id="password" class="form-control" />
+			</div>
+			<!-- <input type="hidden" name="password" value="${customer.password}"> -->
+
+			<div class="form-group">
 				<label for="email">Email:</label>
 				<form:errors path="customerEmail" cssStyle="color: red;" />
 				<form:input path="customerEmail" id="email" class="form-control" />
@@ -37,8 +44,7 @@
 
 			<div class="form-group">
 				<label for="billingApartmentNumber">Numer domu:</label>
-				<form:errors path="billingApartmentNumber"
-					cssStyle="color: red;" />
+				<form:errors path="billingApartmentNumber" cssStyle="color: red;" />
 				<form:input path="billingApartmentNumber"
 					id="billingApartmentNumber" class="form-control" />
 			</div>
@@ -46,8 +52,7 @@
 			<div class="form-group">
 				<label for="billingCity">Miasto:</label>
 				<form:errors path="billingCity" cssStyle="color: red;" />
-				<form:input path="billingCity" id="billingCity"
-					class="form-control" />
+				<form:input path="billingCity" id="billingCity" class="form-control" />
 			</div>
 
 			<div class="form-group">
@@ -68,8 +73,7 @@
 
 			<div class="form-group">
 				<label for="shippingApartmentNumber">Numer domu:</label>
-				<form:errors path="shippingApartmentNumber"
-					cssStyle="color: red;" />
+				<form:errors path="shippingApartmentNumber" cssStyle="color: red;" />
 				<form:input path="shippingApartmentNumber"
 					id="shippingApartamentNumber" class="form-control" />
 			</div>
@@ -88,7 +92,7 @@
 					class="form-control" />
 			</div>
 			<input type="hidden" name="customerId" value="${customer.customerId}">
-			<input type="hidden" name="password" value="${customer.password}">
+
 			<input type="hidden" name="customerFirstName"
 				value="${customer.customerFirstName}">
 			<input type="hidden" name="customerLastName"

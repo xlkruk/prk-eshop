@@ -72,10 +72,11 @@ public class CartResources {
 		CartItem cartItem = new CartItem();
 		cartItem.setProduct(product);
 		cartItem.setQuantity(1);
-		cartItem.setTotalPrice( Math.round(((100-product.getDiscount())*100)/100f*product.getPrice())/100f * cartItem.getQuantity());
-		System.out.println("@@@@@@@ = " + Math.round(((100-product.getDiscount())*100)/100f*product.getPrice())/100f);
+		cartItem.setTotalPrice( Math.round(((100-product.getDiscount())*100)/100f*product.getPrice() * cartItem.getQuantity())/100f);
+		System.out.println("@@@@@@@ = " + Math.round(((100-product.getDiscount())*100)/100f*product.getPrice())/100f+"TTTTTTTT"+cartItem.getTotalPrice());
 		cartItem.setCart(cart);
 		cartItemService.addCartItem(cartItem);
+	
 
 	}
 

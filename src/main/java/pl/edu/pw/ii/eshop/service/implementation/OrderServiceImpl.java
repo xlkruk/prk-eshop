@@ -7,6 +7,7 @@ import pl.edu.pw.ii.eshop.model.Customer;
 import pl.edu.pw.ii.eshop.model.Order;
 import pl.edu.pw.ii.eshop.model.Status;
 import pl.edu.pw.ii.eshop.service.CartService;
+import pl.edu.pw.ii.eshop.service.MailService;
 import pl.edu.pw.ii.eshop.service.OrderService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private CartService cartService;
+    
+    @Autowired MailService mailService;
 
     @Override
     public void addOrder(Order customerOrder) {
@@ -64,6 +67,7 @@ public class OrderServiceImpl implements OrderService {
 		customerOrder.setStatusChangeDate(new Date());
 		customerOrder.setStatus(Status.PAYMENT_RECEIVED.getDescription());
 		customerOrderDao.updateOrder(customerOrder);
+		mailService.sendPaymentConfirmation(customerOrder);
 		
 	}
 
@@ -72,6 +76,7 @@ public class OrderServiceImpl implements OrderService {
 		customerOrder.setStatusChangeDate(new Date());
 		customerOrder.setStatus(Status.SENT.getDescription());
 		customerOrderDao.updateOrder(customerOrder);
+		mailService.sendDeliveryConfirmation(customerOrder);
 		
 	}
 

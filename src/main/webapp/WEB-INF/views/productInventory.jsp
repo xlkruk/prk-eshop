@@ -1,4 +1,5 @@
 ﻿<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@include file="/WEB-INF/views/template/header.jsp"%>
 <%@include file="/WEB-INF/views/template/navbar.jsp"%>
@@ -32,7 +33,7 @@
 						<td>${product.name}</td>
 						<td>${product.category}</td>
 						<!-- <td>${product.stock}</td>-->
-						<td>${product.price}PLN</td>
+						<td><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${product.price}" /> PLN</td>
 						<td><a
 							href="<spring:url value="/product/viewProduct/${product.id }" />"><span
 								class="glyphicon glyphicon-info-sign btn btn-info"></span></a> <a

@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import pl.edu.pw.ii.eshop.dao.CustomerDao;
+import pl.edu.pw.ii.eshop.dao.UserDao;
 import pl.edu.pw.ii.eshop.model.Customer;
 import pl.edu.pw.ii.eshop.model.CustomerInfo;
+import pl.edu.pw.ii.eshop.model.Users;
 import pl.edu.pw.ii.eshop.service.CustomerService;
 
 @Service
@@ -15,6 +17,9 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
 	private CustomerDao customerDao;
+	
+	@Autowired
+	private UserDao userDao;
 
 	@Override
 	public void addCustomer(Customer customer) {
@@ -40,12 +45,17 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public void editCustomer(CustomerInfo customerInfo) {
-		System.out.println("#########################"+customerInfo.getCustomerId());
 		Customer customer = customerDao.getCustomerById(customerInfo.getCustomerId());
 		customer.setCustomerEmail(customerInfo.getCustomerEmail());
 		customer.setCustomerPhone(customerInfo.getCustomerPhone());
-		if(customerInfo.getPassword() != null)
+		System.out.println("@@@@@@@@@@@@@@@@@@@"+customerInfo.getPassword());
+		if((customerInfo.getPassword() != null) && !customerInfo.getPassword().equals("")){
+			System.out.println("###############"+customerInfo.getPassword());
 			customer.setPassword(customerInfo.getPassword());
+			Users user = userDao.getUserByUsername(customerInfo.getUsername());
+			user.setPassword(customerInfo.getPassword());
+			userDao.updateUser(user);
+		}
 		customer.getBillingAddress().setApartmentNumber(customerInfo.getBillingApartmentNumber());
 		customer.getBillingAddress().setCity(customerInfo.getBillingCity());
 		customer.getBillingAddress().setStreet(customerInfo.getBillingStreet());

@@ -1,4 +1,4 @@
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+﻿<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@include file="/WEB-INF/views/template/header.jsp"%>
 <%@include file="/WEB-INF/views/template/navbar.jsp"%>
 
@@ -26,20 +26,20 @@
 					class="form-control" value="${product.manufacturer}" />
 			</div>
 
-			<div class="form-group">
+						<div class="form-group">
 				<label for="category">Kategoria:</label> <label
 					class="checkbox-inline"><form:radiobutton path="category"
-						id="category" value="kategoria1" />Kategoria 1</label> <label
+						id="category" value="biżuteria" />biżuteria</label> <label
 					class="checkbox-inline"><form:radiobutton path="category"
-						id="category" value="kategoria2" />Kategoria 2</label> <label
+						id="category" value="ceramika" />ceramika</label> <label
 					class="checkbox-inline"><form:radiobutton path="category"
-						id="category" value="kategoria3" />Kategoria 3</label> <label
+						id="category" value="kartki i zaproszenia" />kartki i zaproszenia</label> <label
 					class="checkbox-inline"><form:radiobutton path="category"
-						id="category" value="kategoria4" />Kategoria 4</label> <label
+						id="category" value="meble" />meble</label> <label
 					class="checkbox-inline"><form:radiobutton path="category"
-						id="category" value="kategoria5" />Kategoria 5</label> <label
+						id="category" value="obrazy i ramki" />obrazy i ramki</label> <label
 					class="checkbox-inline"><form:radiobutton path="category"
-						id="category" value="kategoria6" />Kategoria 6</label>
+						id="category" value="torby" />torby</label>
 			</div>
 
 			<div class="form-group">

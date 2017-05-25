@@ -57,7 +57,7 @@
 				<label for="billingStreet">Ulica:</label>
 				<form:errors path="billingAddress.street" cssStyle="color: red;" />
 				<form:input path="billingAddress.street" id="billingStreet"
-					class="form-control" />
+					class="form-control" required="required"/>
 			</div>
 
 			<div class="form-group">
@@ -65,21 +65,21 @@
 				<form:errors path="billingAddress.apartmentNumber"
 					cssStyle="color: red;" />
 				<form:input path="billingAddress.apartmentNumber"
-					id="billingApartamentNumber" class="form-control" />
+					id="billingApartamentNumber" class="form-control"  required="required"/>
 			</div>
 
 			<div class="form-group">
 				<label for="billingCity">Miasto:</label>
 				<form:errors path="billingAddress.city" cssStyle="color: red;" />
 				<form:input path="billingAddress.city" id="billingCity"
-					class="form-control" />
+					class="form-control"  required="required"/>
 			</div>
 			
 			<div class="form-group">
 				<label for="billingZipCode">Kod pocztowy:</label>
 				<form:errors path="billingAddress.zipCode" cssStyle="color: red;" />
 				<form:input path="billingAddress.zipCode" id="billingZipCode"
-					class="form-control" />
+					class="form-control"  required="required"/>
 			</div>
 			
 			<h3>Adres do wysyłki</h3>
@@ -88,7 +88,7 @@
 				<label for="shippingStreet">Ulica:</label>
 				<form:errors path="shippingAddress.street" cssStyle="color: red;" />
 				<form:input path="shippingAddress.street" id="shippingStreet"
-					class="form-control" />
+					class="form-control"  required="required"/>
 			</div>
 
 			<div class="form-group">
@@ -96,21 +96,21 @@
 				<form:errors path="shippingAddress.apartmentNumber"
 					cssStyle="color: red;" />
 				<form:input path="shippingAddress.apartmentNumber"
-					id="shippingApartamentNumber" class="form-control" />
+					id="shippingApartamentNumber" class="form-control"  required="required"/>
 			</div>
 
 			<div class="form-group">
 				<label for="shippingCity">Miasto:</label>
 				<form:errors path="shippingAddress.city" cssStyle="color: red;" />
 				<form:input path="shippingAddress.city" id="shippingCity"
-					class="form-control" />
+					class="form-control"  required="required"/>
 			</div>
 			
 			<div class="form-group">
 				<label for="shippingZipCode">Kod pocztowy:</label>
 				<form:errors path="shippingAddress.zipCode" cssStyle="color: red;" />
 				<form:input path="shippingAddress.zipCode" id="shippingZipCode"
-					class="form-control" />
+					class="form-control"  required="required"/>
 			</div>
 
 			<br>
