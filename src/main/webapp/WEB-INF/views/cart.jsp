@@ -29,8 +29,8 @@
 						<th>Przedmiot</th>
 						<th>Cena jednostkowa</th>
 						<th>Rabat</th>
-						<th>Ilosc (szt.)</th>
-						<th>Cena</th>
+						<th>Ilość (szt.)</th>
+						<th>Cena PLN</th>
 						<th></th>
 					</tr>
 					<tr ng-repeat="item in cart.cartItems">

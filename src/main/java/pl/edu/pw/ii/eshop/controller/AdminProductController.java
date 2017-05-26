@@ -51,7 +51,11 @@ public class AdminProductController {
 			return "addProduct";
 		}
 
-		productService.addProduct(product);
+		try {
+			productService.addProduct(product);
+		} catch (Exception e) {
+			return "addProduct";
+		}
 		return "redirect:/admin/productInventory";
 	}
 

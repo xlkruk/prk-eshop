@@ -9,5 +9,5 @@ create table users(
       constraint fk_authorities_users foreign key(username) references users(username));
       create unique index ix_auth_username on authorities (username,authority);
       
-insert into users values ("admin","admin",1);
-insert into authorities values ("admin","ROLE_USER");      
+insert into users values (1,1,1,"admin","admin");
+insert into authorities values (1,"ROLE_ADMIN", "admin");   

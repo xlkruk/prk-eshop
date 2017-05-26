@@ -26,7 +26,7 @@
 					<th>Miniaturka</th>
 					<th>Nazwa produktu</th>
 					<th>Kategoria</th>
-					<!-- <th>Dostępność (szt.)</th> -->
+					<th>Rabat %</th>
 					<th>Cena PLN</th>
 					<th></th>
 				</tr>
@@ -36,7 +36,7 @@
 					<td><img src="${pageContext.request.contextPath}/productImage?id=${product.id}"  alt="image" style="width: 100%;" /></td>
 					<td>${product.name}</td>
 					<td>${product.category}</td>
-				<!-- 	<td>${product.stock}</td> -->
+				 	<td>${product.discount}</td>
 					<td><h2><strong><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${product.price}" /></strong></h2></td>
 					<td><a
 						href="<spring:url value="/product/viewProduct/${product.id }" />"><span
