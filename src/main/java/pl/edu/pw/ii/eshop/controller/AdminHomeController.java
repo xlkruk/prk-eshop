@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import pl.edu.pw.ii.eshop.model.Categories;
 import pl.edu.pw.ii.eshop.model.Customer;
 import pl.edu.pw.ii.eshop.model.Order;
 import pl.edu.pw.ii.eshop.model.Product;
@@ -36,6 +37,13 @@ public class AdminHomeController {
 	@RequestMapping("/productInventory")
 	public String productInventory(Model model){
 		List<Product> products = productService.getProductList();
+		model.addAttribute("products", products);
+		return "productInventory";
+	}
+	
+	@RequestMapping("/productListByCategory/{category}")
+	public String productInventory(@PathVariable Categories category,Model model){
+		List<Product> products = productService.getProductListByCategory(category.getDescription());
 		model.addAttribute("products", products);
 		return "productInventory";
 	}

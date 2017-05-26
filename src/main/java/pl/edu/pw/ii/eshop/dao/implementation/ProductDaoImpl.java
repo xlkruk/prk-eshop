@@ -60,4 +60,14 @@ public class ProductDaoImpl implements ProductDao {
 
 	}
 
+	@Override
+	public List<Product> getProductsByCategory(String category) {
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("from Product where category=?");
+		query.setString(0, category);
+		List<Product> products = query.list();
+		session.flush();
+		return products;
+	}
+
 }

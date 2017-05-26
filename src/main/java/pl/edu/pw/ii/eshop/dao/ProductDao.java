@@ -10,6 +10,8 @@ public interface ProductDao {
 	public Product getProductById(int id);
 
 	public List<Product> getAllProducts();
+	
+	public List<Product> getProductsByCategory( String category);
 
 	public void deleteProduct(Product product);
 

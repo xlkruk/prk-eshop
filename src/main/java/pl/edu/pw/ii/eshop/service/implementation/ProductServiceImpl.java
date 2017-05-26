@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import pl.edu.pw.ii.eshop.dao.CustomerDao;
 import pl.edu.pw.ii.eshop.dao.ProductDao;
 import pl.edu.pw.ii.eshop.model.Product;
 import pl.edu.pw.ii.eshop.model.ProductInfo;
@@ -90,6 +91,11 @@ public class ProductServiceImpl implements ProductService{
 	public void addProduct(ProductInfo productInfo) {
 		importImage(productInfo);
 		addProduct(productInfoToProduct(productInfo));		
+	}
+
+	@Override
+	public List<Product> getProductListByCategory(String category) {
+		return productDao.getProductsByCategory(category);
 	}
 
 }

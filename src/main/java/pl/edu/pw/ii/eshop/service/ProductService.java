@@ -10,6 +10,8 @@ import pl.edu.pw.ii.eshop.model.ProductInfo;
 public interface ProductService {
 
 	List<Product> getProductList();
+	
+	List<Product> getProductListByCategory(String category);
 
 	Product getProductById(int id);
 

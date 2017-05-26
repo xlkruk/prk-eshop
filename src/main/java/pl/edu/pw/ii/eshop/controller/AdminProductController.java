@@ -34,9 +34,9 @@ public class AdminProductController {
 	@RequestMapping("/product/addProduct")
 	public String addProduct(Model model) {
 		Product product = new Product();
-		product.setCategory("kategoria3");
+		product.setCategory("ceramika");
 		product.setCondition("Nowy");
-		product.setStatus("aktywny");
+		product.setStatus("Aktywny");
 
 		model.addAttribute("product", product);
 
@@ -86,7 +86,6 @@ public class AdminProductController {
 	public String changeOrderStatus(@Valid @ModelAttribute("order") Order order, BindingResult result,
 			HttpServletRequest request) {
 		Order ord = orderService.getOrderById(order.getOrderId());
-		System.out.println("%%%%%%%%%%%%%"+order.getOrderId());
 		String status = order.getStatus();
 
 		switch (status) {

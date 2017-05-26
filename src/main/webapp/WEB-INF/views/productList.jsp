@@ -8,6 +8,14 @@
 	<div class="container">
 		<div class="page-header">
 			<h1>Nasze produkty</h1>
+			<h3>Kategorie:</h3>
+			<a href="<spring:url value="/product/productList" />">Wszystkie</a>
+			| <a href="<spring:url value="/product/productListByCategory/JEWELLERY" />">Biżuteria</a>
+			| <a href="<spring:url value="/product/productListByCategory/CERAMICS" />">Ceramika</a>
+			| <a href="<spring:url value="/product/productListByCategory/CARDS" />">Kartki i zaproszenia</a>
+			| <a href="<spring:url value="/product/productListByCategory/FERNITURES" />">Meble</a>
+			| <a href="<spring:url value="/product/productListByCategory/PAINTINGS" />">Obrazy i ramki</a>
+			| <a href="<spring:url value="/product/productListByCategory/BAGS" />">Torby</a>
 
 			<p class="lead">Sprawdź nasze wspaniałe produkty</p>
 		</div>
@@ -19,7 +27,7 @@
 					<th>Nazwa produktu</th>
 					<th>Kategoria</th>
 					<!-- <th>Dostępność (szt.)</th> -->
-					<th>Cena</th>
+					<th>Cena PLN</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -29,7 +37,7 @@
 					<td>${product.name}</td>
 					<td>${product.category}</td>
 				<!-- 	<td>${product.stock}</td> -->
-					<td><h2><strong><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${product.price}" /> PLN</strong></h2></td>
+					<td><h2><strong><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${product.price}" /></strong></h2></td>
 					<td><a
 						href="<spring:url value="/product/viewProduct/${product.id }" />"><span
 							class="glyphicon glyphicon-info-sign btn btn-info"></span></a></td>
