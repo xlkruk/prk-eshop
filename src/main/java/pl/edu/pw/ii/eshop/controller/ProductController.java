@@ -36,7 +36,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/productListByCategory/{category}")
-	public String orderListByStatus(@PathVariable Categories category, Model model){
+	public String productListByStatus(@PathVariable Categories category, Model model){
 		List<Product> products = productService.getProductListByCategory(category.getDescription());
 		model.addAttribute("products", products);
 		return "productList";

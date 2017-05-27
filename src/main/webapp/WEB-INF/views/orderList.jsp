@@ -8,10 +8,10 @@
 		<div class="page-header">
 			<h1>Zamówienia</h1>
 			<a href="<spring:url value="/admin/orderList" />">Wszystkie</a>
-			| <a href="<spring:url value="/admin/orderListByStatus/NOWE" />">Nowe</a>
-			| <a href="<spring:url value="/admin/orderListByStatus/ZAPŁACONE" />">Opłacone</a>
-			| <a href="<spring:url value="/admin/orderListByStatus/WYSŁANE" />">Wysłane</a>
-			| <a href="<spring:url value="/admin/orderListByStatus/ZAKOŃCZONE" />">Zakończone</a>
+			| <a href="<spring:url value="/admin/orderListByStatus/NEW" />">Nowe</a>
+			| <a href="<spring:url value="/admin/orderListByStatus/PAYMENT_RECEIVED" />">Opłacone</a>
+			| <a href="<spring:url value="/admin/orderListByStatus/SENT" />">Wysłane</a>
+			| <a href="<spring:url value="/admin/orderListByStatus/COMPLETED" />">Zakończone</a>
 			<p class="lead">Zarządzanie zamówieniami</p>
 		</div>
 

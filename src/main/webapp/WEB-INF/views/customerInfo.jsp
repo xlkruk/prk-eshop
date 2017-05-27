@@ -14,7 +14,7 @@
 		<table class="table table-striped table-hover">
 			<thead>
 				<tr class="bg-info">
-					<th>Imię</th>
+					<th>Imie</th>
 					<th>Nazwisko</th>
 					<th>Email</th>
 					<th>Telefon</th>

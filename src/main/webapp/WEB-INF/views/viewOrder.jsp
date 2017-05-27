@@ -15,13 +15,13 @@
 					method="post">
 					<div class="form-group">
 						<label for="status">Zmiana statusu:</label> <label class="checkbox-inline"><form:radiobutton
-								path="order.status" id="status" value="NOWY" />NOWY</label> <label
+								path="order.status" id="status" value="NEW" />NOWY</label> <label
 							class="checkbox-inline"><form:radiobutton
-								path="order.status" id="status" value="ZAPŁACONE" />ZAPŁACONE</label> <label
+								path="order.status" id="status" value="PAYED" />ZAPŁACONE</label> <label
 							class="checkbox-inline"><form:radiobutton
-								path="order.status" id="status" value="WYSŁANE" />WYSŁANE</label> <label
+								path="order.status" id="status" value="SENT" />WYSŁANE</label> <label
 							class="checkbox-inline"><form:radiobutton
-								path="order.status" id="status" value="ZAKOŃCZONE" />ZAKOŃCZONE</label>
+								path="order.status" id="status" value="COMPLETED" />ZAKOŃCZONE</label>
 
 						<input type="hidden" name="orderId" value="${order.orderId}">
 						<input class="btn btn-warning" type="submit" value="Zmień status" />

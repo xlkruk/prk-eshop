@@ -36,7 +36,7 @@ public class AdminProductController {
 		Product product = new Product();
 		product.setCategory("ceramika");
 		product.setCondition("Nowy");
-		product.setStatus("Aktywny");
+		product.setStatus("active");
 
 		model.addAttribute("product", product);
 
@@ -93,16 +93,16 @@ public class AdminProductController {
 		String status = order.getStatus();
 
 		switch (status) {
-		case "NOWY":
+		case "NEW":
 			orderService.setNewStaus(ord);
 			break;
-		case "ZAP£ACONE":
+		case "PAYED":
 			orderService.setPaymentReceivedStatus(ord);
 			break;
-		case "WYS£ANE":
+		case "SENT":
 			orderService.setSentStatus(ord);
 			break;
-		case "ZAKOÑCZONE":
+		case "COMPLETED":
 			orderService.setCompletedStaus(ord);
 			break;
 		default:

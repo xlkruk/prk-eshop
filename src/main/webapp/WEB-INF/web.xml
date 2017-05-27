@@ -5,7 +5,9 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-
+	<error-page>
+		<location>/errors</location>
+	</error-page>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/dispatcher-servlet.xml, /WEB-INF/applicationContext.xml</param-value>
