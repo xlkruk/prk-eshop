@@ -2,8 +2,6 @@ package pl.edu.pw.ii.eshop.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.User;
@@ -25,6 +23,13 @@ import pl.edu.pw.ii.eshop.service.CartService;
 import pl.edu.pw.ii.eshop.service.CustomerService;
 import pl.edu.pw.ii.eshop.service.ProductService;
 
+/**
+ * Klasa realizuj¹ca funkcje kontrolera, który obs³uguje zapytania wysy³ane
+ * poprzez przegl¹darkê od u¿ytkowników.
+ * 
+ * @author £ukasz Kruk
+ * @version 1.0
+ */
 @Controller
 @RequestMapping("/api/cart")
 public class CartResources {
@@ -41,6 +46,17 @@ public class CartResources {
 	@Autowired
 	private CartItemService cartItemService;
 
+	/**
+	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /api/cart/{cartId}. Metoda
+	 * wykorzystuje implementacjê interfejsu CartService do pobrania koszyka o
+	 * zadanym id reprezentowanego jako obiekt klasy {@link Cart}. Metoda zwraca
+	 * koszyk o zadanym id w formacie JSON
+	 * 
+	 * @param cartId
+	 *            id koszyka
+	 * @return obiekt klasy {@link Cart} w formacie JSON
+	 * @see CartService
+	 */
 	@RequestMapping("/{cartId}")
 	public @ResponseBody Cart getCartById(@PathVariable(value = "cartId") int cartId) {// JSON
 																						// dzieki
@@ -51,19 +67,40 @@ public class CartResources {
 		return cartService.getCartById(cartId);
 	}
 
+	/**
+	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /api/cart/add/{productId} przy
+	 * pomocy metody PUT. Metoda wykorzystuje implementacjê interfejsu
+	 * CartItemService do dodania produktu o zadanym id do linii agreguj¹cej
+	 * koszyka. Linia agreguj¹ca rozumiana jako element koszyka, który agreguje
+	 * wszytkie produkty tego samego typu. Je¿eli istnieje linia agregacyjna
+	 * {@link CartItem} dla produktu o productId, to jest on dodawany do niej. W
+	 * przeciwnym przypadku jest tworzona nowa linia agregacyjna i produkt
+	 * {@link Product} jest dodawany do niej. linia agregacyjna jest utrwalana.
+	 * 
+	 * @param productId
+	 *            id produktu
+	 * @see CartService
+	 * @see CartItemService
+	 */
 	@RequestMapping(value = "/add/{productId}", method = RequestMethod.PUT)
 	@ResponseStatus(value = HttpStatus.NO_CONTENT)
 	public void addItem(@PathVariable(value = "productId") int productId, @AuthenticationPrincipal User user) {
+		/* pobranie klienta o zadanym username */
 		Customer customer = customerService.getCustomerByUsername(user.getUsername());
 		Cart cart = customer.getCart();
 		Product product = productService.getProductById(productId);
 		List<CartItem> cartItems = cart.getCartItems();
 
+		/*
+		 * przeliczenie iloœci produktów oraz ceny ca³kowitej dla linii
+		 * agregacyjnych
+		 */
 		for (int i = 0; i < cartItems.size(); i++) {
 			if (product.getId() == cartItems.get(i).getProduct().getId()) {
 				CartItem cartItem = cartItems.get(i);
 				cartItem.setQuantity(cartItem.getQuantity() + 1);
-				cartItem.setTotalPrice(Math.round(((100-product.getDiscount())*100)/100f*product.getPrice())/100f * cartItem.getQuantity());
+				cartItem.setTotalPrice(Math.round(((100 - product.getDiscount()) * 100) / 100f * product.getPrice())
+						/ 100f * cartItem.getQuantity());
 				cartItemService.addCartItem(cartItem);
 				return;
 			}
@@ -72,13 +109,23 @@ public class CartResources {
 		CartItem cartItem = new CartItem();
 		cartItem.setProduct(product);
 		cartItem.setQuantity(1);
-		cartItem.setTotalPrice( Math.round(((100-product.getDiscount())*100)/100f*product.getPrice() * cartItem.getQuantity())/100f);
-		System.out.println("@@@@@@@ = " + Math.round(((100-product.getDiscount())*100)/100f*product.getPrice())/100f+"TTTTTTTT"+cartItem.getTotalPrice());
+		cartItem.setTotalPrice(
+				Math.round(((100 - product.getDiscount()) * 100) / 100f * product.getPrice() * cartItem.getQuantity())
+						/ 100f);
 		cartItem.setCart(cart);
 		cartItemService.addCartItem(cartItem);
-	
 
 	}
+
+	/**
+	 * Metoda wykorzystuj¹ca implementacjê interfejsu {@link CartItemService} do
+	 * usuniêcia linii agregacyjnej koszyka z produktami o zadanym productId
+	 * 
+	 * @param productId
+	 *            id produktu, dla którego ma zostaæ usuniêta linia agregacyjna
+	 *            koszyka
+	 * @see CartItemService
+	 */
 
 	@RequestMapping(value = "/remove/{productId}", method = RequestMethod.DELETE)
 	@ResponseStatus(value = HttpStatus.NO_CONTENT)
@@ -87,6 +134,16 @@ public class CartResources {
 		cartItemService.deleteCartItem(cartItem);
 	}
 
+	/**
+	 * Metoda realizuj¹ca funkcjonalnoœæ wyczyszczenia koszyka polegaj¹c¹ na
+	 * usuniêciu wszytkich linii agregacyjnych koszyka. Metoda wykorzystuje
+	 * implementacjê interfejsu {@link CartItemService} do usuniêcia wszystkich
+	 * linii agregacyjnych.
+	 * 
+	 * @param cartId
+	 *            id koszyka do wyczyszczenia.
+	 * @see CartItemService
+	 */
 	@RequestMapping(value = "/{cartId}", method = RequestMethod.DELETE)
 	@ResponseStatus(value = HttpStatus.NO_CONTENT)
 	public void clearCart(@PathVariable(value = "cartId") int cartId) {
@@ -94,6 +151,7 @@ public class CartResources {
 		cartItemService.deleteAllCartItems(cart);
 	}
 
+	
 	@ExceptionHandler(IllegalArgumentException.class)
 	@ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "B³êdne ¿¹danie")
 	public void handleClientErrors(Exception e) {

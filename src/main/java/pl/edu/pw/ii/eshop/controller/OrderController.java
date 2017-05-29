@@ -1,8 +1,5 @@
 package pl.edu.pw.ii.eshop.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,15 +7,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import pl.edu.pw.ii.eshop.model.Cart;
-import pl.edu.pw.ii.eshop.model.CartItem;
 import pl.edu.pw.ii.eshop.model.Customer;
 import pl.edu.pw.ii.eshop.model.Order;
-import pl.edu.pw.ii.eshop.model.OrderItem;
-import pl.edu.pw.ii.eshop.model.Product;
 import pl.edu.pw.ii.eshop.service.CartService;
-import pl.edu.pw.ii.eshop.service.MailService;
 import pl.edu.pw.ii.eshop.service.OrderService;
 
+/**
+ * Klasa realizuj¹ca funkcje kontrolera, który obs³uguje zapytania wysy³ane
+ * poprzez przegl¹darkê od u¿ytkowników, zwi¹zane zamówieniami.
+ * 
+ * @author Krzysztof Trybus
+ * @version 1.0
+ */
 @Controller
 @RequestMapping("/order")
 public class OrderController {
@@ -29,9 +29,21 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 
-	@Autowired
-	private MailService mailService;
-
+	/**
+	 * Metoda obs³uguj¹ca ¿¹danie /order/{cartId}. Metoda tworzy nowe zamówienie
+	 * {@link Order}. Metoda przy wykorzystaniu implementacji interfejsu
+	 * {@link CartService} pobiera koszyk {@link Cart} o zadanym cartId.
+	 * Nastepnie tworzy nowe zamówienie {@link Order}, do którego przypisuje
+	 * koszyk klienta. Nastêpnie pobiera Klienta {@link Customer} za instancji
+	 * Koszyka {@link Cart}. Informacje pobrane z obiektu klienta
+	 * {@link Customer}, s¹ ustawiane jako atrybuty zamówienia. Zamówienie jest
+	 * utrwalane przy pomocy {@link OrderService}. ¯¹danie jest przekierowywane
+	 * do redirect:/checkout?cartId={cartId}
+	 * 
+	 * @param cartId
+	 *            id koszyka {@link Cart}
+	 * @return nazwa widoku
+	 */
 	@RequestMapping("{cartId}")
 	public String createOrder(@PathVariable("cartId") int cartId) {
 		Cart cart = cartService.getCartById(cartId);
@@ -47,6 +59,20 @@ public class OrderController {
 		return "redirect:/checkout?cartId=" + cartId;
 	}
 
+	/**
+	 * Metoda obs³uguj¹ca ¿¹danie /order/viewOrder/{id} typu GET. Przy u¿yciu
+	 * implementacji interfejsu {@link OrderService} bobierane jest zamówienie
+	 * {@link Order} od id przekazanym w parametrach wywo³ania. Nastêpnie
+	 * zamówienie order jest zapisywane jako atrybut modelu {@link Model}
+	 * 
+	 * @param id
+	 *            id zamówienia {@link Order}
+	 * @param model
+	 *            interfejs, Spring dostarcza implementacjê. Holder dla
+	 *            atrybutów modelu w MVC.
+	 * @return nazwa widoku.
+	 * @throws Exception
+	 */
 	@RequestMapping("viewOrder/{id}")
 	public String viewOrder(@PathVariable int id, Model model) throws Exception {
 		Order order = orderService.getOrderById(id);
