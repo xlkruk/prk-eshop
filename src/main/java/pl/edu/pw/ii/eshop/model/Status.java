@@ -1,5 +1,12 @@
 package pl.edu.pw.ii.eshop.model;
 
+/**
+ * Klasa wyliczeniowa, reprezentuj¹ca status zamówienia
+ * 
+ * @author Agnieszka Œwiderska
+ *
+ */
+
 public enum Status {
 	NEW("NOWY"), PAYMENT_RECEIVED("ZAP£ACONE"), SENT("WYS£ANE"), COMPLETED("ZAKOÑCZONE");
 

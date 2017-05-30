@@ -4,7 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-
+/**
+ * Klasa na potrzeby Spring Security. Przetrzymuje informacje o nazwie
+ * u¿ytkownika oraz o przypisanej mu roli
+ * 
+ * @author £ukasz Kruk
+ *
+ */
 
 @Entity
 public class Authorities {
@@ -13,6 +19,9 @@ public class Authorities {
 	@GeneratedValue
 	private int authoritiesId;
 	private String username;
+	/**
+	 * rola u¿ytkownika
+	 */
 	private String authority;
 
 	public int getAuthoritiesId() {

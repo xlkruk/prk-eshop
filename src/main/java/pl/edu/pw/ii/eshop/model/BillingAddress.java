@@ -9,65 +9,143 @@ import javax.persistence.OneToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+/**
+ * Klasa reprezentuj¹ca adres do wystawienia faktury za zakup. Jest to encja
+ * reprezentowana jako tabela BILLINADDRESS
+ * 
+ * @author LucaR
+ *
+ */
 @Entity
-public class BillingAddress implements Serializable{
-	
+public class BillingAddress implements Serializable {
+
 	private static final long serialVersionUID = -1558789023364843365L;
 	@Id
-    @GeneratedValue
-    private int billingAddressId;
-    private String street;
-    private String apartmentNumber;
-    private String city;
-    private String zipCode;
+	@GeneratedValue
+	private int billingAddressId;
+	private String street;
+	private String apartmentNumber;
+	private String city;
+	private String zipCode;
 
-    @OneToOne
-    private Customer customer;
+	@OneToOne
+	private Customer customer;
 
+	/**
+	 * Konstruktor bezparametrowy
+	 */
+	public BillingAddress() {
+	}
+
+	/**
+	 * Metoda zwraca id adresu
+	 * 
+	 * @return id adresu
+	 */
 	public int getBillingAddressId() {
 		return billingAddressId;
 	}
 
+	/**
+	 * Metoda ustawia id adresu
+	 * 
+	 * @param billingAddressId
+	 */
 	public void setBillingAddressId(int billingAddressId) {
 		this.billingAddressId = billingAddressId;
 	}
 
+	/**
+	 * Metoda zwracaj¹ca nazwê ulicy
+	 * 
+	 * @return nazwa ulicy
+	 */
 	public String getStreet() {
 		return street;
 	}
 
+	/**
+	 * Metoda ustawiaj¹ca nazwê ulicy
+	 * 
+	 * @param street
+	 *            nazwa ulicy
+	 */
 	public void setStreet(String street) {
 		this.street = street;
 	}
 
+	/**
+	 * Metoda zwracaj¹ca numer domu/mieszkania w postaci ³añcucha.
+	 * 
+	 * @return numer domu/mieszkania
+	 */
 	public String getApartmentNumber() {
 		return apartmentNumber;
 	}
 
+	/**
+	 * Metoda ustawiaj¹ca numer domu/mieszkania.
+	 * 
+	 * @param apartmentNumber
+	 *            numer domu/mieszkania
+	 */
 	public void setApartmentNumber(String apartmentNumber) {
 		this.apartmentNumber = apartmentNumber;
 	}
 
+	/**
+	 * Metoda pobieraj¹ca nazwê miasta.
+	 * 
+	 * @return nazwma miasta.
+	 */
 	public String getCity() {
 		return city;
 	}
 
+	/**
+	 * Metoda ustawiaj¹ca nazwê miasta.
+	 * 
+	 * @param city
+	 *            nazwa miasta.
+	 */
 	public void setCity(String city) {
 		this.city = city;
 	}
 
+	/**
+	 * Metoda zwracaj¹ca kod pocztowy w postaci ³añcucha.
+	 * 
+	 * @return kod pocztowy
+	 */
 	public String getZipCode() {
 		return zipCode;
 	}
 
+	/**
+	 * Metoda ustawiaj¹ca kod pocztowy.
+	 * 
+	 * @param zipCode
+	 *            kod pocztowy.
+	 */
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
 
+	/**
+	 * Metoda zwracaj¹ca klienta, do którego jest przypisany adres.
+	 * 
+	 * @return Klient, do którego jest przypisany adres.
+	 */
 	public Customer getCustomer() {
 		return customer;
 	}
 
+	/**
+	 * Metoda przypisuj¹ca klienta {@link Customer} do adresu.
+	 * 
+	 * @param customer
+	 *            klient sklepu.
+	 */
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
@@ -77,7 +155,6 @@ public class BillingAddress implements Serializable{
 		return "BillingAddress [billingAddressId=" + billingAddressId + ", street=" + street + ", apartmentNumber="
 				+ apartmentNumber + ", city=" + city + ", zipCode=" + zipCode + "]";
 	}
-    
-    
 
+	
 }
