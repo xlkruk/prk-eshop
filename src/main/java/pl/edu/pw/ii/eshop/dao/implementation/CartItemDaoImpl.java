@@ -14,6 +14,12 @@ import pl.edu.pw.ii.eshop.dao.CartItemDao;
 import pl.edu.pw.ii.eshop.model.Cart;
 import pl.edu.pw.ii.eshop.model.CartItem;
 
+/**
+ * Klasa implementuj¹ca interfejs {@link CartItemDao}
+ * 
+ * @author Agnieszka Œwiderska
+ *
+ */
 @Repository
 @Transactional
 public class CartItemDaoImpl implements CartItemDao {
@@ -22,8 +28,11 @@ public class CartItemDaoImpl implements CartItemDao {
 
 	@Override
 	public void addCartItem(CartItem cartItem) {
+		// pobranie obiektu Session
 		Session session = sessionFactory.getCurrentSession();
+		// utrwalene obiektu CartItem w bazie danych
 		session.saveOrUpdate(cartItem);
+		// wymuszenie wykonania operacji.
 		session.flush();
 
 	}
@@ -39,7 +48,7 @@ public class CartItemDaoImpl implements CartItemDao {
 	@Override
 	public void deleteAllCartItems(Cart cart) {
 		List<CartItem> cartItems = cart.getCartItems();
-		for(CartItem cartItem: cartItems){
+		for (CartItem cartItem : cartItems) {
 			deleteCartItem(cartItem);
 		}
 
@@ -49,7 +58,7 @@ public class CartItemDaoImpl implements CartItemDao {
 	public CartItem getCartItemByProductId(int productId) {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("from CartItem where productId=?");
-		query.setInteger(0,productId);
+		query.setInteger(0, productId);
 		session.flush();
 		return (CartItem) query.uniqueResult();
 	}

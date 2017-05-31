@@ -12,6 +12,12 @@ import org.springframework.transaction.annotation.Transactional;
 import pl.edu.pw.ii.eshop.dao.ProductDao;
 import pl.edu.pw.ii.eshop.model.Product;
 
+/**
+ * Klasa implementuj¹ca interfejs {@link ProductDao} przy u¿yciu ORM hibernate
+ * 
+ * @author £ukasz Kruk
+ *
+ */
 
 @Repository
 @Transactional
@@ -23,6 +29,7 @@ public class ProductDaoImpl implements ProductDao {
 	@Override
 	public void addProduct(Product product) {
 		Session session = sessionFactory.getCurrentSession();
+		// utrwalenie produktu
 		session.saveOrUpdate(product);
 		session.flush();
 
@@ -31,6 +38,7 @@ public class ProductDaoImpl implements ProductDao {
 	@Override
 	public Product getProductById(int id) {
 		Session session = sessionFactory.getCurrentSession();
+		// pobranie produktu o zadanym id
 		Product product = (Product) session.get(Product.class, id);
 		session.flush();
 		return product;
@@ -39,7 +47,9 @@ public class ProductDaoImpl implements ProductDao {
 	@Override
 	public List<Product> getAllProducts() {
 		Session session = sessionFactory.getCurrentSession();
+		// prygotowanie zapytania zwracaj¹cego wszystkie produkty
 		Query query = session.createQuery("from Product");
+		// wykonanie zapytania i przypisanie wyników
 		List<Product> products = query.list();
 		session.flush();
 		return products;
@@ -48,6 +58,7 @@ public class ProductDaoImpl implements ProductDao {
 	@Override
 	public void deleteProduct(Product product) {
 		Session session = sessionFactory.getCurrentSession();
+		// usuniêcie produktu
 		session.delete(product);
 		session.flush();
 	}
@@ -55,6 +66,7 @@ public class ProductDaoImpl implements ProductDao {
 	@Override
 	public void editProduct(Product product) {
 		Session session = sessionFactory.getCurrentSession();
+		// utrwalenie produktu
 		session.merge(product);
 		session.flush();
 
@@ -63,8 +75,11 @@ public class ProductDaoImpl implements ProductDao {
 	@Override
 	public List<Product> getProductsByCategory(String category) {
 		Session session = sessionFactory.getCurrentSession();
+		// przygotowanie zapytania pobieraj¹cego produkty o zadanej kategorii
 		Query query = session.createQuery("from Product where category=?");
+		// ustawienie parametrów zapytania
 		query.setString(0, category);
+		// wykonanie zapytania oraz przypisanie wyników
 		List<Product> products = query.list();
 		session.flush();
 		return products;

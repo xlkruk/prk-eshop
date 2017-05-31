@@ -13,13 +13,19 @@ import pl.edu.pw.ii.eshop.dao.CartDao;
 import pl.edu.pw.ii.eshop.model.Cart;
 import pl.edu.pw.ii.eshop.service.OrderService;
 
+/**
+ * Klasa implementuj¹ca interfejs {@link CartDao}.
+ * 
+ * @author £ukasz Kruk
+ *
+ */
 @Repository
 @Transactional
 public class CartDaoImpl implements CartDao {
 
 	@Autowired
 	private SessionFactory sesionFactory;
-	
+
 	@Autowired
 	private OrderService orderService;
 
@@ -30,16 +36,33 @@ public class CartDaoImpl implements CartDao {
 		return (Cart) session.get(Cart.class, cartId);
 	}
 
+	/**
+	 * Metoda umo¿liwiaj¹ca utrwalenie modyfikowanego koszyka {@link Cart}.
+	 * Metoda wykorzystuj¹ca implementacjê interfejsu {@link OrderService} do
+	 * pobrania ceny ca³kowitej zamówienia.
+	 * 
+	 * @param cart
+	 *            koszyk {@link Cart}
+	 */
 	@Override
 	public void update(Cart cart) {
 		int cartId = cart.getCartId();
-		double grandTotal=orderService.getOrderGrandTotal(cartId);
+		double grandTotal = orderService.getOrderGrandTotal(cartId);
 		cart.setGrantTotal(grandTotal);
 
 		Session session = sesionFactory.getCurrentSession();
-session.saveOrUpdate(cart);
+		session.saveOrUpdate(cart);
 	}
 
+	/**
+	 * Metoda waiduj¹ca czy koszyk o danym id istnieje. Je¿eli tak, to zwraca
+	 * koszyk {@link Cart}, w przeciwnym wypadku rzucany jest wyj¹tek
+	 * IOException
+	 * 
+	 * @param cartId
+	 *            id koszyka {@link Cart}
+	 * @return koszyk {@link Cart}
+	 */
 	@Override
 	public Cart validate(int cartId) throws IOException {
 		Cart cart = getCartById(cartId);
