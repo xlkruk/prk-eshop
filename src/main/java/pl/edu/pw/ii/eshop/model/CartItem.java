@@ -11,9 +11,9 @@ import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * Klasa reprezentuj¹ca encjê CARTITEM, liniê agregacyjn¹ koszyka.
+ * Klasa reprezentujÄ…ca encjÄ™ CARTITEM, liniÄ™ agregacyjnÄ… koszyka.
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  *
  */
 @Entity
@@ -27,7 +27,7 @@ public class CartItem implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "cartId")
-	@JsonIgnore // potrzebne aby nie zapêtlaæ budowy JSOna
+	@JsonIgnore // potrzebne aby nie zapÄ™tlaÄ‡ budowy JSOna
 	private Cart cart;
 
 	@ManyToOne
@@ -44,26 +44,26 @@ public class CartItem implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca id linii agregacyjnej.
+	 * Metoda zwracajÄ…ca id linii agregacyjnej.
 	 * 
-	 * @return id linii agreguj¹cej koszyka.
+	 * @return id linii agregujÄ…cej koszyka.
 	 */
 	public int getCartItemId() {
 		return cartItemId;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca id linii agreguj¹cej koszyka.
+	 * Metoda ustawiajÄ…ca id linii agregujÄ…cej koszyka.
 	 * 
 	 * @param cartItemId
-	 *            id linii agreguj¹cej koszyka.
+	 *            id linii agregujÄ…cej koszyka.
 	 */
 	public void setCartItemId(int cartItemId) {
 		this.cartItemId = cartItemId;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca koszyk {@link Cart}, do którego jest przypisana linia
+	 * Metoda zwracajÄ…ca koszyk {@link Cart}, do ktÃ³rego jest przypisana linia
 	 * agregacyjna.
 	 * 
 	 * @return koszyk {@link Cart}
@@ -73,7 +73,7 @@ public class CartItem implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca koszyk {@link Cart}, do którego jest przypisana linia
+	 * Metoda ustawiajÄ…ca koszyk {@link Cart}, do ktÃ³rego jest przypisana linia
 	 * agregacyjna.
 	 * 
 	 * @param cart
@@ -84,7 +84,7 @@ public class CartItem implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca produkt {@link Product}, którego dotyczy linia
+	 * Metoda ustawiajÄ…ca produkt {@link Product}, ktÃ³rego dotyczy linia
 	 * agregacyjna.
 	 * 
 	 * @return produkt {@link Product}
@@ -94,7 +94,7 @@ public class CartItem implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca produkt, którego ma dotyczyæ ta linia agregacyjna.
+	 * Metoda ustawiajÄ…ca produkt, ktÃ³rego ma dotyczyÄ‡ ta linia agregacyjna.
 	 * 
 	 * @param product
 	 *            produkt {@link Product}
@@ -104,26 +104,26 @@ public class CartItem implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca iloœæ produktów na danej linii agregacyjnej.
+	 * Metoda zwracajÄ…ca iloÅ›Ä‡ produktÃ³w na danej linii agregacyjnej.
 	 * 
-	 * @return iloœæ produktów.
+	 * @return iloÅ›Ä‡ produktÃ³w.
 	 */
 	public int getQuantity() {
 		return quantity;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca iloœæ produktów na danej linii agregacyjnej koszyka.
+	 * Metoda ustawiajÄ…ca iloÅ›Ä‡ produktÃ³w na danej linii agregacyjnej koszyka.
 	 * 
 	 * @param quantity
-	 *            iloœæ produktów {@link Product}.
+	 *            iloÅ›Ä‡ produktÃ³w {@link Product}.
 	 */
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca cenê danej linii agregacyjnej.
+	 * Metoda zwracajÄ…ca cenÄ™ danej linii agregacyjnej.
 	 * 
 	 * @return cena linii agregacyjnej.
 	 */
@@ -132,10 +132,10 @@ public class CartItem implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca cenê brutto dla linii agregacyjnej.
+	 * Metoda ustawiajÄ…ca cenÄ™ brutto dla linii agregacyjnej.
 	 * 
 	 * @param totalPrice
-	 *            cena produktów na linii agregacyjnej.
+	 *            cena produktÃ³w na linii agregacyjnej.
 	 */
 	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;

@@ -6,9 +6,9 @@ import javax.persistence.Id;
 
 /**
  * Klasa na potrzeby Spring Security. Przetrzymuje informacje o nazwie
- * uøytkownika oraz o przypisanej mu roli
+ * u≈ºytkownika oraz o przypisanej mu roli
  * 
- * @author £ukasz Kruk
+ * @author ≈Åukasz Kruk
  *
  */
 
@@ -20,7 +20,7 @@ public class Authorities {
 	private int authoritiesId;
 	private String username;
 	/**
-	 * rola uøytkownika
+	 * rola u≈ºytkownika
 	 */
 	private String authority;
 

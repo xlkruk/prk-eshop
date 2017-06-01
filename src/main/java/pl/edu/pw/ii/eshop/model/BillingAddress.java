@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * Klasa reprezentuj¹ca adres do wystawienia faktury za zakup. Jest to encja
+ * Klasa reprezentujÄ…ca adres do wystawienia faktury za zakup. Jest to encja
  * reprezentowana jako tabela BILLINADDRESS
  * 
  * @author LucaR
@@ -56,7 +56,7 @@ public class BillingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca nazwê ulicy
+	 * Metoda zwracajÄ…ca nazwÄ™ ulicy
 	 * 
 	 * @return nazwa ulicy
 	 */
@@ -65,7 +65,7 @@ public class BillingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca nazwê ulicy
+	 * Metoda ustawiajÄ…ca nazwÄ™ ulicy
 	 * 
 	 * @param street
 	 *            nazwa ulicy
@@ -75,7 +75,7 @@ public class BillingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca numer domu/mieszkania w postaci ³añcucha.
+	 * Metoda zwracajÄ…ca numer domu/mieszkania w postaci Å‚aÅ„cucha.
 	 * 
 	 * @return numer domu/mieszkania
 	 */
@@ -84,7 +84,7 @@ public class BillingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca numer domu/mieszkania.
+	 * Metoda ustawiajÄ…ca numer domu/mieszkania.
 	 * 
 	 * @param apartmentNumber
 	 *            numer domu/mieszkania
@@ -94,7 +94,7 @@ public class BillingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda pobieraj¹ca nazwê miasta.
+	 * Metoda pobierajÄ… nazwÄ™ miasta.
 	 * 
 	 * @return nazwma miasta.
 	 */
@@ -103,7 +103,7 @@ public class BillingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca nazwê miasta.
+	 * Metoda ustawiajÄ…ca nazwÄ™ miasta.
 	 * 
 	 * @param city
 	 *            nazwa miasta.
@@ -113,7 +113,7 @@ public class BillingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca kod pocztowy w postaci ³añcucha.
+	 * Metoda zwracajÄ…ca kod pocztowy w postaci Å‚aÅ„cucha.
 	 * 
 	 * @return kod pocztowy
 	 */
@@ -122,7 +122,7 @@ public class BillingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca kod pocztowy.
+	 * Metoda ustawiajÄ…ca kod pocztowy.
 	 * 
 	 * @param zipCode
 	 *            kod pocztowy.
@@ -132,16 +132,16 @@ public class BillingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca klienta, do którego jest przypisany adres.
+	 * Metoda zwracajÄ…ca klienta, do ktÃ³rego jest przypisany adres.
 	 * 
-	 * @return Klient, do którego jest przypisany adres.
+	 * @return Klient, do ktÃ³rego jest przypisany adres.
 	 */
 	public Customer getCustomer() {
 		return customer;
 	}
 
 	/**
-	 * Metoda przypisuj¹ca klienta {@link Customer} do adresu.
+	 * Metoda przypisujÄ…ca klienta {@link Customer} do adresu.
 	 * 
 	 * @param customer
 	 *            klient sklepu.
