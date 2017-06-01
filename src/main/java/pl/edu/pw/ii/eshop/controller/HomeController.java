@@ -41,6 +41,17 @@ public class HomeController {
 	public String home() {
 		return "home";
 	}
+	
+	/**
+	 * Metoda obsługująca żądanie /contact typu GET. zwraca nazwę widoku do
+	 * wygenerowania
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/contact")
+	public String contact() {
+		return "contact";
+	}
 
 	/**
 	 * Metoda obsługująca żądanie /productList typu GET. Przy pomocy obiektu

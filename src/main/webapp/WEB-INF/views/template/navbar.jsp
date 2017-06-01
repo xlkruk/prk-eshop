@@ -20,7 +20,7 @@
 						<ul class="nav navbar-nav">
 							<!-- <li><a href="<c:url value="/" /> ">Strona domowa</a></li> -->
 							<li><a href="<c:url value="/product/productList" />">Oferta</a></li>
-							<li><a href="#contact">Kontakt</a></li>
+							<li><a href="<c:url value="/contact" />">Kontakt</a></li>
 						</ul>
 						<ul class="nav navbar-nav pull-right">
 							<c:if test="${pageContext.request.userPrincipal.name != null}">
