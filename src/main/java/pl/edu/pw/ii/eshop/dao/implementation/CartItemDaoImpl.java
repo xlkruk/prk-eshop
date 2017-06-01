@@ -15,9 +15,9 @@ import pl.edu.pw.ii.eshop.model.Cart;
 import pl.edu.pw.ii.eshop.model.CartItem;
 
 /**
- * Klasa implementuj¹ca interfejs {@link CartItemDao}
+ * Klasa implementujÄ…ca interfejs {@link CartItemDao}
  * 
- * @author Agnieszka Œwiderska
+ * @author Agnieszka Åšwiderska
  *
  */
 @Repository

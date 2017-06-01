@@ -1,13 +1,13 @@
 package pl.edu.pw.ii.eshop.model;
 
 /**
- * Klasa wyliczeniowa reprezentuj¹ca kategorie produktów.
+ * Klasa wyliczeniowa reprezentujÄ…ca kategorie produktÃ³w.
  * 
- * @author Agnieszka Œwiderska
+ * @author Agnieszka Åšwiderska
  *
  */
 public enum Categories {
-	CERAMICS("ceramika"), JEWELLERY("bi¿uteria"), CARDS("kartki i zaproszenia"), FERNITURES("meble"), PAINTINGS(
+	CERAMICS("ceramika"), JEWELLERY("biÅ¼uteria"), CARDS("kartki i zaproszenia"), FERNITURES("meble"), PAINTINGS(
 			"obrazy i ramki"), BAGS("torby");
 
 	private String description;
@@ -23,7 +23,7 @@ public enum Categories {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca opis kategorii.
+	 * Metoda zwracajÄ…ca opis kategorii.
 	 * 
 	 * @return opis kategorii
 	 */
@@ -32,7 +32,7 @@ public enum Categories {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca opis kategorii
+	 * Metoda ustawiajÄ…ca opis kategorii
 	 * 
 	 * @param description
 	 *            opis kategorii.

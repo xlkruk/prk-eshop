@@ -13,8 +13,8 @@ import pl.edu.pw.ii.eshop.service.CartService;
 import pl.edu.pw.ii.eshop.service.OrderService;
 
 /**
- * Klasa realizuj¹ca funkcje kontrolera, który obs³uguje zapytania wysy³ane
- * poprzez przegl¹darkê od u¿ytkowników, zwi¹zane zamówieniami.
+ * Klasa realizujÄ…ca funkcje kontrolera, ktÃ³ry obsÅ‚uguje zapytania wysyÅ‚ane
+ * poprzez przeglÄ…darkÄ™ od uÅ¼ytkownikÃ³w, zwiÄ…zane zamÃ³wieniami.
  * 
  * @author Krzysztof Trybus
  * @version 1.0
@@ -30,14 +30,14 @@ public class OrderController {
 	private OrderService orderService;
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie /order/{cartId}. Metoda tworzy nowe zamówienie
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie /order/{cartId}. Metoda tworzy nowe zamÃ³wienie
 	 * {@link Order}. Metoda przy wykorzystaniu implementacji interfejsu
 	 * {@link CartService} pobiera koszyk {@link Cart} o zadanym cartId.
-	 * Nastepnie tworzy nowe zamówienie {@link Order}, do którego przypisuje
-	 * koszyk klienta. Nastêpnie pobiera Klienta {@link Customer} za instancji
+	 * Nastepnie tworzy nowe zamÃ³wienie {@link Order}, do ktÃ³rego przypisuje
+	 * koszyk klienta. NastÄ™pnie pobiera Klienta {@link Customer} za instancji
 	 * Koszyka {@link Cart}. Informacje pobrane z obiektu klienta
-	 * {@link Customer}, s¹ ustawiane jako atrybuty zamówienia. Zamówienie jest
-	 * utrwalane przy pomocy {@link OrderService}. ¯¹danie jest przekierowywane
+	 * {@link Customer}, sÄ…ustawiane jako atrybuty zamÃ³wienia. zamÃ³wienie jest
+	 * utrwalane przy pomocy {@link OrderService}. Å¼Ä…danie jest przekierowywane
 	 * do redirect:/checkout?cartId={cartId}
 	 * 
 	 * @param cartId
@@ -60,16 +60,16 @@ public class OrderController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie /order/viewOrder/{id} typu GET. Przy u¿yciu
-	 * implementacji interfejsu {@link OrderService} bobierane jest zamówienie
-	 * {@link Order} od id przekazanym w parametrach wywo³ania. Nastêpnie
-	 * zamówienie order jest zapisywane jako atrybut modelu {@link Model}
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie /order/viewOrder/{id} typu GET. Przy uÅ¼yciu
+	 * implementacji interfejsu {@link OrderService} bobierane jest zamÃ³wienie
+	 * {@link Order} od id przekazanym w parametrach wywoÅ‚ania. NastÄ™pnie
+	 * zamÃ³wienie order jest zapisywane jako atrybut modelu {@link Model}
 	 * 
 	 * @param id
-	 *            id zamówienia {@link Order}
+	 *            id zamÃ³wienia {@link Order}
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 * @throws Exception
 	 */

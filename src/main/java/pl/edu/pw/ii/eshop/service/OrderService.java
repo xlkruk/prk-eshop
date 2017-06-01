@@ -6,94 +6,94 @@ import pl.edu.pw.ii.eshop.model.Customer;
 import pl.edu.pw.ii.eshop.model.Order;
 
 /**
- * Interfejs warstwy serwisu, definiuj¹cy metody zwi¹zane z logik¹ biznesow¹
- * zwi¹zan¹ z obs³ug¹ zamówienia
+ * Interfejs warstwy serwisu, definiujÄ…cy metody zwiÄ…zane z logikÄ… biznesowÄ…
+ * zwiÄ…zanÄ… z obsÅ‚ugÄ… zamÃ³wienia
  * 
- * @author £ukasz Kruk
+ * @author Ä…ukasz Kruk
  *
  */
 
 public interface OrderService {
 
 	/**
-	 * Metoda utrwalaj¹ca nowe zamówienie {@link Order}
+	 * Metoda utrwalajÄ…ca nowe zamÃ³wienie {@link Order}
 	 * 
 	 * @param order
-	 *            zamówienie
+	 *            zamÃ³wienie
 	 */
 	void addOrder(Order customerOrder);
 
 	/**
-	 * Metoda zwracaj¹ca cenê ca³kowit¹ koszyka
+	 * Metoda zwracajÄ…ca cenÄ™ caÅ‚kowitÄ… koszyka
 	 * 
 	 * @param cartId
 	 *            id koszyka klienta
-	 * @return cena ca³kowita
+	 * @return cena caÅ‚kowita
 	 */
 	double getOrderGrandTotal(int cartId);
 
 	/**
-	 * Metoda zwracaj¹ca wszytkie zamówienia
+	 * Metoda zwracajÄ…ca wszytkie zamÃ³wienia
 	 * 
-	 * @return lista wszystkich zamówieñ {@link Order}
+	 * @return lista wszystkich zamÃ³wieÅ„ {@link Order}
 	 */
 	List<Order> getAllOrders();
 
 	/**
-	 * Metoda zwracaj¹ca zamówienie po zadanym statusie
+	 * Metoda zwracajÄ…ca zamÃ³wienie o zadanym statusie
 	 * 
 	 * @param status
-	 * @return lista zamówieñ {@link Order}
+	 * @return lista zamÃ³wieÅ„ {@link Order}
 	 */
 	List<Order> getOrdersByStatus(String status);
 
 	/**
-	 * Metoda zwracaj¹ca wszytskie zamówienia z³o¿one przez klienta o zadanym id
+	 * Metoda zwracajÄ…ca wszytskie zamÃ³wienia zÅ‚oÅ¼one przez klienta o zadanym id
 	 * 
 	 * @param customerId
 	 *            id klienta {@link Customer}
-	 * @return lista zamówieñ {@link Order}
+	 * @return lista zamÃ³wieÅ„ {@link Order}
 	 */
 	List<Order> getOrdersByCustomerId(int customerId);
 
 	/**
-	 * Metoda ustawiaj¹cy status zamówienia na PAYMENT_RECEIVED
+	 * Metoda ustawiajÄ…cy status zamÃ³wienia na PAYMENT_RECEIVED
 	 * 
 	 * @param customerOrder
-	 *            zamówienie klienta
+	 *            zamÃ³wienie klienta
 	 */
 	void setPaymentReceivedStatus(Order customerOrder);
 
 	/**
-	 * Metoda ustawiaj¹cy status zamówienia na SENT
+	 * Metoda ustawiajÄ…cy status zamÃ³wienia na SENT
 	 * 
 	 * @param customerOrder
-	 *            zamówienie klienta
+	 *            zamÃ³wienie klienta
 	 */
 	void setSentStatus(Order customerOrder);
 
 	/**
-	 * Metoda ustawiaj¹cy status zamówienia na COMPLETED
+	 * Metoda ustawiajÄ…cy status zamÃ³wienia na COMPLETED
 	 * 
 	 * @param customerOrder
-	 *            zamówienie klienta
+	 *            zamÃ³wienie klienta
 	 */
 	void setCompletedStaus(Order customerOrder);
 
 	/**
-	 * Metoda ustawiaj¹cy status zamówienia na NEW
+	 * Metoda ustawiajÄ…cy status zamÃ³wienia na NEW
 	 * 
 	 * @param customerOrder
-	 *            zamówienie klienta
+	 *            zamÃ³wienie klienta
 	 */
 	void setNewStaus(Order customerOrder);
 
 	/**
-	 * Metoda zwracaj¹ca zamówienie Order o zadanym id
+	 * Metoda zwracajÄ…ca zamÃ³wienie Order o zadanym id
 	 * 
 	 * @param id
-	 *            id zamówienia
-	 * @return zamówienie {@link Order}
+	 *            id zamÃ³wienia
+	 * @return zamÃ³wienie {@link Order}
 	 */
 	Order getOrderById(int id);
 }

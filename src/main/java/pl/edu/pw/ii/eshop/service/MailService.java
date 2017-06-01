@@ -3,15 +3,15 @@ package pl.edu.pw.ii.eshop.service;
 import pl.edu.pw.ii.eshop.model.Order;
 
 /**
- * Interfejs warstwy serwisu, definiuj¹cy metody zwi¹zane z logik¹ biznesow¹
- * zwi¹zan¹ z wysy³aniem maili do klientów
+ * Interfejs warstwy serwisu, definiujÄ…cy metody zwiÄ…zane z logikÄ… biznesowÄ…
+ * zwiÄ…zanÄ… z wysyÅ‚aniem maili do klientÃ³w
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  *
  */
 public interface MailService {
 	/**
-	 * Metoda realizuj¹ca wys³anie wiadomoœci email
+	 * Metoda realizujÄ…ca wysÅ‚anie wiadomoÅ›ci email
 	 * 
 	 * @param from
 	 *            nadawca
@@ -20,34 +20,34 @@ public interface MailService {
 	 * @param subject
 	 *            temat
 	 * @param msg
-	 *            wiadomoœæ
+	 *            wiadomoÅ›Ä‡
 	 */
 	public void sendMail(String from, String to, String subject, String msg);
 
 	/**
-	 * Metoda realizuj¹ca wys³anie wiadomoœci email z potwierdzeniem z³o¿enia
-	 * zamówienia
+	 * Metoda realizujÄ…ca wysyÅ‚anie wiadomoÅ›ci email z potwierdzeniem zÅ‚oÅ¼enia
+	 * zamÃ³wienia
 	 * 
 	 * @param order
-	 *            zamówienie klienta {@link Order}
+	 *            zamÃ³wienie klienta {@link Order}
 	 */
 	public void sendOrderConfirmation(Order order);
 
 	/**
-	 * Metoda realizuj¹ca wys³anie wiadomoœci email z potwierdzeniem otzrymania
-	 * wp³aty za zmówienie zamówienia
+	 * Metoda realizujÄ…ca wysyÅ‚anie wiadomoÅ›ci email z potwierdzeniem otrzymania
+	 * wpÅ‚aty za zamÃ³wienie
 	 * 
 	 * @param order
-	 *            zamówienie klienta {@link Order}
+	 *            zamÃ³wienie klienta {@link Order}
 	 */
 	public void sendPaymentConfirmation(Order order);
 
 	/**
-	 * Metoda realizuj¹ca wys³anie wiadomoœci email z informuj¹ce o wys³aniu
-	 * przesy³ki.
+	 * Metoda realizujÄ…ca wysÅ‚anie wiadomoÅ›ci email z informujÄ…ce o wysÅ‚aniu
+	 * przesyÅ‚ki.
 	 * 
 	 * @param order
-	 *            zamówienie klienta {@link Order}
+	 *            zamÃ³wienie klienta {@link Order}
 	 */
 	public void sendDeliveryConfirmation(Order order);
 }

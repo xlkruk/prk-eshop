@@ -5,14 +5,14 @@ import java.util.List;
 import pl.edu.pw.ii.eshop.model.Product;
 
 /**
- * Interfejs dostêpu do obiektu {@link Product} DAO
+ * Interfejs dostÄ™pu do obiektu {@link Product} DAO
  * 
- * @author Agnieszka Œwiderska
+ * @author Agnieszka Åšwiderska
  *
  */
 public interface ProductDao {
 	/**
-	 * Metoda utrwalaj¹ca nowy produkt {@link Product}
+	 * Metoda utrwalajÄ…ca nowy produkt {@link Product}
 	 * 
 	 * @param product
 	 *            produkt {@link Product}
@@ -20,7 +20,7 @@ public interface ProductDao {
 	public void addProduct(Product product);
 
 	/**
-	 * Metoda zwracaj¹ca produkt {@link Product} o zadanym id
+	 * Metoda zwracajÄ…ca produkt {@link Product} o zadanym id
 	 * 
 	 * @param id
 	 *            id produktu.
@@ -29,23 +29,23 @@ public interface ProductDao {
 	public Product getProductById(int id);
 
 	/**
-	 * Metoda zwracajaca listê wszystkich produktów {@link Product}
+	 * Metoda zwracajaca listÄ™ wszystkich produktÃ³w {@link Product}
 	 * 
-	 * @return lista wszystkich produktów {@link Product}
+	 * @return lista wszystkich produktÃ³w {@link Product}
 	 */
 	public List<Product> getAllProducts();
 
 	/**
-	 * Metoda zwracaj¹ca wszystkie produkty o zadanej kategorii
+	 * Metoda zwracajÄ…ca wszystkie produkty o zadanej kategorii
 	 * 
 	 * @param category
 	 *            kategoria
-	 * @return lista produktów o zadanej kategorii.
+	 * @return lista produktÃ³w o zadanej kategorii.
 	 */
 	public List<Product> getProductsByCategory(String category);
 
 	/**
-	 * Metoda umo¿liwiaj¹ca usuniêcie produktu
+	 * Metoda umoÅ¼liwiajÄ…ca usuniÄ™cie produktu
 	 * 
 	 * @param product
 	 *            produkt {@link Product}
@@ -53,7 +53,7 @@ public interface ProductDao {
 	public void deleteProduct(Product product);
 
 	/**
-	 * Metoda umo¿liwiaj¹ca utrwalenie zmodyfikowanego produktu {@link Product}
+	 * Metoda umoÅ¼liwiajÄ…ca utrwalenie zmodyfikowanego produktu {@link Product}
 	 * 
 	 * @param product
 	 *            produkt {@link Product}

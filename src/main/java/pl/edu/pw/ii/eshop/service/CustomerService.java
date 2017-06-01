@@ -6,15 +6,15 @@ import pl.edu.pw.ii.eshop.model.Customer;
 import pl.edu.pw.ii.eshop.model.CustomerInfo;
 
 /**
- * Interfejs warstwy serwisu, definiuj¹cy metody zwi¹zane z logik¹ biznesow¹
- * zwi¹zan¹ z klientami
+ * Interfejs warstwy serwisu, definiujÄ…cy metody zwiÄ…zane z logikÄ… biznesowÄ…
+ * zwiÄ…zanÄ… z klientami
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  *
  */
 public interface CustomerService {
 	/**
-	 * Metoda umo¿liwiaj¹ca utrwalenie nowego klienta {@link Customer}
+	 * Metoda umoÅ¼liwiajÄ…ca utrwalenie nowego klienta {@link Customer}
 	 * 
 	 * @param customer
 	 *            klient {@link Customer}
@@ -22,7 +22,7 @@ public interface CustomerService {
 	void addCustomer(Customer customer);
 
 	/**
-	 * Metoda zwracaj¹ca klienta o zadanym id
+	 * Metoda zwracajÄ…ca klienta o zadanym id
 	 * 
 	 * @param id
 	 *            id klienta
@@ -31,14 +31,14 @@ public interface CustomerService {
 	Customer getCustomerById(int id);
 
 	/**
-	 * Metoda zwracaj¹ca listê wszystkich klientów
+	 * Metoda zwracajÄ…ca listÄ™ wszystkich klientÃ³w
 	 * 
-	 * @return lista wszystkich klientów {@link Customer} sklepu
+	 * @return lista wszystkich klientÃ³w {@link Customer} sklepu
 	 */
 	List<Customer> getAllCustomers();
 
 	/**
-	 * Metoda umo¿liwiaj¹ca utrwalenie zmodyfikowanego klienta
+	 * Metoda umoÅ¼liwiajÄ…ca utrwalenie zmodyfikowanego klienta
 	 * 
 	 * @param customer
 	 *            klient {@link Customer}
@@ -46,16 +46,16 @@ public interface CustomerService {
 	void editCustomer(CustomerInfo customer);
 
 	/**
-	 * Metoda zwracaj¹ca klienta o zadanej nazwie u¿ytkownika
+	 * Metoda zwracajÄ…ca klienta o zadanej nazwie uÅ¼ytkownika
 	 * 
 	 * @param username
-	 *            nazwa u¿ytkownika
+	 *            nazwa uÅ¼ytkownika
 	 * @return klient {@link Customer}
 	 */
 	Customer getCustomerByUsername(String username);
 
 	/**
-	 * Metoda zwracaj¹ca obiekt reprezentuj¹cy informacje o kliencie.
+	 * Metoda zwracajÄ…ca obiekt reprezentujÄ…cy informacje o kliencie.
 	 * 
 	 * @param customer
 	 *            klient {@link Customer}

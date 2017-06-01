@@ -13,10 +13,10 @@ import pl.edu.pw.ii.eshop.model.Cart;
 import pl.edu.pw.ii.eshop.service.CustomerService;
 
 /**
- * Klasa realizuj¹ca funkcje kontrolera, który obs³uguje zapytania wysy³ane
- * poprzez przegl¹darkê od u¿ytkowników.
+ * Klasa realizujÄ…ca funkcje kontrolera, ktÃ³ry obsÅ‚uguje zapytania wysyÅ‚ane
+ * poprzez przeglÄ…darkÄ™ od uÅ¼ytkownikÃ³w.
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  * @version 1.0
  */
 
@@ -25,8 +25,8 @@ import pl.edu.pw.ii.eshop.service.CustomerService;
 public class CartItemController {
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /cart przy pomocy metody GET. id
-	 * koszyka jes uto¿samiane z id sesji. ¯¹danie jest przekierowywane do
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /cart przy pomocy metody GET. id
+	 * koszyka jest utoÅ¼samiane z id sesji. Å»Ä…danie jest przekierowywane do
 	 * /cart/{id}.
 	 * 
 	 * @param request
@@ -41,15 +41,15 @@ public class CartItemController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /cart/{cartId}. Metoda
-	 * zapisuje id koszyka w modelu. Metoda zwraca nazwê widoku do wygenerowania
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /cart/{cartId}. Metoda
+	 * zapisuje id koszyka w modelu. Metoda zwraca nazwÄ™ widoku do wygenerowania
 	 * odpowiedzi.
 	 * 
 	 * @param cartId
 	 *            id koszyka do dodania w modelu
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 * @see Cart
 	 * @see Model

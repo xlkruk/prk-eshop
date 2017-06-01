@@ -8,12 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 /**
- * Klasa reprezentuj¹ca encjê ORDITEM, pozycje zamówienia.
+ * Klasa reprezentujÄ…ca encjÄ… ORDITEM, pozycje zamÃ³wienia.
  * 
- * @author Agnieszka Œwiderska
+ * @author Agnieszka Åšwiderska
  *
  */
 @Entity
@@ -35,14 +33,14 @@ public class OrderItem implements Serializable {
 	private double totalPrice;
 
 	/**
-	 * Konstruktor parametryczny. Przypisuje zamówienie {@link Order} do pozycji
-	 * zamówienia. Inicjuje nazwê produktu, iloœæ cenê ca³kowit¹ za produky na
-	 * pozycji zamówienia, cenê jednostkow¹ za produkt.
+	 * Konstruktor parametryczny. Przypisuje zamÃ³wienie {@link Order} do pozycji
+	 * zamÃ³wienia. Inicjuje nazwÄ™ produktu, iloÅ›Ä‡, cenÄ™ caÅ‚kowitÄ… za produky na
+	 * pozycji zamÃ³wienia, cenÄ™ jednostkowÄ… za produkt.
 	 * 
 	 * @param order
-	 *            zamówienie, którego dotyczy pozycja zamówienia
+	 *            zamÃ³wienie, ktÃ³rego dotyczy pozycja zamÃ³wienia
 	 * @param cartItem
-	 *            linia agreguj¹ca koszyka skojarzona z pozycj¹ zamówienia.
+	 *            linia agregujÄ…ca koszyka skojarzona z pozycjÄ… zamÃ³wienia.
 	 */
 	public OrderItem(Order order, CartItem cartItem) {
 		this.order = order;
@@ -53,118 +51,116 @@ public class OrderItem implements Serializable {
 	}
 
 	/**
-	 * Metaoda zwracaj¹ca cenê jednostkow¹ produktu na pozycji zamówienia.
+	 * Metaoda zwracajÄ…ca cenÄ™ jednostkowÄ… produktu na pozycji zamÃ³wienia.
 	 * 
-	 * @return cena jednostkow¹ produktu na pozycji zamówienia.
+	 * @return cena jednostkowÄ… produktu na pozycji zamÃ³wienia.
 	 */
 	public double getPrice() {
 		return price;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca cenê jednostkow¹ produktu na pozycji zamówienia.
+	 * Metoda ustawiajÄ…ca cenÄ™ jednostkowÄ… produktu na pozycji zamÃ³wienia.
 	 * 
 	 * @param price
-	 *            cena jednostkow¹ produktu na pozycji zamówienia.
+	 *            cena jednostkowÄ… produktu na pozycji zamÃ³wienia.
 	 */
 	public void setPrice(double price) {
 		this.price = price;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca id pozycji zamówienia - klucz g³owny encji.
+	 * Metoda zwracajÄ…ca id pozycji zamÃ³wienia - klucz gÅ‚Ã³wny encji.
 	 * 
-	 * @return id pozycji zamówienia - klucz g³owny encji.
+	 * @return id pozycji zamÃ³wienia - klucz gÅ‚Ã³wny encji.
 	 */
 	public int getOrderItemId() {
 		return orderItemId;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca id pozycji zamówienia - klucz g³owny encji.
+	 * Metoda ustawiajÄ…ca id pozycji zamÃ³wienia - klucz gÅ‚Ã³wny encji.
 	 * 
 	 * @param orderItemId
-	 *            id pozycji zamówienia - klucz g³owny encji.
+	 *            id pozycji zamÃ³wienia - klucz gÅ‚Ã³wny encji.
 	 */
 	public void setOrderItemId(int orderItemId) {
 		this.orderItemId = orderItemId;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca zamówienie {@link Order}, którego dotyczy podana
+	 * Metoda zwracajÄ…ca zamÃ³wienie {@link Order}, ktÃ³rego dotyczy podana
 	 * pozycja.
 	 * 
-	 * @return zamówienie {@link Order}, którego dotyczy podana pozycja.
+	 * @return zamÃ³wienie {@link Order}, ktÃ³rego dotyczy podana pozycja.
 	 */
 	public Order getOrder() {
 		return order;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca zamówienie {@link Order}, którego dotyczy podana
+	 * Metoda ustawiajÄ…ca zamÃ³wienie {@link Order}, ktÃ³rego dotyczy podana
 	 * pozycja.
 	 * 
 	 * @param order
-	 *            zamówienie {@link Order}, którego dotyczy podana pozycja.
+	 *            zamÃ³wienie {@link Order}, ktÃ³rego dotyczy podana pozycja.
 	 */
 	public void setOrder(Order order) {
 		this.order = order;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca nazwê produktu nale¿¹cego do pozycji zamówienia.
+	 * Metoda zwracajÄ…ca nazwÄ™ produktu naleÅ¼Ä…cego do pozycji zamÃ³wienia.
 	 * 
-	 * @return nazwa produktu nale¿¹cego do pozycji zamówienia.
+	 * @return nazwa produktu naleÅ¼Ä…cego do pozycji zamÃ³wienia.
 	 */
 	public String getProductName() {
 		return productName;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca nazwê produktu nale¿¹cego do pozycji zamówienia.
+	 * Metoda ustawiajÄ…ca nazwÄ™ produktu naleÅ¼Ä…cego do pozycji zamÃ³wienia.
 	 * 
 	 * @param productName
-	 *            nazwê produktu nale¿¹cego do pozycji zamówienia.
+	 *            nazwÄ™ produktu naleÅ¼Ä…cego do pozycji zamÃ³wienia.
 	 */
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca iloœæ produktów {@link Product} na danej pozycj
-	 * izamówienia
+	 * Metoda zwracajÄ…ca iloÅ›Ä‡ produktÃ³w {@link Product} na danej pozycji zamÃ³wienia
 	 * 
-	 * @return iloœæ produktów {@link Product} na danej pozycj izamówienia
+	 * @return iloÅ›Ä‡ produktÃ³w {@link Product} na danej pozycji zamÃ³wienia
 	 */
 	public int getQuantity() {
 		return quantity;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca iloœæ produktów {@link Product} na danej pozycj
-	 * izamówienia
+	 * Metoda ustawiajÄ…ca iloÅ›Ä‡ produktÃ³w {@link Product} na danej pozycji zamÃ³wienia
 	 * 
 	 * @param quantity
-	 *            iloœæ produktów {@link Product} na danej pozycj izamówienia
+	 *            iloÅ›Ä‡ produktÃ³w {@link Product} na danej pozycji zamÃ³wienia
 	 */
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca cenê ca³kowit¹ pozycji zamówienia
+	 * Metoda zwracajÄ…ca cenÄ™ caÅ‚kowitÄ… pozycji zamÃ³wienia
 	 * 
-	 * @return cena ca³kowit¹ pozycji zamówienia
+	 * @return cena caÅ‚kowitÄ… pozycji zamÃ³wienia
 	 */
 	public double getTotalPrice() {
 		return totalPrice;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca cenê ca³kowit¹ pozycji zamówienia
+	 * Metoda ustawiajÄ…ca cenÄ™ caÅ‚kowitÄ… pozycji zamÃ³wienia
 	 * 
 	 * @param totalPrice
-	 *            cena ca³kowit¹ pozycji zamówienia
+	 *            cena caÅ‚kowitÄ… pozycji zamÃ³wienia
 	 */
 	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;

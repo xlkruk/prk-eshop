@@ -1,8 +1,13 @@
-<%@include file="/WEB-INF/views/template/header.jsp"%>
+﻿<%@include file="/WEB-INF/views/template/header.jsp"%>
 <%@include file="/WEB-INF/views/template/navbar.jsp"%>
 
 <div class="container-wrapper">
 	<div class="container">
+
+	<!-- <center>
+		<img class="market-logo"
+						src="<c:url value="/resources/images/handmade-market-logo.png"/>"
+						alt="MARKET LOGO"></center> -->
 
 
 		<!-- Carousel
@@ -13,6 +18,9 @@
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
 				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
+				<li data-target="#myCarousel" data-slide-to="4"></li>
+				<li data-target="#myCarousel" data-slide-to="5"></li>
 			</ol>
 			<div class="carousel-inner home-image" role="listbox">
 				<div class="item active">
@@ -21,17 +29,12 @@
 						alt="First slide">
 					<div class="container">
 						<div class="carousel-caption">
-							<h1>Example headline.</h1>
+							<h1>Obrazy i ramki</h1>
 							<p>
-								Note: If you're viewing this page via a
-								<code>file://</code>
-								URL, the "next" and "previous" Glyphicon buttons on the left and
-								right might not load/display properly due to web browser
-								security rules.
+								Chcesz przyozdobić oryginalnie  ścianę? Polecamy ramki do zdjęć i nie tylko...
 							</p>
 							<p>
-								<a class="btn btn-lg btn-primary" href="#" role="button">Sign
-									up today</a>
+								<a class="btn btn-lg btn-primary" href="/Shop/product/productListByCategory/PAINTINGS" role="button"> Wejdź </a>
 							</p>
 						</div>
 					</div>
@@ -42,13 +45,10 @@
 						alt="Second slide">
 					<div class="container">
 						<div class="carousel-caption">
-							<h1>Another example headline.</h1>
-							<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-								quam. Donec id elit non mi porta gravida at eget metus. Nullam
-								id dolor id nibh ultricies vehicula ut id elit.</p>
+							<h1>Biżuteria</h1>
+							<p>Tak prosto kogoś oczarować... Niepowtarzalne wzory naszyjników, bransolet, kolczyków i wiele innych!!!</p>
 							<p>
-								<a class="btn btn-lg btn-primary" href="#" role="button">Learn
-									more</a>
+								<a class="btn btn-lg btn-primary" href="/Shop/product/productListByCategory/JEWELLERY" role="button"> Wejdź </a>
 							</p>
 						</div>
 					</div>
@@ -59,13 +59,52 @@
 						alt="Third slide">
 					<div class="container">
 						<div class="carousel-caption">
-							<h1>One more for good measure.</h1>
-							<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-								quam. Donec id elit non mi porta gravida at eget metus. Nullam
-								id dolor id nibh ultricies vehicula ut id elit.</p>
+							<h1>Ceramika</h1>
+							<p>Drobne bibeloty, by dodać piękna domowemu otoczeniu...</p>
 							<p>
-								<a class="btn btn-lg btn-primary" href="#" role="button">Browse
-									gallery</a>
+								<a class="btn btn-lg btn-primary" href="/Shop/product/productListByCategory/CERAMICS" role="button"> Wejdź</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img class="third-slide home-image"
+						src="<c:url value="/resources/images/carousel4.jpg"/>"
+						alt="Third slide">
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>Kartki i zaproszenia</h1>
+							<p>Wyjatkowe kartki świąteczne i okolicznościowe. Spraw komuś radość!</p>
+							<p>
+								<a class="btn btn-lg btn-primary" href="/Shop/product/productListByCategory/CARDS" role="button"> Wejdź </a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img class="third-slide home-image"
+						src="<c:url value="/resources/images/carousel5.jpg"/>"
+						alt="Third slide">
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>Meble</h1>
+							<p>Poza wygodą meble mogą być także piękne i stylowe...</p>
+							<p>
+								<a class="btn btn-lg btn-primary" href="/Shop/product/productListByCategory/FERNITURES" role="button"> Wejdź</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img class="third-slide home-image"
+						src="<c:url value="/resources/images/carousel6.jpg"/>"
+						alt="Third slide">
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>Torby</h1>
+							<p>Możesz zawsze mieć pod ręką taki niepowatrzalny gadżet... Zwaracamy szczególną uwagę na szeroki wybór toreb z filcu.</p>
+							<p>
+								<a class="btn btn-lg btn-primary" href="/Shop/product/productListByCategory/BAGS" role="button"> Wejdź</a>
 							</p>
 						</div>
 					</div>
@@ -94,50 +133,79 @@
 			<div class="row">
 				<div class="col-lg-4">
 					<img class="img-circle"
-						src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+						src="<c:url value="/resources/images/kategoria1.jpg"/>"
 						alt="Generic placeholder image" width="140" height="140">
-					<h2>Heading</h2>
-					<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis
-						euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
-						Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-						Praesent commodo cursus magna.</p>
+					<h2>Obrazy i ramki</h2>
+					<p>Ręcznie malowane obrazy. Ramki do zdjęć wykonane różnymi technikami.</p>
 					<p>
-						<a class="btn btn-default" href="#" role="button">View details
+						<a class="btn btn-md btn-primary" href="/Shop/product/productListByCategory/PAINTINGS" role="button">Przejdź dalej
 							&raquo;</a>
 					</p>
 				</div>
 				<!-- /.col-lg-4 -->
 				<div class="col-lg-4">
 					<img class="img-circle"
-						src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+						src="<c:url value="/resources/images/kategoria2.jpg"/>"
 						alt="Generic placeholder image" width="140" height="140">
-					<h2>Heading</h2>
-					<p>Duis mollis, est non commodo luctus, nisi erat porttitor
-						ligula, eget lacinia odio sem nec elit. Cras mattis consectetur
-						purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo,
-						tortor mauris condimentum nibh.</p>
+					<h2>Biżuteria</h2>
+					<p>Biżuteria z kamieni szlachetnych i minerałów. Ozdoby z filcu i haftu soutache.</p>
 					<p>
-						<a class="btn btn-default" href="#" role="button">View details
+						<a class="btn btn-md btn-primary" href="/Shop/product/productListByCategory/JEWELLERY" role="button">Przejdź dalej
 							&raquo;</a>
 					</p>
 				</div>
 				<!-- /.col-lg-4 -->
 				<div class="col-lg-4">
 					<img class="img-circle"
-						src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+						src="<c:url value="/resources/images/kategoria3.jpg"/>"
 						alt="Generic placeholder image" width="140" height="140">
-					<h2>Heading</h2>
-					<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis
-						in, egestas eget quam. Vestibulum id ligula porta felis euismod
-						semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-						condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+					<h2>Ceramika</h2>
+					<p>Wybór bibelotow z ceramiki. Nadadzą niepowtarzalny charakter Twojej przestrzeni.</p>
 					<p>
-						<a class="btn btn-default" href="#" role="button">View details
+						<a class="btn btn-md btn-primary" href="/Shop/product/productListByCategory/CERAMICS" role="button">Przejdź dalej
 							&raquo;</a>
 					</p>
 				</div>
 				<!-- /.col-lg-4 -->
 			</div>
 			<!-- /.row -->
-
+			<div class="row">
+				<div class="col-lg-4">
+					<img class="img-circle"
+						src="<c:url value="/resources/images/kategoria4.jpg"/>"
+						alt="Generic placeholder image" width="140" height="140">
+					<h2>Kartki i zaproszenia</h2>
+					<p>Oryginalne kartki świąteczne i okolicznościowe. Zaproszenia na przeróżne okazje.</p>
+					<p>
+						<a class="btn btn-md btn-primary" href="/Shop/product/productListByCategory/CARDS" role="button">Przejdź dalej
+							&raquo;</a>
+					</p>
+				</div>
+				<!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<img class="img-circle"
+						src="<c:url value="/resources/images/kategoria5.jpg"/>"
+						alt="Generic placeholder image" width="140" height="140">
+					<h2>Meble</h2>
+					<p>Meble rystykalne i nowoczesne. Wspaniałe wzornictwo i funkcjonalność.</p>
+					<p>
+						<a class="btn btn-md btn-primary" href="/Shop/product/productListByCategory/FERNITURES" role="button">Przejdź dalej
+							&raquo;</a>
+					</p>
+				</div>
+				<!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<img class="img-circle"
+						src="<c:url value="/resources/images/kategoria6.jpg"/>"
+						alt="Generic placeholder image" width="140" height="140">
+					<h2>Torby</h2>
+					<p>Torby na codzień i od święta. Wykonane ręcznie z filcu, skóry i bawełny.</p>
+					<p>
+						<a class="btn btn-md btn-primary" href="/Shop/product/productListByCategory/BAGS" role="button">Przejdź dalej
+							&raquo;</a>
+					</p>
+				</div>
+				<!-- /.col-lg-4 -->
+			</div>
+			<!-- /.row -->
 		<%@include file="/WEB-INF/views/template/footer.jsp"%>

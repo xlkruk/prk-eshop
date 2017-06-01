@@ -6,8 +6,8 @@ import pl.edu.pw.ii.eshop.model.Product;
 import pl.edu.pw.ii.eshop.model.ProductInfo;
 
 /**
- * Interfejs warstwy serwisu, definiuj¹cy metody zwi¹zane z logik¹ biznesow¹
- * zwi¹zan¹ z obs³ug¹ Produktu
+ * Interfejs warstwy serwisu, definiujÄ…cy metody zwiÄ…zane z logikÄ… biznesowÄ…
+ * zwiÄ…zanÄ… z obsÅ‚ugÄ… Produktu
  * 
  * @author Krzysztof Trybus
  *
@@ -15,23 +15,23 @@ import pl.edu.pw.ii.eshop.model.ProductInfo;
 
 public interface ProductService {
 	/**
-	 * Metoda zwracajaca listê wszystkich produktów {@link Product}
+	 * Metoda zwracajaca listÄ™ wszystkich produktÃ³w {@link Product}
 	 * 
-	 * @return lista wszystkich produktów {@link Product}
+	 * @return lista wszystkich produktÃ³w {@link Product}
 	 */
 	List<Product> getProductList();
 
 	/**
-	 * Metoda zwracaj¹ca wszystkie produkty o zadanej kategorii
+	 * Metoda zwracajÄ…ca wszystkie produkty o zadanej kategorii
 	 * 
 	 * @param category
 	 *            kategoria
-	 * @return lista produktów o zadanej kategorii.
+	 * @return lista produktÃ³w o zadanej kategorii.
 	 */
 	List<Product> getProductListByCategory(String category);
 
 	/**
-	 * Metoda zwracaj¹ca produkt {@link Product} o zadanym id
+	 * Metoda zwracajÄ…ca produkt {@link Product} o zadanym id
 	 * 
 	 * @param id
 	 *            id produktu.
@@ -40,7 +40,7 @@ public interface ProductService {
 	Product getProductById(int id);
 
 	/**
-	 * Metoda utrwalaj¹ca nowy produkt {@link Product}
+	 * Metoda utrwalajÄ…ca nowy produkt {@link Product}
 	 * 
 	 * @param product
 	 *            produkt {@link Product}
@@ -48,7 +48,7 @@ public interface ProductService {
 	void addProduct(Product product);
 
 	/**
-	 * Metoda utrwalaj¹ca nowy produkt {@link Product} na podstawie
+	 * Metoda utrwalajÄ…ca nowy produkt {@link Product} na podstawie obiektu reprezentujÄ…cego informacje o nim
 	 * {@link ProductInfo}
 	 * 
 	 * @param product
@@ -57,7 +57,7 @@ public interface ProductService {
 	void addProduct(ProductInfo product);
 
 	/**
-	 * Metoda umo¿liwiaj¹ca utrwalenie zmodyfikowanego produktu {@link Product}
+	 * Metoda umoÅ¼liwiajÄ…ca utrwalenie zmodyfikowanego produktu {@link Product}
 	 * 
 	 * @param product
 	 *            produkt {@link Product}
@@ -65,7 +65,7 @@ public interface ProductService {
 	void editProduct(Product product);
 
 	/**
-	 * Metoda umo¿liwiaj¹ca utrwalenie zmodyfikowanego produktu {@link Product}
+	 * Metoda umoÅ¼liwiajÄ…ca utrwalenie zmodyfikowanego produktu {@link Product}
 	 * na podstawie informacji o produkcie {@link ProductInfo}
 	 * 
 	 * @param product
@@ -74,7 +74,7 @@ public interface ProductService {
 	void editProduct(ProductInfo product);
 
 	/**
-	 * Metoda umo¿liwiaj¹ca usuniêcie produktu
+	 * Metoda umoÅ¼liwiajÄ…ca usuniÄ™cie produktu
 	 * 
 	 * @param product
 	 *            produkt {@link Product}

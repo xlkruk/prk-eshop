@@ -7,8 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 /**
  * Klasa reprezentująca adres do wystawienia faktury za zakup. Jest to encja
  * reprezentowana jako tabela BILLINADDRESS

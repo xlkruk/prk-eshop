@@ -8,22 +8,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * Klasa realizuj¹ca funkcje kontrolera, który obs³uguje zapytania wysy³ane
- * poprzez przegl¹darkê od u¿ytkowników.
+ * Klasa realizujÄ…ca funkcje kontrolera, ktÃ³ry obsÅ‚uguje zapytania wysyÅ‚ane
+ * poprzez przeglÄ…darkÄ™ od uÅ¼ytkownikÃ³w.
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  * @version 1.0
  */
 @Controller
 public class ErrorController {
 
 	/**
-	 * Metoda realizuj¹ca przekierowanie na stronê errorPage.jsp w przypadku
-	 * odpowiedzi HTTP reprezentj¹cej niepowodzenie obs³ugi ¿¹dania.
+	 * Metoda realizujÄ…ca przekierowanie na stronÄ™ errorPage.jsp w przypadku
+	 * odpowiedzi HTTP reprezentjÄ…cej niepowodzenie obsÅ‚ugi Å¼Ä…dania.
 	 * 
 	 * @param httpRequest
-	 *            obiekt rz¹dania {@link HttpServletRequest}
-	 * @return nazwa widoku generowanego w przypadku b³êdu.
+	 *            obiekt Å¼Ä…dania {@link HttpServletRequest}
+	 * @return nazwa widoku generowanego w przypadku bÅ‚Ä™du.
 	 */
 	@RequestMapping(value = "errors", method = RequestMethod.GET)
 	public ModelAndView renderErrorPage(HttpServletRequest httpRequest) {
@@ -61,12 +61,12 @@ public class ErrorController {
 	}
 
 	/**
-	 * Metoda realizuj¹ca przekierowanie na stronê errorPage.jsp w przypadku
-	 * odpowiedzi HTTP reprezentj¹cej niepowodzenie obs³ugi ¿¹dania POST.
+	 * Metoda realizujÄ…ca przekierowanie na stronÄ™ errorPage.jsp w przypadku
+	 * odpowiedzi HTTP reprezentjÄ…cej niepowodzenie obsÅ‚ugi Å¼Ä…dania POST.
 	 * 
 	 * @param httpRequest
-	 *            obiekt rz¹dania {@link HttpServletRequest}
-	 * @return nazwa widoku generowanego w przypadku b³êdu.
+	 *            obiekt Å¼Ä…dania {@link HttpServletRequest}
+	 * @return nazwa widoku generowanego w przypadku bÅ‚Ä™du.
 	 */
 	@RequestMapping(value = "errors", method = RequestMethod.POST)
 	public ModelAndView renderErrorPagePOST(HttpServletRequest httpRequest) {

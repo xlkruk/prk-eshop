@@ -3,27 +3,27 @@ package pl.edu.pw.ii.eshop.dao;
 import pl.edu.pw.ii.eshop.model.Users;
 
 /**
- * Interfejs dostÍpu do obiektu {@link Users} DAO
+ * Interfejs dostƒôpu do obiektu {@link Users} DAO
  * 
- * @author Agnieszka åwiderska
+ * @author Agnieszka ≈öwiderska
  *
  */
 public interface UserDao {
 
 	/**
-	 * Metoda zwracajπca uøytkownika {@link Users} o zadanej nazwie uøytkownika
+	 * Metoda zwracajƒÖca u≈ºytkownika {@link Users} o zadanej nazwie u≈ºytkownika
 	 * 
 	 * @param username
-	 *            nazwa uøytkownika (login)
-	 * @return uøytkownik {@link Users}
+	 *            nazwa u≈ºytkownika (login)
+	 * @return u≈ºytkownik {@link Users}
 	 */
 	Users getUserByUsername(String username);
 
 	/**
-	 * Metoda umoøliwiajπca utrwalenie zmodyfikowanego uøytkownika {@link Users}
+	 * Metoda umo≈ºliwiajƒÖca utrwalenie zmodyfikowanego u≈ºytkownika {@link Users}
 	 * 
 	 * @param user
-	 *            uøytkownik {@link Users}
+	 *            u≈ºytkownik {@link Users}
 	 */
 	void updateUser(Users user);
 }

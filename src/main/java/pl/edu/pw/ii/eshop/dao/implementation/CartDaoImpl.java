@@ -14,9 +14,9 @@ import pl.edu.pw.ii.eshop.model.Cart;
 import pl.edu.pw.ii.eshop.service.OrderService;
 
 /**
- * Klasa implementuj¹ca interfejs {@link CartDao}.
+ * Klasa implementujÄ…ca interfejs {@link CartDao}.
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  *
  */
 @Repository
@@ -37,9 +37,9 @@ public class CartDaoImpl implements CartDao {
 	}
 
 	/**
-	 * Metoda umo¿liwiaj¹ca utrwalenie modyfikowanego koszyka {@link Cart}.
-	 * Metoda wykorzystuj¹ca implementacjê interfejsu {@link OrderService} do
-	 * pobrania ceny ca³kowitej zamówienia.
+	 * Metoda umoÅ¼liwiajÄ…ca utrwalenie modyfikowanego koszyka {@link Cart}.
+	 * Metoda wykorzystujÄ…ca implementacjÄ™ interfejsu {@link OrderService} do
+	 * pobrania ceny caÅ‚kowitej zamÃ³wienia.
 	 * 
 	 * @param cart
 	 *            koszyk {@link Cart}
@@ -55,8 +55,8 @@ public class CartDaoImpl implements CartDao {
 	}
 
 	/**
-	 * Metoda waiduj¹ca czy koszyk o danym id istnieje. Je¿eli tak, to zwraca
-	 * koszyk {@link Cart}, w przeciwnym wypadku rzucany jest wyj¹tek
+	 * Metoda waidujÄ…ca czy koszyk o danym id istnieje. JeÅ¼eli tak, to zwraca
+	 * koszyk {@link Cart}, w przeciwnym wypadku rzucany jest wyjÄ…tek
 	 * IOException
 	 * 
 	 * @param cartId

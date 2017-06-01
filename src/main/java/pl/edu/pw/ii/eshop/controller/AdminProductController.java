@@ -20,10 +20,10 @@ import pl.edu.pw.ii.eshop.service.OrderService;
 import pl.edu.pw.ii.eshop.service.ProductService;
 
 /**
- * Klasa realizuj¹ca funkcje kontrolera, który obs³uguje zapytania wysy³ane
- * poprzez przegl¹darkê od u¿ytkowników.
+ * Klasa realizujÄ…ca funkcje kontrolera, ktÃ³ry obsÅ‚uguje zapytania wysyÅ‚ane
+ * poprzez przeglÄ…darkÄ™ od uÅ¼ytkownikÃ³w.
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  * @version 1.0
  */
 @Controller
@@ -37,12 +37,12 @@ public class AdminProductController {
 	private OrderService orderService;
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /admin/product/addProduct.
-	 * Zwraca nazwê widoku do wygenerowania odpowiedzi.
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /admin/product/addProduct.
+	 * Zwraca nazwÄ™ widoku do wygenerowania odpowiedzi.
 	 * 
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ…. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 * @see Product
 	 * @see Model
@@ -58,22 +58,22 @@ public class AdminProductController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /admin/product/addProduct przy
-	 * pomocy metody POST. Metoda wykorzystuje implementacjê interfejsu
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /admin/product/addProduct przy
+	 * pomocy metody POST. Metoda wykorzystuje implementacjÄ… interfejsu
 	 * ProductService do utrwalenia nowego produktu reprezentowanego jako obiekt
-	 * klasy Product. W przypadku udanego pobrania produktu do edycji, ¿¹danie
+	 * klasy Product. W przypadku udanego pobrania produktu do edycji, Å¼Ä…danie
 	 * jest przekierowywane do /admin/productInventory. W przeciwnym wypadku
 	 * zwracany jest widok addProduct
 	 * 
 	 * @param product
-	 *            obiekt klasy {@link ProductInfo}. typ opakowuj¹cy obiekty
+	 *            obiekt klasy {@link ProductInfo}. typ opakowujÄ…cy obiekty
 	 *            klasy {@link Product}. Przechowuje informacje o produkcie.
 	 * @param result
-	 *            interfejs rozszerzaj¹cy interfejs umo¿liwiaj¹cy rejestrowanie
-	 *            b³êdów, zastosowanie walidatora {@link Valid}.
+	 *            interfejs rozszerzajÄ…cy interfejs umoÅ¼liwiajÄ…cy rejestrowanie
+	 *            bÅ‚Ä™dÃ³w, zastosowanie walidatora {@link Valid}.
 	 * @param request
-	 *            obiekt klasy {@link HttpServletRequest}, reprezentuj¹cy
-	 *            rz¹danie HTTP.
+	 *            obiekt klasy {@link HttpServletRequest}, reprezentujÄ…cy
+	 *            Å¼Ä…danie HTTP.
 	 * @return nazwa widoku.
 	 * @see Product
 	 * @see BindingResult
@@ -97,17 +97,17 @@ public class AdminProductController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki GET /admin/editProduct/{id}.
-	 * Metoda wykorzystuje implementacjê interfejsu ProductService do pobrania
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki GET /admin/editProduct/{id}.
+	 * Metoda wykorzystuje implementacjÄ… interfejsu ProductService do pobrania
 	 * produktu o zadanym id. Produkt reprezentowany jako obiekt klasy Product.
-	 * Produkt produktów jest dodawany do modelu. Metoda zwraca nazwê widoku do
+	 * Produkt produktÃ³w jest dodawany do modelu. Metoda zwraca nazwÄ™ widoku do
 	 * wygenerowania odpowiedzi.
 	 * 
 	 * @param id
 	 *            id produktu do edycji
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ…. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 * @see Product
 	 * @see Model
@@ -121,21 +121,21 @@ public class AdminProductController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /admin/product/editProduct przy
-	 * pomocy metody POST. Metoda wykorzystuje implementacjê interfejsu
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /admin/product/editProduct przy
+	 * pomocy metody POST. Metoda wykorzystuje implementacjÄ… interfejsu
 	 * ProductService do utrwalenia modyfikowanego produktu reprezentowanego
-	 * jako obiekt klasy Product. W przypadku braku b³êdów walidacji, product
-	 * jest utrwalany i ¿¹danie jest przekierowywane do /order/viewOrder/{id}.
+	 * jako obiekt klasy Product. W przypadku braku bÅ‚Ä™dÃ³w walidacji, product
+	 * jest utrwalany i Å¼Ä…danie jest przekierowywane do /order/viewOrder/{id}.
 	 * 
 	 * @param order
-	 *            obiekt klasy {@link Order}. Encja reprezentuj¹ca zamówienie
+	 *            obiekt klasy {@link Order}. Encja reprezentujÄ…ca zamÃ³wienie
 	 *            klienta
 	 * @param result
-	 *            interfejs rozszerzaj¹cy interfejs umo¿liwiaj¹cy rejestrowanie
-	 *            b³êdów, zastosowanie walidatora {@link Valid}.
+	 *            interfejs rozszerzajÄ…cy interfejs umoÅ¼liwiajÄ…cy rejestrowanie
+	 *            bÅ‚Ä™dÃ³w, zastosowanie walidatora {@link Valid}.
 	 * @param request
-	 *            obiekt klasy {@link HttpServletRequest}, reprezentuj¹cy
-	 *            rz¹danie HTTP.
+	 *            obiekt klasy {@link HttpServletRequest}, reprezentujÄ…cy
+	 *            Å¼Ä…danie HTTP.
 	 * @return nazwa widoku.
 	 * @see Product
 	 * @see BindingResult
@@ -155,17 +155,17 @@ public class AdminProductController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki
 	 * /admin/product/deleteProduct/{id} przy pomocy metody GET. Metoda
-	 * wykorzystuje implementacjê interfejsu ProductService do usuniêcia
+	 * wykorzystuje implementacjÄ… interfejsu ProductService do usuniÄ™cia
 	 * produktu o zadanym id, reprezentowanego jako obiekt klasy Product.
-	 * ¿¹danie jest przekierowywane do /admin/productInventory.
+	 * Å¼Ä…danie jest przekierowywane do /admin/productInventory.
 	 * 
 	 * @param id
-	 *            id produktu do usuniêcia
+	 *            id produktu do usuniÄ™cia
 	 * @param request
-	 *            obiekt klasy {@link HttpServletRequest}, reprezentuj¹cy
-	 *            rz¹danie HTTP.
+	 *            obiekt klasy {@link HttpServletRequest}, reprezentujÄ…cy
+	 *            Å¼Ä…danie HTTP.
 	 * @return nazwa widoku.
 	 * @see Product
 	 * @see HttpServletRequest
@@ -180,22 +180,22 @@ public class AdminProductController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /admin/order/changeStatus przy
-	 * pomocy metody POST. Metoda wykorzystuje implementacjê interfejsu
-	 * OrderService do zmiany statusu zamówienia reprezentowanego jako obiekt
-	 * klasy {@link Order}. ¯¹danie jest przekierowywane do
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /admin/order/changeStatus przy
+	 * pomocy metody POST. Metoda wykorzystuje implementacjÄ… interfejsu
+	 * OrderService do zmiany statusu zamÃ³wienia reprezentowanego jako obiekt
+	 * klasy {@link Order}. Å¼Ä…danie jest przekierowywane do
 	 * /admin/productInventory. W przeciwnym wypadku zwracany jest widok
 	 * editProduct
 	 * 
 	 * @param order
-	 *            obiekt klasy {@link Order}. Encaj reprezentuj¹ca zamówienie
+	 *            obiekt klasy {@link Order}. Encaj reprezentujÄ…ca zamÃ³wienie
 	 *            klienta
 	 * @param result
-	 *            interfejs rozszerzaj¹cy interfejs umo¿liwiaj¹cy rejestrowanie
-	 *            b³êdów, zastosowanie walidatora {@link Valid}.
+	 *            interfejs rozszerzajÄ…cy interfejs umoÅ¼liwiajÄ…cy rejestrowanie
+	 *            bÅ‚Ä™dÃ³w, zastosowanie walidatora {@link Valid}.
 	 * @param request
-	 *            obiekt klasy {@link HttpServletRequest}, reprezentuj¹cy
-	 *            rz¹danie HTTP.
+	 *            obiekt klasy {@link HttpServletRequest}, reprezentujÄ…cy
+	 *            Å¼Ä…danie HTTP.
 	 * @return nazwa widoku.
 	 * @see Order
 	 * @see BindingResult

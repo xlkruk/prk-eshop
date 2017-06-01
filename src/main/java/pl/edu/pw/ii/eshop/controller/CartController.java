@@ -22,10 +22,10 @@ import pl.edu.pw.ii.eshop.service.OrderService;
 import pl.edu.pw.ii.eshop.service.ProductService;
 
 /**
- * Klasa realizuj¹ca funkcje kontrolera, który obs³uguje zapytania wysy³ane
- * poprzez przegl¹darkê od u¿ytkowników.
+ * Klasa realizujÄ…ca funkcje kontrolera, ktÃ³ry obsÅ‚uguje zapytania wysyÅ‚ane
+ * poprzez przeglÄ…darkÄ™ od uÅ¼ytkownikÃ³w.
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  * @version 1.0
  */
 @Controller
@@ -36,10 +36,10 @@ public class CartController {
 	private CustomerService customerService;
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /customer/cart przy pomocy
-	 * metody GET. Metoda wykorzystuje implementacjê interfejsu CustomerService
-	 * do pobrania id Koszyka u¿ytkownika, przekazanego w parametrze wywo³ania
-	 * metody. ¯¹danie jest przekierowywane do /customer/cart/{id}.
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /customer/cart przy pomocy
+	 * metody GET. Metoda wykorzystuje implementacjÄ™ interfejsu CustomerService
+	 * do pobrania id Koszyka uÅ¼ytkownika, przekazanego w parametrze wywoÅ‚ania
+	 * metody. Å¼Ä…danie jest przekierowywane do /customer/cart/{id}.
 	 * 
 	 * @param user
 	 *            obiekt {@link User}
@@ -57,15 +57,15 @@ public class CartController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /customer/cart/{cartId}. Metoda
-	 * zapisuje id koszyka w modelu. Metoda Zwraca nazwê widoku do wygenerowania
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /customer/cart/{cartId}. Metoda
+	 * zapisuje id koszyka w modelu. Metoda Zwraca nazwÄ™  widoku do wygenerowania
 	 * odpowiedzi.
 	 * 
 	 * @param cartId
 	 *            id koszyka do dodania w modelu
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 * @see Cart
 	 * @see Model

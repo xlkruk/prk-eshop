@@ -20,9 +20,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * Klasa reprezentuj¹ca encjê PRODUCT, produkt.
+ * Klasa reprezentujÄ…ca encjÄ™ PRODUCT, produkt.
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  *
  */
 @Entity
@@ -35,37 +35,37 @@ public class Product implements Serializable {
 	@Column(name = "ID")
 	private int id;
 	@Column(name = "NAME")
-	@NotEmpty(message = "Nazwa produktu nie mo¿e byæ pusta.")
+	@NotEmpty(message = "Nazwa produktu nie moÅ¼e byÅ¼ pusta.")
 	private String name;
 	@Column(name = "CATEGORY")
 	private String category;
 	@Column(name = "DESCRIPTION", length = 10000)
 	private String description;
 	@Column(name = "PRICE")
-	@Min(value = 0, message = "Cena musi byæ wiêksza lub równa zero.")
+	@Min(value = 0, message = "Cena musi byÅ¼ wiÄ™ksza lub rÃ³wna zero.")
 	private double price;
 	@Column(name = "PRODUCT_CONDITION")
 	private String condition;
 	@Column(name = "STATUS")
 	private String status;
 	@Column(name = "STOCK")
-	@Min(value = 0, message = "Liczba sztuk musi byæ wiêksza lub równa zero.")
+	@Min(value = 0, message = "Liczba sztuk musi byÄ‡ wiÄ™ksza lub rÃ³wna zero.")
 	private int stock;
 	@Column(name = "MANUFACTURER")
 	private String manufacturer;
 
 	@Column(name = "DISCOUNT")
-	@Min(value = 0, message = "Rabat musi byæ wiêkszy lub równy zero.")
-	@Max(value = 100, message = "Rabat nie mo¿e byæ wiêkszy ni¿ 100%.")
+	@Min(value = 0, message = "Rabat musi byÄ‡ wiÄ™kszy lub rÃ³wny zero.")
+	@Max(value = 100, message = "Rabat nie moÅ¼e byÄ‡ wiÄ™kszy niï¿½ 100%.")
 	private int discount;
 
 	@Lob
 	@Column(name = "Image", length = Integer.MAX_VALUE, nullable = true)
 	private byte[] productImage;
 
-	// ustawiam FetchType.EAGER aby mieæ pod rêk¹ dla JSONa
+	// ustawiam FetchType.EAGER aby mieÄ‡ pod rÄ™kÄ… dla JSONa
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JsonIgnore // potrzebne aby nie zapêtlaæ budowy JSOna
+	@JsonIgnore // potrzebne aby nie zapÄ™tlaÄ‡ budowy JSOna
 	private List<CartItem> cartItems;
 
 	/**
@@ -75,45 +75,45 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca id produktu {@link Product} - klucz g³ówny
+	 * Metoda zwracajÄ…ca id produktu {@link Product} - klucz gÅ‚Ã³wny
 	 * 
-	 * @return id produktu {@link Product} - klucz g³ówny
+	 * @return id produktu {@link Product} - klucz gÅ‚Ã³wny
 	 */
 	public int getId() {
 		return id;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca id produktu {@link Product} - klucz g³ówny
+	 * Metoda ustawiajÄ…ca id produktu {@link Product} - klucz gÅ‚Ã³wny
 	 * 
 	 * @param id
-	 *            id produktu {@link Product} - klucz g³ówny
+	 *            id produktu {@link Product} - klucz gÅ‚Ã³wny
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca rabat na cenê produktu.
+	 * Metoda zwracajÄ…ca rabat na cenÄ™ produktu.
 	 * 
-	 * @return rabat na cenê produktu.
+	 * @return rabat na cenÄ™ produktu.
 	 */
 	public int getDiscount() {
 		return discount;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca rabat na cenê produktu.
+	 * Metoda ustawiajÄ…ca rabat na cenÄ™ produktu.
 	 * 
 	 * @param discount
-	 *            rabat na cenê produktu.
+	 *            rabat na cenÄ™ produktu.
 	 */
 	public void setDiscount(int discount) {
 		this.discount = discount;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca nazwê produktu.
+	 * Metoda zwracajÄ…ca nazwÄ™ produktu.
 	 * 
 	 * @return nazwa produktu.
 	 */
@@ -122,7 +122,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca nazwê produktu.
+	 * Metoda ustawiajÄ…ca nazwÄ™ produktu.
 	 * 
 	 * @param name
 	 *            nazwa produktu.
@@ -132,7 +132,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca kategoriê produktu
+	 * Metoda zwracajÄ…ca kategoriÄ™ produktu
 	 * 
 	 * @return kategoria produktu
 	 */
@@ -141,7 +141,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca kategoriê produktu
+	 * Metoda ustawiajÄ…ca kategoriÄ™ produktu
 	 * 
 	 * @param category
 	 *            kategoria produktu
@@ -151,7 +151,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca opis produktu
+	 * Metoda zwracajÄ…ca opis produktu
 	 * 
 	 * @return opis produktu
 	 */
@@ -160,7 +160,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca opis produktu
+	 * Metoda ustawiajÄ…ca opis produktu
 	 * 
 	 * @param description
 	 */
@@ -169,7 +169,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca cenê produktu
+	 * Metoda zwracajÄ…ca cenÄ™ produktu
 	 * 
 	 * @return cena produktu
 	 */
@@ -178,7 +178,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca cenê produktu
+	 * Metoda ustawiajÄ…ca cenÄ™ produktu
 	 * 
 	 * @param price
 	 *            cena produktu
@@ -188,7 +188,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca stan produktu - obecnie nieu¿ywana
+	 * Metoda zwracajÄ…ca stan produktu - obecnie nieuÅ¼ywana
 	 * 
 	 * @return stan produktu
 	 */
@@ -197,7 +197,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca stan produktu.
+	 * Metoda ustawiajÄ…ca stan produktu.
 	 * 
 	 * @param condidiotn
 	 *            stan produktu
@@ -207,7 +207,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca status produktu
+	 * Metoda zwracajÄ…ca status produktu
 	 * 
 	 * @return status produktu
 	 */
@@ -216,7 +216,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca status produktu
+	 * Metoda ustawiajÄ…ca status produktu
 	 * 
 	 * @param status
 	 *            status produktu
@@ -226,7 +226,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda pobieraj¹ca stan magazynu - obecnie nieu¿ywane
+	 * Metoda zwracajÄ…ca stan magazynu - obecnie nieuÅ¼ywane
 	 * 
 	 * @return stan magazynu.
 	 */
@@ -235,7 +235,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca status magazynu
+	 * Metoda zwracajÄ…ca status magazynu
 	 * 
 	 * @param stock
 	 */
@@ -244,7 +244,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca producenta produktu.
+	 * Metoda zwracajÄ…ca producenta produktu.
 	 * 
 	 * @return producent produktu.
 	 */
@@ -253,7 +253,7 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca producenta produktu.
+	 * Metoda ustawiajÄ…ca producenta produktu.
 	 * 
 	 * @param manufacturer
 	 *            producent produktu.
@@ -263,39 +263,39 @@ public class Product implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca obrazek w postaci tablicy bajtów.
+	 * Metoda zwracajÄ…ca obrazek w postaci tablicy bajtÃ³w.
 	 * 
-	 * @return obrazek w postaci tablicy bajtów.
+	 * @return obrazek w postaci tablicy bajtÃ³w.
 	 */
 	public byte[] getProductImage() {
 		return productImage;
 	}
 
 	/**
-	 * Metoda ustawiajaca obrazek w postaci tablicy bajtów.
+	 * Metoda ustawiajaca obrazek w postaci tablicy bajtÃ³w.
 	 * 
 	 * @param productImage
-	 *            obrazek w postaci tablicy bajtów.
+	 *            obrazek w postaci tablicy bajtÃ³w.
 	 */
 	public void setProductImage(byte[] productImage) {
 		this.productImage = productImage;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca linie agregacyjne koszyka {@link CartItem} , do których
-	 * nale¿y produkt.
+	 * Metoda zwracajÄ…ca linie agregacyjne koszyka {@link CartItem} , do ktÃ³rych
+	 * naleÅ¼y produkt.
 	 * 
-	 * @return lista linii agregacyjnych koszyka, do których nale¿y produkt.
+	 * @return lista linii agregacyjnych koszyka, do ktÃ³rych naleÅ¼y produkt.
 	 */
 	public List<CartItem> getCartItems() {
 		return cartItems;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca linie agregacyjne koszyka, do których nale¿y produkt.
+	 * Metoda ustawiajÄ…ca linie agregacyjne koszyka, do ktÃ³rych naleÅ¼y produkt.
 	 * 
 	 * @param cartItems
-	 *            lista linii agregacyjnych koszyka, do których nale¿y produkt.
+	 *            lista linii agregacyjnych koszyka, do ktÃ³rych naleÅ¼y produkt.
 	 */
 	public void setCartItems(List<CartItem> cartItems) {
 		this.cartItems = cartItems;

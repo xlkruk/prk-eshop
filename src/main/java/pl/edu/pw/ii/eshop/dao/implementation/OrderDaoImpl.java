@@ -14,9 +14,9 @@ import pl.edu.pw.ii.eshop.model.Order;
 import pl.edu.pw.ii.eshop.model.Product;
 
 /**
- * Klasa implementuj筩a {@link OrderDao}
+ * Klasa implementuj膮ca {@link OrderDao}
  * 
- * @author kasz Kruk
+ * @author 艁ukasz Kruk
  *
  */
 
@@ -36,9 +36,9 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public List<Order> getAllOrders() {
 		Session session = sessionFactory.getCurrentSession();
-		// przygotowanie zapytania o wszystkie zam體ienia
+		// przygotowanie zapytania o wszystkie zam贸wienia
 		Query query = session.createQuery("from ORDERS");
-		// wykonanie zapytania oraz przypisanie wynik體
+		// wykonanie zapytania oraz przypisanie wynik贸w
 		List<Order> orders = query.list();
 		session.flush();
 		return orders;
@@ -57,11 +57,11 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public List<Order> getOrdersByCustomerId(int customerId) {
 		Session session = sessionFactory.getCurrentSession();
-		// przygotowanie zapytanie o zam體ienia klienta
+		// przygotowanie zapytanie o zam贸wienia klienta
 		Query query = session.createQuery("from ORDERS where customerId=?");
-		// ustawienei parametr體 zapytania
+		// ustawienei parametr锟絯 zapytania
 		query.setInteger(0, customerId);
-		// wykonanie zapytania oraz przypisanie wynik體
+		// wykonanie zapytania oraz przypisanie wynik贸w
 		List<Order> orders = query.list();
 		session.flush();
 		return orders;
@@ -70,7 +70,7 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public void updateOrder(Order order) {
 		Session session = sessionFactory.getCurrentSession();
-		// utrwalenie zam體ienia
+		// utrwalenie zam锟絯ienia
 		session.saveOrUpdate(order);
 		session.flush();
 
@@ -79,7 +79,7 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public Order getOrderById(int id) {
 		Session session = sessionFactory.getCurrentSession();
-		// pobranie zam體ienia o zadanym id
+		// pobranie zam贸wienia o zadanym id
 		Order order = (Order) session.get(Order.class, id);
 		session.flush();
 		return order;

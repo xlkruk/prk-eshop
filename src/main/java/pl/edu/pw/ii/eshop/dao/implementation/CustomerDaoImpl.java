@@ -17,7 +17,7 @@ import pl.edu.pw.ii.eshop.model.Product;
 import pl.edu.pw.ii.eshop.model.Users;
 
 /**
- * Klasa implementuj筩a interfejs {@link CustomerDao}
+ * Klasa implementuj膮ca interfejs {@link CustomerDao}
  * 
  * @author Krzysztof Trybus
  *
@@ -33,7 +33,7 @@ public class CustomerDaoImpl implements CustomerDao {
 	public void addCustomer(Customer customer) {
 		// pobranie obiektu Session
 		Session session = sessionFactory.getCurrentSession();
-		// przypisanie klienta do odres體 dostawy i do faktury
+		// przypisanie klienta do odres贸w dostawy i do faktury
 		customer.getBillingAddress().setCustomer(customer);
 		customer.getShippingAddress().setCustomer(customer);
 		// utrwalenie zmian
@@ -41,19 +41,19 @@ public class CustomerDaoImpl implements CustomerDao {
 		session.saveOrUpdate(customer.getBillingAddress());
 		session.saveOrUpdate(customer.getShippingAddress());
 
-		// utworzenie nowego u縴tkownika oraz ustawienie atrybut體
+		// utworzenie nowego u偶ytkownika oraz ustawienie atrybut贸w
 		Users user = new Users();
 		user.setUsername(customer.getUsername());
 		user.setPassword(customer.getPassword());
 		user.setEnabled(true);
 		user.setCustomerId(customer.getCustomerId());
 
-		// Utworzenie nowego wpisu z rolami oraz ustawienie z roli u縴tkownika
+		// Utworzenie nowego wpisu z rolami oraz ustawienie z roli u偶ytkownika
 		Authorities authority = new Authorities();
 		authority.setUsername(customer.getUsername());
 		authority.setAuthority("ROLE_USER");
 
-		// utrwalenie u縴tkownika oraz jego roli
+		// utrwalenie u偶ytkownika oraz jego roli
 		session.saveOrUpdate(user);
 		session.saveOrUpdate(authority);
 
@@ -82,7 +82,7 @@ public class CustomerDaoImpl implements CustomerDao {
 		Session session = sessionFactory.getCurrentSession();
 		// utworzenie zapytania
 		Query query = session.createQuery("from Customer");
-		// pobranie listy klient體
+		// pobranie listy klient贸w
 		List<Customer> customers = query.list();
 		return customers;
 	}
@@ -101,7 +101,7 @@ public class CustomerDaoImpl implements CustomerDao {
 	@Override
 	public void editCustomer(Customer customer) {
 		Session session = sessionFactory.getCurrentSession();
-		//utrwalenie zmodyfikowanego klienta oraz jego adres體 dostawy i do faktury
+		//utrwalenie zmodyfikowanego klienta oraz jego adres贸w dostawy i do faktury
 		session.saveOrUpdate(customer);
 		session.saveOrUpdate(customer.getBillingAddress());
 		session.saveOrUpdate(customer.getShippingAddress());

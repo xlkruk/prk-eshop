@@ -1,5 +1,11 @@
 @CHARSET "UTF-8";
 
+.market-logo{
+	
+	margin-bottom:40px;
+}
+
+
 .container-wrapper{
 	
 	height:80%;
@@ -16,11 +22,13 @@
 
 body {
 	font-family: Quicksand;
+	background-color: #87c4c5;
 }
 
 .table {
 	table-layout: fixed;
 	overflow: auto;
+	background-color: #87c4c5;
 }
 
 .table th {

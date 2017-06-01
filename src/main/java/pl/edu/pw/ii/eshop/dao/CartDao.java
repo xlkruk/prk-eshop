@@ -5,15 +5,15 @@ import java.io.IOException;
 import pl.edu.pw.ii.eshop.model.Cart;
 
 /**
- * Interfejs dostÍpu do obiektu {@link Cart} DAO.
+ * Interfejs dostƒôpu do obiektu {@link Cart} DAO.
  * 
- * @author £ukasz Kruk
+ * @author ≈Åukasz Kruk
  *
  */
 public interface CartDao {
 
 	/**
-	 * Metoda zwracajπca koszyk {@link Cart} o zadanym cartId
+	 * Metoda zwracajƒÖca koszyk {@link Cart} o zadanym cartId
 	 * 
 	 * @param cartId
 	 *            id koszyka
@@ -22,7 +22,7 @@ public interface CartDao {
 	Cart getCartById(int cartId);
 
 	/**
-	 * Metoda walidujπca koszyk klienta o zadanym cartId.
+	 * Metoda walidujƒÖca koszyk klienta o zadanym cartId.
 	 * 
 	 * @param cartId
 	 *            id koszyka klienta
@@ -32,7 +32,7 @@ public interface CartDao {
 	Cart validate(int cartId) throws IOException;
 
 	/**
-	 * Metoda realizujπca utrwalenie zmodyfikowanego koszyka {@link Cart}
+	 * Metoda realizujƒÖca utrwalenie zmodyfikowanego koszyka {@link Cart}
 	 * 
 	 * @param cart
 	 */

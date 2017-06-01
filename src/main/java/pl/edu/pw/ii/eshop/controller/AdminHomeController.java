@@ -18,10 +18,10 @@ import pl.edu.pw.ii.eshop.service.OrderService;
 import pl.edu.pw.ii.eshop.service.ProductService;
 
 /**
- * Klasa realizuj¹ca funkcje kontrolera, który obs³uguje zapytania wysy³ane
- * poprzez przegl¹darkê od u¿ytkowników.
+ * Klasa realizujÄ…ca funkcje kontrolera, ktÃ³ry obsÅ‚uguje zapytania wysyÅ‚ane
+ * poprzez przeglÄ…darkÄ™ od uÅ¼ytkownikÃ³w.
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  * @version 1.0
  */
 @Controller
@@ -38,9 +38,9 @@ public class AdminHomeController {
 	private CustomerService customerService;
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /admin. Zwraca nazwê widoku do
-	 * wygenerowania w odpowiedzi. Widoki znajduj¹ siê w /WEB-INF/views/. Widok
-	 * jest stron¹ *.jsp
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /admin. Zwraca nazwÄ™ widoku do
+	 * wygenerowania w odpowiedzi. Widoki znajdujÄ… siÄ™ w /WEB-INF/views/. Widok
+	 * jest stronÄ… *.jsp
 	 * 
 	 * @return nazwa widoku.
 	 */
@@ -50,14 +50,14 @@ public class AdminHomeController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /admin/productInventory. Metoda
-	 * wykorzystuje implementacjê interfejsu ProductService do pobrania listy
-	 * produktów reprezentowanych jako obiekty klasy Product. Lista produktów
-	 * jest dodawana do modelu. Zwraca nazwê widoku do wygenerowania odpowiedzi.
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /admin/productInventory. Metoda
+	 * wykorzystuje implementacjÄ™ interfejsu ProductService do pobrania listy
+	 * produktÃ³w reprezentowanych jako obiekty klasy Product. Lista produktÃ³w
+	 * jest dodawana do modelu. Zwraca nazwÄ™ widoku do wygenerowania odpowiedzi.
 	 * 
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 * @see Product
 	 * @see Model 
@@ -71,18 +71,18 @@ public class AdminHomeController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki
 	 * /admin/productListByCategory/{category}. Metoda wykorzystuje
-	 * implementacjê interfejsu ProductService do pobrania listy produktów z
-	 * zadan¹ kategori¹. Produkty reprezentowane jako obiekty klasy Product.
-	 * Lista produktów jest dodawana do modelu. Metoda Zwraca nazwê widoku do
+	 * implementacjÄ™ interfejsu ProductService do pobrania listy produktÃ³w z
+	 * zadanÄ… kategoriÄ…. Produkty reprezentowane jako obiekty klasy Product.
+	 * Lista produktÃ³w jest dodawana do modelu. Metoda Zwraca nazwÄ™ widoku do
 	 * wygenerowania odpowiedzi.
 	 * 
 	 * @param category
-	 *            Typ wyliczeniowy, definiuj¹cy dostêpne kategorie.
+	 *            Typ wyliczeniowy, definiujÄ…cy dostÄ™pne kategorie.
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 * @see Product
 	 * @see Model
@@ -97,15 +97,15 @@ public class AdminHomeController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /admin/customer. Metoda
-	 * wykorzystuje implementacjê interfejsu CustomerService do pobrania listy
-	 * klientów sklepu. Klienci s¹ reprezentowani jako obiekty klasy Customer.
-	 * Lista klientów jest dodawana do modelu.
-	 * Metoda zwraca nazwê widoku do wygenerowania odpowiedzi.
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /admin/customer. Metoda
+	 * wykorzystuje implementacjÄ™ interfejsu CustomerService do pobrania listy
+	 * klientÃ³w sklepu. Klienci sÄ… reprezentowani jako obiekty klasy Customer.
+	 * Lista klientÃ³w jest dodawana do modelu.
+	 * Metoda zwraca nazwÄ™ widoku do wygenerowania odpowiedzi.
 	 * 
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 * @see Customer 
 	 * @see Model
@@ -119,15 +119,15 @@ public class AdminHomeController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /admin/orderList. Metoda
-	 * wykorzystuje implementacjê interfejsu OrderService do pobrania listy
-	 * zamówieñ klientów sklepu. Zamówienia s¹ reprezentowane jako obiekty klasy Order.
-	 * Lista zamówieñ jest dodawana do modelu.
-	 * Metoda zwraca nazwê widoku do wygenerowania odpowiedzi.
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /admin/orderList. Metoda
+	 * wykorzystuje implementacjÄ™ interfejsu OrderService do pobrania listy
+	 * zamÃ³wieÅ„ klientÃ³w sklepu. ZamÃ³wienia sÄ… reprezentowane jako obiekty klasy Order.
+	 * Lista zamÃ³wieÅ„ jest dodawana do modelu.
+	 * Metoda zwraca nazwÄ™ widoku do wygenerowania odpowiedzi.
 	 * 
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 * @see Order 
 	 * @see Model
@@ -141,16 +141,16 @@ public class AdminHomeController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /admin/orderListByStatus. Metoda
-	 * wykorzystuje implementacjê interfejsu OrderService do pobrania listy
-	 * zamówieñ klientów sklepu w zadanym statusie. Zamówienia s¹ reprezentowane jako obiekty klasy Order.
-	 * Lista zamówieñ jest dodawana do modelu.
-	 * Metoda zwraca nazwê widoku do wygenerowania odpowiedzi.
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /admin/orderListByStatus. Metoda
+	 * wykorzystuje implementacjÄ™ interfejsu OrderService do pobrania listy
+	 * zamÃ³wieÅ„ klientÃ³w sklepu w zadanym statusie. ZamÃ³wienia sÄ… reprezentowane jako obiekty klasy Order.
+	 * Lista zamÃ³wieÅ„ jest dodawana do modelu.
+	 * Metoda zwraca nazwÄ™ widoku do wygenerowania odpowiedzi.
 	 * 
-	 * @param status Typ wyliczeniowy, reprezentuj¹cy mo¿liwe statusy zamówieñ klientów.
+	 * @param status Typ wyliczeniowy, reprezentujÄ…cy moÅ¼liwe statusy zamÃ³wieÅ„ klientÃ³w.
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 * @see Order 
 	 * @see Model

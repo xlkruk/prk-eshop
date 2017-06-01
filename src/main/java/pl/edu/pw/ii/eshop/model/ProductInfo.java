@@ -8,35 +8,35 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * Klasa pomocnicza, reprezentuj¹ca informacje o produkcie. U¿ywana w warstwie
+ * Klasa pomocnicza, reprezentujÄ…ca informacje o produkcie. UÅ¼ywana w warstwie
  * serwisu oraz prezentacji.
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  *
  */
 public class ProductInfo {
 
 	private int id;
-	@NotEmpty(message = "Nazwa produktu nie mo¿e byæ pusta.")
+	@NotEmpty(message = "Nazwa produktu nie moÅ¼e byÄ‡ pusta.")
 	private String name;
 
 	private String category;
 
 	private String description;
 
-	@Min(value = 0, message = "Cena musi byæ wiêksza lub równa zero.")
-	@DecimalMax(value = "99999.99", message = "Cena nie mo¿e byæ wiêksza ni¿ 99999.99 PLN")
+	@Min(value = 0, message = "Cena musi byÄ‡ wiÄ™ksza lub rÃ³wna zero.")
+	@DecimalMax(value = "99999.99", message = "Cena nie moÅ¼e byÄ‡ wiÄ™ksza niÅ¼ 99999.99 PLN")
 	private double price;
 
 	private String condition;
 
 	private String status;
-	@Min(value = 0, message = "Liczba sztuk musi byæ wiêksza lub równa zero.")
+	@Min(value = 0, message = "Liczba sztuk musi byÄ‡ wiÄ™ksza lub rÃ³wna zero.")
 	private int stock;
 
 	private String manufacturer;
-	@Min(value = 0, message = "Rabat musi byæ wiêksza lub równy zero.")
-	@Max(value = 100, message = "Rabat nie mo¿e byæ wiêkszy ni¿ 100%.")
+	@Min(value = 0, message = "Rabat musi byÄ‡ wiÄ™ksza lub rÃ³wny zero.")
+	@Max(value = 100, message = "Rabat nie moÅ¼e byÄ‡ wiÄ™kszy niÅ¼ 100%.")
 	private int discount;
 
 	private MultipartFile productImage;
@@ -44,26 +44,26 @@ public class ProductInfo {
 	private byte[] productImageAsArray;
 
 	/**
-	 * Metoda zwracaj¹ca obrazek jako tablicê bajtów
+	 * Metoda zwracajÄ…ca obrazek jako tablicÄ™ bajtÃ³w
 	 * 
-	 * @return obrazek jako tablicê bajtów
+	 * @return obrazek jako tablicÄ™ bajtÃ³w
 	 */
 	public byte[] getProductImageAsArray() {
 		return productImageAsArray;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca obrazek jako tablicê bajtów
+	 * Metoda ustawiajÄ…ca obrazek jako tablicÄ™ bajtÃ³w
 	 * 
 	 * @param productImageAsArray
-	 *            obrazek jako tablicê bajtów
+	 *            obrazek jako tablicÄ™ bajtÃ³w
 	 */
 	public void setProductImageAsArray(byte[] productImageAsArray) {
 		this.productImageAsArray = productImageAsArray;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca id produktu
+	 * Metoda zwracajÄ…ca id produktu
 	 * 
 	 * @return id produktu
 	 */
@@ -72,7 +72,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca id produktu
+	 * Metoda ustawiajÄ…ca id produktu
 	 * 
 	 * @param id
 	 *            id produktu
@@ -82,7 +82,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca nazwê produktu
+	 * Metoda zwracajÄ…ca nazwÄ™ produktu
 	 * 
 	 * @return nazwa produktu
 	 */
@@ -91,7 +91,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca nazwê produktu
+	 * Metoda ustawiajÄ…ca nazwÄ™ produktu
 	 * 
 	 * @param name
 	 *            nazwa produktu
@@ -101,7 +101,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca kategoriê produktu
+	 * Metoda zwracajÄ…ca kategoriÄ™ produktu
 	 * 
 	 * @return kategoria produktu
 	 */
@@ -110,7 +110,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca kategoriê produktu
+	 * Metoda ustawiajÄ…ca kategoriÄ™ produktu
 	 * 
 	 * @param category
 	 *            kategoria produktu.
@@ -120,7 +120,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca opis produktu
+	 * Metoda zwracajÄ…ca opis produktu
 	 * 
 	 * @return opis produktu
 	 */
@@ -129,7 +129,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca opis produktu
+	 * Metoda ustawiajÄ…ca opis produktu
 	 * 
 	 * @param description
 	 *            opis produktu
@@ -139,7 +139,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca cenê produktu
+	 * Metoda zwracajÄ…ca cenÄ™ produktu
 	 * 
 	 * @return cena produktu
 	 */
@@ -148,7 +148,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca cenê produktu
+	 * Metoda ustawiajÄ…ca cenÄ™ produktu
 	 * 
 	 * @param price
 	 *            cena produktu
@@ -158,7 +158,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca stan produktu
+	 * Metoda zwracajÄ…ca stan produktu
 	 * 
 	 * @return stan produktu
 	 */
@@ -167,7 +167,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca stan produktu
+	 * Metoda ustawiajÄ…ca stan produktu
 	 * 
 	 * @param condition
 	 *            stan produktu
@@ -177,7 +177,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca status produktu
+	 * Metoda zwracajÄ…ca status produktu
 	 * 
 	 * @return status produktu
 	 */
@@ -186,7 +186,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca status produktu
+	 * Metoda ustawiajÄ…ca status produktu
 	 * 
 	 * @param status
 	 */
@@ -195,7 +195,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca stan magazynu.
+	 * Metoda zwracajÄ…ca stan magazynu.
 	 * 
 	 * @return stan magazynu.
 	 */
@@ -204,7 +204,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca stan magazynu.
+	 * Metoda ustawiajÄ…ca stan magazynu.
 	 * 
 	 * @param stock
 	 *            stan magazynu.
@@ -214,7 +214,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca producenta produktu
+	 * Metoda zwracajÄ…ca producenta produktu
 	 * 
 	 * @return producent produktu
 	 */
@@ -223,7 +223,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca producenta produktu
+	 * Metoda ustawiajÄ…ca producenta produktu
 	 * 
 	 * @param manufacturer
 	 *            producent produktu
@@ -233,7 +233,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca rabat
+	 * Metoda zwracajÄ…ca rabat
 	 * 
 	 * @return rabat
 	 */
@@ -242,7 +242,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca rabat
+	 * Metoda ustawiajÄ…ca rabat
 	 * 
 	 * @param discount
 	 *            rabat
@@ -252,7 +252,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca obrazek jako obiekt {@link MultipartFile}
+	 * Metoda zwracajÄ…ca obrazek jako obiekt {@link MultipartFile}
 	 * 
 	 * @return obrazek jako obiekt {@link MultipartFile}
 	 */
@@ -261,7 +261,7 @@ public class ProductInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca obrazek jako obiekt {@link MultipartFile}
+	 * Metoda ustawiajÄ…ca obrazek jako obiekt {@link MultipartFile}
 	 * 
 	 * @param productImage
 	 *            obrazek jako obiekt {@link MultipartFile}

@@ -13,9 +13,9 @@ import pl.edu.pw.ii.eshop.dao.ProductDao;
 import pl.edu.pw.ii.eshop.model.Product;
 
 /**
- * Klasa implementujπca interfejs {@link ProductDao} przy uøyciu ORM hibernate
+ * Klasa implementujƒÖca interfejs {@link ProductDao} przy u≈ºyciu ORM hibernate
  * 
- * @author £ukasz Kruk
+ * @author ≈Åukasz Kruk
  *
  */
 
@@ -47,9 +47,9 @@ public class ProductDaoImpl implements ProductDao {
 	@Override
 	public List<Product> getAllProducts() {
 		Session session = sessionFactory.getCurrentSession();
-		// prygotowanie zapytania zwracajπcego wszystkie produkty
+		// prygotowanie zapytania zwracajƒÖcego wszystkie produkty
 		Query query = session.createQuery("from Product");
-		// wykonanie zapytania i przypisanie wynikÛw
+		// wykonanie zapytania i przypisanie wynik√≥w
 		List<Product> products = query.list();
 		session.flush();
 		return products;
@@ -58,7 +58,7 @@ public class ProductDaoImpl implements ProductDao {
 	@Override
 	public void deleteProduct(Product product) {
 		Session session = sessionFactory.getCurrentSession();
-		// usuniÍcie produktu
+		// usuniƒôcie produktu
 		session.delete(product);
 		session.flush();
 	}
@@ -75,11 +75,11 @@ public class ProductDaoImpl implements ProductDao {
 	@Override
 	public List<Product> getProductsByCategory(String category) {
 		Session session = sessionFactory.getCurrentSession();
-		// przygotowanie zapytania pobierajπcego produkty o zadanej kategorii
+		// przygotowanie zapytania pobierajƒÖcego produkty o zadanej kategorii
 		Query query = session.createQuery("from Product where category=?");
-		// ustawienie parametrÛw zapytania
+		// ustawienie parametr√≥w zapytania
 		query.setString(0, category);
-		// wykonanie zapytania oraz przypisanie wynikÛw
+		// wykonanie zapytania oraz przypisanie wynik√≥w
 		List<Product> products = query.list();
 		session.flush();
 		return products;

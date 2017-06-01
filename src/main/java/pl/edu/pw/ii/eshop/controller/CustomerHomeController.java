@@ -18,25 +18,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import pl.edu.pw.ii.eshop.model.Customer;
 import pl.edu.pw.ii.eshop.model.CustomerInfo;
 import pl.edu.pw.ii.eshop.model.Order;
-import pl.edu.pw.ii.eshop.model.Product;
-import pl.edu.pw.ii.eshop.model.ProductInfo;
-import pl.edu.pw.ii.eshop.model.Status;
 import pl.edu.pw.ii.eshop.service.CustomerService;
 import pl.edu.pw.ii.eshop.service.OrderService;
-import pl.edu.pw.ii.eshop.service.ProductService;
+
 /**
- * Klasa realizuj¹ca funkcje kontrolera, który obs³uguje zapytania wysy³ane
- * poprzez przegl¹darkê od u¿ytkowników, zwi¹zane z obs³ug¹ klientów.
+ * Klasa realizujÄ…ca funkcje kontrolera, ktÃ³ry obsÅ‚uguje zapytania wysyÅ‚ane
+ * poprzez przeglÄ…darkÄ™ od uÅ¼ytkownikÃ³w, zwiÄ…zane z obsÅ‚ugÄ… klientÃ³w.
  * 
- * @author Agnieszka Œwiderska
+ * @author Agnieszka Åšwiderska
  * @version 1.0
  */
 @Controller
 @RequestMapping("/customer")
 public class CustomerHomeController {
-
-	@Autowired
-	private ProductService productService;
 
 	@Autowired
 	private CustomerService customerService;
@@ -45,17 +39,17 @@ public class CustomerHomeController {
 	private OrderService orderService;
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie /customer/{username}. Zwraca nazwê widoku do
-	 * wygenerowania w odpowiedzi. Przy pomocy obiektu implementuj¹cego
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie /customer/{username}. Zwraca nazwÄ™ widoku do
+	 * wygenerowania w odpowiedzi. Przy pomocy obiektu implementujÄ…cego
 	 * interfejs {@link CustomerService} pobierany jest obiekt {@link Customer}
-	 * reprezentuj¹cy klienta sklepu. Customer jest dodawany do modelu.
+	 * reprezentujÄ…cy klienta sklepu. Customer jest dodawany do modelu.
 	 * 
 	 * @param username
-	 *            nazwa u¿ytkownika serwisu dla, którego ma zostaæ wygenerowana
+	 *            nazwa uÅ¼ytkownika serwisu dla, ktÃ³rego ma zostaï¿½ wygenerowana
 	 *            strona.
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku
 	 * @see Customer
 	 * @see CustomerService
@@ -68,18 +62,18 @@ public class CustomerHomeController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie /customer/editCustomer/{id}. Zwraca nazwê
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie /customer/editCustomer/{id}. Zwraca nazwÄ™
 	 * widoku do wygenerowania w odpowiedzi. Przy pomocy obiektu
-	 * implementuj¹cego interfejs {@link CustomerService} pobierany jest obiekt
-	 * {@link CustomerInfo} reprezentuj¹cy informacjê o kliencie sklepu o
+	 * implementujÄ…cego interfejs {@link CustomerService} pobierany jest obiekt
+	 * {@link CustomerInfo} reprezentujÄ…cy informacjÄ™ o kliencie sklepu o
 	 * zadanym id. CustomerInfo jest dodawany do modelu.
 	 * 
 	 * @param id
 	 *            id klienta sklepu
 	 *
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku
 	 * @see Customer
 	 * @see CustomerInfo
@@ -94,22 +88,22 @@ public class CustomerHomeController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie /customer/editCustomer typu POST.
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie /customer/editCustomer typu POST.
 	 * Wykorzystuje {@link CustomerService} do utrwalenia modyfikowanego Klienta
-	 * sklepu. Modyfikowane dane s¹ walidowane i w przypadku pozytywnej
-	 * walidacji (braku b³êdów walidacji), ¿¹danie jest przekierowywane
+	 * sklepu. Modyfikowane dane sÄ… walidowane i w przypadku pozytywnej
+	 * walidacji (braku bÅ‚Ä™dÃ³w walidacji), Å¼Ä…danie jest przekierowywane
 	 * doredirect:/customer/{username}. W przeciwnym przypadku zwracana jest
 	 * nazwa widoku do wygenerowania w odpowiedzi.
 	 * 
 	 * @param customer
-	 *            Obiekt klasy {@link CustomerInfo}, reprezentuj¹cy informacje o
+	 *            Obiekt klasy {@link CustomerInfo}, reprezentujÄ…cy informacje o
 	 *            kliencie sklepu
 	 * @param result
-	 *            interfejs rozszerzaj¹cy interfejs umo¿liwiaj¹cy rejestrowanie
-	 *            b³êdów, zastosowanie walidatora {@link Valid}.
+	 *            interfejs rozszerzajÄ…cy interfejs umoÅ¼liwiajÄ…cy rejestrowanie
+	 *            bÅ‚Ä™dÃ³w, zastosowanie walidatora {@link Valid}.
 	 * @param request
-	 *            obiekt klasy {@link HttpServletRequest}, reprezentuj¹cy
-	 *            rz¹danie HTTP.
+	 *            obiekt klasy {@link HttpServletRequest}, reprezentujÄ…cy
+	 *            Å¼Ä…danie HTTP.
 	 * @return nazwa widoku
 	 */
 	@RequestMapping(value = "/editCustomer", method = RequestMethod.POST)
@@ -127,18 +121,18 @@ public class CustomerHomeController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie /customer/orderList/{id} typu GET.
-	 * Wykorzystuje implementacjê interfejsu {@link OrderService} do pobrania
-	 * listy zamówieñ {@link Order} dla klienta o zadanym id. Lista zamówieñ
-	 * jest dodawana do modelu. Metoda zwraca nazwê widoku do wygenerowania w
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie /customer/orderList/{id} typu GET.
+	 * Wykorzystuje implementacjÄ™ interfejsu {@link OrderService} do pobrania
+	 * listy zamÃ³wieÅ„ {@link Order} dla klienta o zadanym id. Lista zamÃ³wieÅ„
+	 * jest dodawana do modelu. Metoda zwraca nazwÄ™ widoku do wygenerowania w
 	 * odpowiedzi.
 	 * 
 	 * @param id
-	 *            id klienta {@link Customer}, dla kórego nalezy pobraæ listê
-	 *            zamówieñ.
+	 *            id klienta {@link Customer}, dla ktÃ³rego nalezy pobraÄ‡ listÄ™
+	 *            zamÃ³wieÅ„.
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 */
 	@RequestMapping("/orderList/{id}")
@@ -149,20 +143,20 @@ public class CustomerHomeController {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie /customer/pay/{id} typu GET. Metoda przy
-	 * u¿yciu implementacji interfejsu {@link OrderService} dla zamówienia o id
-	 * przekazanym w parametrach wywo³ania, zmienia status na
-	 * "PAYMENT_RECEIVED". Nastêpnie pobierana jest lista wszystkich zamówieñ
-	 * dla klienta o id zwróconego poprzez wywo³anie
-	 * order.getCustomer().getCustomerId(). Lista zamówieñ jest dodawana do
-	 * modelu. Rz¹danie jest przekierowywane do
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie /customer/pay/{id} typu GET. Metoda przy
+	 * uÅ¼yciu implementacji interfejsu {@link OrderService} dla zamÃ³wienia o id
+	 * przekazanym w parametrach wywoÅ‚ania, zmienia status na
+	 * "PAYMENT_RECEIVED". NastÄ™pnie pobierana jest lista wszystkich zamÃ³wieÅ„
+	 * dla klienta o id zwrÃ³conego poprzez wywoÅ‚anie
+	 * order.getCustomer().getCustomerId(). Lista zamÃ³wieÅ„ jest dodawana do
+	 * modelu. Å¼Ä…danie jest przekierowywane do
 	 * redirect:/customer/orderList/{customerId}
 	 * 
 	 * @param id
-	 *            id zamówienia do op³acenia
+	 *            id zamÃ³wienia do opÅ‚acenia
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 */
 	@RequestMapping("/pay/{id}")

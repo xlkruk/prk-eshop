@@ -16,9 +16,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
- * Klasa reprezentuj¹ca encjê ORDERS, zamówienie klienta
+ * Klasa reprezentujÄ…ca encjÄ™ ORDERS, zamÃ³wienie klienta
  * 
- * @author Agnieszka Œwiderska
+ * @author Agnieszka Åšwiderska
  *
  */
 @Entity(name = "ORDERS")
@@ -59,8 +59,8 @@ public class Order implements Serializable {
 	private List<OrderItem> orderItems;
 
 	/**
-	 * Konstruktor bezparametryczny. Inicjuje status zamówienia, datê
-	 * utworzenia, datê zmiany statusu, listê pozycji zamówienia.
+	 * Konstruktor bezparametryczny. Inicjuje status zamÃ³wienia, datÄ™
+	 * utworzenia, datÄ™ zmiany statusu, listÄ™ pozycji zamÃ³wienia.
 	 */
 	public Order() {
 		status = Status.NEW.getDescription();
@@ -70,9 +70,9 @@ public class Order implements Serializable {
 	}
 
 	/**
-	 * Kokstruktor przyjmuj¹cy koszyk klienta {@link Cart} jako parametr.
-	 * Wywo³yje konstruktor bezparametrowy. Wype³nia listê pozycji zamówienia
-	 * pozycjami z linii agreguj¹cych koszyka klienta.
+	 * Kokstruktor przyjmujÄ…cy koszyk klienta {@link Cart} jako parametr.
+	 * WywoÅ‚uje konstruktor bezparametrowy. WypeÅ‚nia listÄ™ pozycji zamÃ³wienia
+	 * pozycjami z linii agregujÄ…cych koszyka klienta.
 	 * 
 	 * @param cart
 	 */
@@ -86,46 +86,46 @@ public class Order implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca status zamówienia
+	 * Metoda zwracajÄ…ca status zamÃ³wienia
 	 * 
-	 * @return status zamówienia
+	 * @return status zamÃ³wienia
 	 */
 	public String getStatus() {
 		return status;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca status zamówienia
+	 * Metoda ustawiajÄ…ca status zamÃ³wienia
 	 * 
 	 * @param status
-	 *            status zamówienia
+	 *            status zamÃ³wienia
 	 */
 	public void setStatus(String status) {
 		this.status = status;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca id zamówienia
+	 * Metoda zwracajÄ…ca id zamÃ³wienia
 	 * 
-	 * @return id zamówienia
+	 * @return id zamÃ³wienia
 	 */
 	public int getOrderId() {
 		return orderId;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca id zamówienia
+	 * Metoda ustawiajÄ…ca id zamÃ³wienia
 	 * 
 	 * @param orderId
-	 *            id zamówienia
+	 *            id zamÃ³wienia
 	 */
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca koszyk klienta, na podstawie, ktorego wykreowano
-	 * zamówienia.
+	 * Metoda zwracajÄ…ca koszyk klienta, na podstawie, ktorego wykreowano
+	 * zamÃ³wienia.
 	 * 
 	 * @return koszyk klienta
 	 */
@@ -134,8 +134,8 @@ public class Order implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca koszyk klienta, na podstawie, ktorego wykreowano
-	 * zamówienia.
+	 * Metoda ustawiajÄ…ca koszyk klienta, na podstawie, ktorego wykreowano
+	 * zamÃ³wienia.
 	 * 
 	 * @param cart
 	 *            koszyk klienta
@@ -145,26 +145,26 @@ public class Order implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca klienta, dla którego wykreowano zamówienie.
+	 * Metoda zwracajÄ…ca klienta, dla ktÃ³rego wykreowano zamÃ³wienie.
 	 * 
-	 * @return klient, dla którego wykreowano zamówienie.
+	 * @return klient, dla ktÃ³rego wykreowano zamÃ³wienie.
 	 */
 	public Customer getCustomer() {
 		return customer;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca klienta, dla którego wykreowano zamówienie.
+	 * Metoda ustawiajÄ…ca klienta, dla ktÃ³rego wykreowano zamÃ³wienie.
 	 * 
 	 * @param customer
-	 *            klient, dla którego wykreowano zamówienie.
+	 *            klient, dla ktÃ³rego wykreowano zamÃ³wienie.
 	 */
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
 
 	/**
-	 * MEtoda zwracaj¹ca adres do faktury {@link BillingAddress}
+	 * MEtoda zwracajÄ…ca adres do faktury {@link BillingAddress}
 	 * 
 	 * @return adres do faktury {@link BillingAddress}
 	 */
@@ -173,7 +173,7 @@ public class Order implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca adres do faktury {@link BillingAddress}
+	 * Metoda ustawiajÄ…ca adres do faktury {@link BillingAddress}
 	 * 
 	 * @param billingAddress
 	 *            adres do faktury {@link BillingAddress}
@@ -183,7 +183,7 @@ public class Order implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca adres dostawy {@link ShippingAddress}
+	 * Metoda zwracajÄ…ca adres dostawy {@link ShippingAddress}
 	 * 
 	 * @return adres dostawy {@link ShippingAddress}
 	 */
@@ -192,7 +192,7 @@ public class Order implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca adres dostawy {@link ShippingAddress}
+	 * Metoda ustawiajÄ…ca adres dostawy {@link ShippingAddress}
 	 * 
 	 * @param shippingingAddress
 	 */
@@ -201,57 +201,57 @@ public class Order implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca datê utworzenia zamówienia
+	 * Metoda zwracajÄ…ca datÄ™ utworzenia zamÃ³wienia
 	 * 
-	 * @return data utworzenia zamówienia
+	 * @return data utworzenia zamÃ³wienia
 	 */
 	public Date getCreationDate() {
 		return creationDate;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca datê utworzenia zamówienia
+	 * Metoda ustawiajÄ…ca datÄ™ utworzenia zamÃ³wienia
 	 * 
 	 * @param creationDate
-	 *            data utworzenia zamówienia
+	 *            data utworzenia zamÃ³wienia
 	 */
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca datê zmiany statusu zamówienia.
+	 * Metoda zwracajÄ…ca datÄ™ zmiany statusu zamÃ³wienia.
 	 * 
-	 * @return data zmiany statusu zamówienia.
+	 * @return data zmiany statusu zamÃ³wienia.
 	 */
 	public Date getStatusChangeDate() {
 		return statusChangeDate;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca datê zmiany statusu zamówienia.
+	 * Metoda ustawiajÄ…ca datÄ™ zmiany statusu zamÃ³wienia.
 	 * 
 	 * @param statusChangeDate
-	 *            data zmiany statusu zamówienia.
+	 *            data zmiany statusu zamÃ³wienia.
 	 */
 	public void setStatusChangeDate(Date statusChangeDate) {
 		this.statusChangeDate = statusChangeDate;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca listê pozycji zamówienia {@link OrderItem}
+	 * Metoda zwracajÄ…ca listÄ™ pozycji zamÃ³wienia {@link OrderItem}
 	 * 
-	 * @return lista pozycji zamówienia {@link OrderItem}
+	 * @return lista pozycji zamÃ³wienia {@link OrderItem}
 	 */
 	public List<OrderItem> getOrderItems() {
 		return orderItems;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca listê pozycji zamówienia {@link OrderItem}
+	 * Metoda ustawiajÄ…ca listÄ™ pozycji zamÃ³wienia {@link OrderItem}
 	 * 
 	 * @param orderItems
-	 *            lista pozycji zamówienia {@link OrderItem}
+	 *            lista pozycji zamÃ³wienia {@link OrderItem}
 	 */
 	public void setOrderItems(List<OrderItem> orderItems) {
 		this.orderItems = orderItems;

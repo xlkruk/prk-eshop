@@ -7,10 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 /**
- * Klasa reprezentuj¹ca encjê SHIPPINGADDRESS, adres dostawy.
+ * Klasa reprezentujÄ…ca encjÄ™ SHIPPINGADDRESS, adres dostawy.
  * 
  * @author Krzysztof Trybus
  *
@@ -38,26 +36,26 @@ public class ShippingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca klucz g³ówny
+	 * Metoda zwracajÄ…ca klucz gÅ‚Ã³wny
 	 * 
-	 * @return klucz g³ówny
+	 * @return klucz gÅ‚Ã³wny
 	 */
 	public int getBillingAddressId() {
 		return billingAddressId;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca klucz g³ówny
+	 * Metoda ustawiajÄ…ca klucz gÅ‚Ã³wny
 	 * 
 	 * @param billingAddressId
-	 *            klucz g³ówny
+	 *            klucz gÅ‚Ã³wny
 	 */
 	public void setBillingAddressId(int billingAddressId) {
 		this.billingAddressId = billingAddressId;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca nazwê ulicy.
+	 * Metoda zwracajÄ…ca nazwÄ™ ulicy.
 	 * 
 	 * @return nazwa ulicy
 	 */
@@ -66,7 +64,7 @@ public class ShippingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca nazwê ulicy adresu dostawy
+	 * Metoda ustawiajÄ…ca nazwÄ™ ulicy adresu dostawy
 	 * 
 	 * @param street
 	 *            nazwa ulicy adresu dostawy
@@ -76,7 +74,7 @@ public class ShippingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca numer domu/mieszkania adresu dostawy
+	 * Metoda zwracajÄ…ca numer domu/mieszkania adresu dostawy
 	 * 
 	 * @return numer domu/mieszkania adresu dostawy
 	 */
@@ -85,7 +83,7 @@ public class ShippingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca numer domu/mieszkania adresu dostawy
+	 * Metoda ustawiajÄ…ca numer domu/mieszkania adresu dostawy
 	 * 
 	 * @param apartmentNumber
 	 *            numer domu/mieszkania adresu dostawy
@@ -95,7 +93,7 @@ public class ShippingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca miasto adresu dostawy
+	 * Metoda zwracajÄ…ca miasto adresu dostawy
 	 * 
 	 * @return miasto adresu dostawy
 	 */
@@ -104,7 +102,7 @@ public class ShippingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca miasto adresu dostawy
+	 * Metoda ustawiajÄ…ca miasto adresu dostawy
 	 * 
 	 * @param city
 	 *            miasto adresu dostawy
@@ -114,7 +112,7 @@ public class ShippingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca kod pocztowy adresu dostawy
+	 * Metoda zwracajÄ…ca kod pocztowy adresu dostawy
 	 * 
 	 * @return kod pocztowy adresu dostawy
 	 */
@@ -123,7 +121,7 @@ public class ShippingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca kod pocztowy adresu dostawy
+	 * Metoda ustawiajÄ…ca kod pocztowy adresu dostawy
 	 * 
 	 * @param zipCode
 	 *            kod pocztowy adresu dostawy
@@ -133,19 +131,19 @@ public class ShippingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca klienta, którego dotyczy adres dostawy.
+	 * Metoda zwracajÄ…ca klienta, ktÃ³rego dotyczy adres dostawy.
 	 * 
-	 * @return klient {@link Customer} , którego dotyczy adres dostawy.
+	 * @return klient {@link Customer}, ktÃ³rego dotyczy adres dostawy.
 	 */
 	public Customer getCustomer() {
 		return customer;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca klienta, którego dotyczy adres dostawy.
+	 * Metoda ustawiajÄ…ca klienta, ktÃ³rego dotyczy adres dostawy.
 	 * 
 	 * @param customer
-	 *            klient {@link Customer}, którego dotyczy adres dostawy.
+	 *            klient {@link Customer}, ktÃ³rego dotyczy adres dostawy.
 	 */
 	public void setCustomer(Customer customer) {
 		this.customer = customer;

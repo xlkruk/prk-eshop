@@ -5,10 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * Klasa reprezentuj¹ca encjê USERS, u¿ytkowników systemu. Na potrzeby Spring
+ * Klasa reprezentujÄ…ca encjÄ™ USERS, uÅ¼ytkownikÃ³w systemu. Na potrzeby Spring
  * Security
  * 
- * @author £ukasz Krukid u¿ytkownika
+ * @author Åukasz Kruk
  *
  */
 
@@ -24,95 +24,95 @@ public class Users {
 	private int customerId;
 
 	/**
-	 * Metoda zwracaj¹ca id u¿ytkownika
+	 * Metoda zwracajÄ…ca id uÅ¼ytkownika
 	 * 
-	 * @return id u¿ytkownika
+	 * @return id uÅ¼ytkownika
 	 */
 	public int getUsersId() {
 		return usersId;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca id u¿ytkownika
+	 * Metoda ustawiajÄ…ca id uÅ¼ytkownika
 	 * 
 	 * @param usersId
-	 *            id u¿ytkownika
+	 *            id uÅ¼ytkownika
 	 */
 	public void setUsersId(int usersId) {
 		this.usersId = usersId;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca nazwê u¿ytkowinika
+	 * Metoda zwracajÄ…ca nazwÄ™ uÅ¼ytkowinika
 	 * 
-	 * @return nazwa u¿ytkowinika
+	 * @return nazwa uÅ¼ytkowinika
 	 */
 	public String getUsername() {
 		return username;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca nazwê u¿ytkowinika
+	 * Metoda ustawiajÄ…ca nazwÄ™ uÅ¼ytkowinika
 	 * 
 	 * @param username
-	 *            nazwa u¿ytkowinika
+	 *            nazwa uÅ¼ytkowinika
 	 */
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca has³o u¿ytkownika
+	 * Metoda zwracajÄ…ca hasÅ‚o uÅ¼ytkownika
 	 * 
-	 * @return has³o u¿ytkownika
+	 * @return hasÅ‚o uÅ¼ytkownika
 	 */
 	public String getPassword() {
 		return password;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca has³o u¿ytkownika
+	 * Metoda ustawiajÄ…ca hasÅ‚o uÅ¼ytkownika
 	 * 
 	 * @param password
-	 *            has³o u¿ytkownika
+	 *            hasÅ‚o uÅ¼ytkownika
 	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
 	/**
-	 * Metoda testuj¹ca status u¿ytkownika
+	 * Metoda testujÄ…ca status uÅ¼ytkownika
 	 * 
-	 * @return status u¿ytkownika - true aktywny
+	 * @return status uÅ¼ytkownika - true aktywny
 	 */
 	public boolean isEnabled() {
 		return enabled;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca status u¿ytkownika
+	 * Metoda ustawiajÄ…ca status uÅ¼ytkownika
 	 * 
 	 * @param enabled
-	 *            status u¿ytkownika - true aktywny
+	 *            status uÅ¼ytkownika - true aktywny
 	 */
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca id klienta, z którym skojarzony jest u¿ytkownik.
+	 * Metoda zwracajÄ…ca id klienta, z ktÃ³rym skojarzony jest uÅ¼ytkownik.
 	 * 
-	 * @return id klienta, z którym skojarzony jest u¿ytkownik.
+	 * @return id klienta, z ktÃ³rym skojarzony jest uÅ¼ytkownik.
 	 */
 	public int getCustomerId() {
 		return customerId;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca id klienta, z którym skojarzony jest u¿ytkownik.
+	 * Metoda ustawiajÄ…ca id klienta, z ktÃ³rym skojarzony jest uÅ¼ytkownik.
 	 * 
 	 * @param customerId
-	 *            id klienta, z którym skojarzony jest u¿ytkownik.
+	 *            id klienta, z ktÃ³rym skojarzony jest uÅ¼ytkownik.
 	 */
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;

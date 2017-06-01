@@ -1,14 +1,14 @@
 package pl.edu.pw.ii.eshop.model;
 
 /**
- * Klasa wyliczeniowa, reprezentujπca status zamÛwienia
+ * Klasa wyliczeniowa, reprezentujƒÖca status zam√≥wienia
  * 
- * @author Agnieszka åwiderska
+ * @author Agnieszka ≈öwiderska
  *
  */
 
 public enum Status {
-	NEW("NOWY"), PAYMENT_RECEIVED("ZAP£ACONE"), SENT("WYS£ANE"), COMPLETED("ZAKO—CZONE");
+	NEW("NOWY"), PAYMENT_RECEIVED("ZAP≈ÅACONE"), SENT("WYS≈ÅANE"), COMPLETED("ZAKO≈ÉCZONE");
 
 	private String description;
 

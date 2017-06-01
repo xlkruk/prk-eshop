@@ -11,9 +11,9 @@ import pl.edu.pw.ii.eshop.dao.UserDao;
 import pl.edu.pw.ii.eshop.model.Users;
 
 /**
- * Klasa implementuj¹ca interfejs {@link UserDao}, wykorzystuje ORM hibernate
+ * Klasa implementujÄ…ca interfejs {@link UserDao}, wykorzystuje ORM hibernate
  * 
- * @author LucaR
+ * @author Krzysztof Trybus
  *
  */
 @Repository
@@ -26,7 +26,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public Users getUserByUsername(String username) {
 		Session session = sessionFactory.getCurrentSession();
-		// przygotowanie zapytania pobieraj¹caego z bazy danych u¿ytkownika o
+		// przygotowanie zapytania pobierajÄ…caego z bazy danych uÅ¼ytkownika o
 		// zadanym username
 		Query query = session.createQuery("from Users where username=?");
 		query.setString(0, username);
@@ -37,7 +37,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public void updateUser(Users user) {
 		Session session = sessionFactory.getCurrentSession();
-		// utrwalenie u¿ytkownika
+		// utrwalenie uÅ¼ytkownika
 		session.saveOrUpdate(user);
 		session.flush();
 

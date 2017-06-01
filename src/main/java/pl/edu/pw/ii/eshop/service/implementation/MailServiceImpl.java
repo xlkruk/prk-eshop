@@ -41,9 +41,9 @@ public class MailServiceImpl implements MailService {
 	public void sendOrderConfirmation(Order order) {
 		try {
 			if (order != null) {
-				String subject = "Potwierdzenie z≥oøenia zamÛwienia";
-				String msg = "Witamy\nDziÍkujemy za z≥oøenie zamÛwienia.\n\nPrzedmioty wyúlemy po otrzymaniu wp≥aty "
-						+ order.getCart().getGrantTotal() + "z≥.\n\nPozdrawiamy" + "\nAgnieszka, Krzysiek i £ukasz";
+				String subject = "Potwierdzenie z≈Ço≈ºenia zam√≥wienia";
+				String msg = "Witamy\n\nDziƒôkujemy za z≈Ço≈ºenie zam√≥wienia.\n\nPrzedmioty wy≈õlemy po otrzymaniu wp≈Çaty "
+						+ order.getCart().getGrantTotal() + "z≈Ç.\n\nPozdrawiamy" + "\nAgnieszka, Krzysiek i ≈Åukasz";
 				sendMail("PRK-eshop", order.getCart().getCustomer().getCustomerEmail(), subject, msg);
 			}
 		} catch (Exception e) {
@@ -60,12 +60,12 @@ public class MailServiceImpl implements MailService {
 
 		try {
 			if (order != null) {
-				String subject = "Potwierdzenie otrzymania wp≥aty";
-				String msg = "Witamy\n\nDziÍkujemy za dokonanie wp≥aty " + payment + "z≥ za zamÛwienie nr: "
-						+ order.getOrderId() + ".\n\nPrzesy≥kÍ wyúlemy w ciπgu 3 dni roboczych na adres:\n"
+				String subject = "Potwierdzenie otrzymania wp≈Çaty";
+				String msg = "Witamy\n\nDziƒôkujemy za dokonanie wp≈Çaty " + payment + "z≈Ç za zam√≥wienie nr: "
+						+ order.getOrderId() + ".\n\nPrzesy≈Çkƒô wy≈õlemy w ciƒÖgu 3 dni roboczych na adres:\n"
 						+ order.getShippingAddress().getStreet() + " " + order.getShippingAddress().getApartmentNumber()
 						+ "\n" + order.getShippingAddress().getZipCode() + " " + order.getShippingAddress().getCity()
-						+ "\n\nPozdrawiamy" + "\nAgnieszka, Krzysiek i £ukasz";
+						+ "\n\nPozdrawiamy" + "\nAgnieszka, Krzysiek i ≈Åukasz";
 				sendMail("PRK-eshop", order.getCart().getCustomer().getCustomerEmail(), subject, msg);
 			}
 		} catch (Exception e) {
@@ -83,12 +83,12 @@ public class MailServiceImpl implements MailService {
 
 		try {
 			if (order != null) {
-				String subject = "Potwierdzenie wys≥ania zamÛwienia nr "+order.getOrderId();
-				String msg = "Witamy\n\nPotwierdzenie wys≥ania zamÛwienia nr: "
+				String subject = "Potwierdzenie wys≈Çania zam√≥wienia nr "+order.getOrderId();
+				String msg = "Witamy\n\nPotwierdzenie wys≈Çania zam√≥wienia nr: "
 						+ order.getOrderId() + " na adres:\n"
 						+ order.getShippingAddress().getStreet() + " " + order.getShippingAddress().getApartmentNumber()
 						+ "\n" + order.getShippingAddress().getZipCode() + " " + order.getShippingAddress().getCity()
-						+ "\n\nPozdrawiamy" + "\nAgnieszka, Krzysiek i £ukasz";
+						+ "\n\nPozdrawiamy" + "\nAgnieszka, Krzysiek i ≈Åukasz";
 				sendMail("PRK-eshop", order.getCart().getCustomer().getCustomerEmail(), subject, msg);
 			}
 		} catch (Exception e) {

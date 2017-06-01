@@ -6,15 +6,15 @@ import pl.edu.pw.ii.eshop.model.Customer;
 
 /**
  * 
- * Interfejs dostêpu do obiektu {@link Customer} DAO.
+ * Interfejs dostÄ™pu do obiektu {@link Customer} DAO.
  * 
- * @author £ukasz Kruk
+ * @author Krzysztof Trybus
  * 
  */
 public interface CustomerDao {
 
 	/**
-	 * Metoda umo¿liwiaj¹ca utrwalenie nowego klienta {@link Customer}
+	 * Metoda umoÅ¼liwiajÄ…ca utrwalenie nowego klienta {@link Customer}
 	 * 
 	 * @param customer
 	 *            klient {@link Customer}
@@ -22,7 +22,7 @@ public interface CustomerDao {
 	void addCustomer(Customer customer);
 
 	/**
-	 * Metoda zwracaj¹ca klienta o zadanym id
+	 * Metoda zwracajÄ…ca klienta o zadanym id
 	 * 
 	 * @param id
 	 *            id klienta
@@ -31,23 +31,23 @@ public interface CustomerDao {
 	Customer getCustomerById(int id);
 
 	/**
-	 * Metoda zwracaj¹ca listê wszystkich klientów
+	 * Metoda zwracajÄ…ca listï¿½ wszystkich klientÃ³w
 	 * 
-	 * @return lista wszystkich klientów {@link Customer} sklepu
+	 * @return lista wszystkich klientÃ³w {@link Customer} sklepu
 	 */
 	List<Customer> getAllCustomers();
 
 	/**
-	 * Metoda zwracaj¹ca klienta o zadanej nazwie u¿ytkownika
+	 * Metoda zwracajÄ…ca klienta o zadanej nazwie uÅ¼ytkownika
 	 * 
 	 * @param username
-	 *            nazwa u¿ytkownika
+	 *            nazwa uÅ¼ytkownika
 	 * @return klient {@link Customer}
 	 */
 	Customer getCustomerByUsername(String username);
 
 	/**
-	 * Metoda umo¿liwiaj¹ca utrwalenie zmodyfikowanego klienta
+	 * Metoda umoÅ¼liwiajÄ…ca utrwalenie zmodyfikowanego klienta
 	 * 
 	 * @param customer
 	 *            klient {@link Customer}

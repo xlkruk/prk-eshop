@@ -15,10 +15,10 @@ import pl.edu.pw.ii.eshop.service.ProductService;
 import pl.edu.pw.ii.eshop.model.Categories;
 
 /**
- * Klasa realizuj¹ca funkcje kontrolera, który obs³uguje zapytania wysy³ane
- * poprzez przegl¹darkê od u¿ytkowników.
+ * Klasa realizujÄ…ca funkcje kontrolera, ktÃ³ry obsÅ‚uguje zapytania wysyÅ‚ane
+ * poprzez przeglÄ…darkÄ™ od uÅ¼ytkownikÃ³w.
  * 
- * @author Agnieszka Œwiderska
+ * @author Agnieszka Åšwiderska
  * @version 1.0
  */
 @Controller
@@ -29,14 +29,14 @@ public class ProductController {
 	private ProductService productService;
 
 	/**
-	 * Metoda obs³uguje ¿¹danie /product/productList. Wykorzystuje implementacjê
-	 * interfejsu {@link ProductService} do pobrania listy dostêpnych produktów
-	 * {@link Product}. Lista produktów jest dodawana do modelu jako atrybut.
+	 * Metoda obsÅ‚uguje Å¼Ä…danie /product/productList. Wykorzystuje implementacjÄ™
+	 * interfejsu {@link ProductService} do pobrania listy dostÄ™pnych produktÃ³w
+	 * {@link Product}. Lista produktÃ³w jest dodawana do modelu jako atrybut.
 	 * Metoda zwraca widok generowany w odpowiedzi
 	 * 
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 */
 	@RequestMapping("/productList")
@@ -47,17 +47,17 @@ public class ProductController {
 	}
 
 	/**
-	 * Metoda obs³uguje ¿¹danie /product/viewProduct/{id}. Wykorzystuje
-	 * implementacjê interfejsu {@link ProductService} do pobrania produktu
-	 * {@link Product} o zadanym w parametrach wywo³ania id. Produkt
+	 * Metoda obsÅ‚uguje Å¼Ä…danie /product/viewProduct/{id}. Wykorzystuje
+	 * implementacjÄ™ interfejsu {@link ProductService} do pobrania produktu
+	 * {@link Product} o zadanym w parametrach wywoÅ‚ania id. Produkt
 	 * {@link Product} jest dodawany do modelu jako atrybut. Metoda zwraca widok
 	 * generowany w odpowiedzi
 	 * 
 	 * @param id
 	 *            id produktu
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 */
 	@RequestMapping("/viewProduct/{id}")
@@ -68,18 +68,18 @@ public class ProductController {
 	}
 
 	/**
-	 * Metoda obs³uguje ¿¹danie /product/productListByCategory/{category}.
-	 * Wykorzystuje implementacjê interfejsu {@link ProductService} do pobrania
-	 * listy dostêpnych produktów {@link Product} w zadanej kategorii. Lista
-	 * produktów jest dodawana do modelu jako atrybut. Metoda zwraca widok
+	 * Metoda obsÅ‚uguje Å¼Ä…danie /product/productListByCategory/{category}.
+	 * Wykorzystuje implementacjÄ™ interfejsu {@link ProductService} do pobrania
+	 * listy dostÄ™pnych produktÃ³w {@link Product} w zadanej kategorii. Lista
+	 * produktÃ³w jest dodawana do modelu jako atrybut. Metoda zwraca widok
 	 * generowany w odpowiedzi
 	 * 
 	 * @param category
-	 *            Typ wyliczeniowy {@link Categories}, zawieraj¹cy kategorie
-	 *            produktów.
+	 *            Typ wyliczeniowy {@link Categories}, zawierajÄ…cy kategorie
+	 *            produktÃ³w.
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku.
 	 */
 	@RequestMapping("/productListByCategory/{category}")

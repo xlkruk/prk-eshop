@@ -24,10 +24,10 @@ import pl.edu.pw.ii.eshop.service.CustomerService;
 import pl.edu.pw.ii.eshop.service.ProductService;
 
 /**
- * Klasa realizuj¹ca funkcje kontrolera, który obs³uguje zapytania wysy³ane
- * poprzez przegl¹darkê od u¿ytkowników.
+ * Klasa realizujÄ…ca funkcje kontrolera, ktÃ³ry obsÅ‚uguje zapytania wysyÅ‚ane
+ * poprzez przeglÄ…darkÄ™ od uÅ¼ytkownikÃ³w.
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  * @version 1.0
  */
 @Controller
@@ -47,8 +47,8 @@ public class CartResources {
 	private CartItemService cartItemService;
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /api/cart/{cartId}. Metoda
-	 * wykorzystuje implementacjê interfejsu CartService do pobrania koszyka o
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /api/cart/{cartId}. Metoda
+	 * wykorzystuje implementacjÄ™ interfejsu CartService do pobrania koszyka o
 	 * zadanym id reprezentowanego jako obiekt klasy {@link Cart}. Metoda zwraca
 	 * koszyk o zadanym id w formacie JSON
 	 * 
@@ -68,11 +68,11 @@ public class CartResources {
 	}
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie przegl¹darki /api/cart/add/{productId} przy
-	 * pomocy metody PUT. Metoda wykorzystuje implementacjê interfejsu
-	 * CartItemService do dodania produktu o zadanym id do linii agreguj¹cej
-	 * koszyka. Linia agreguj¹ca rozumiana jako element koszyka, który agreguje
-	 * wszytkie produkty tego samego typu. Je¿eli istnieje linia agregacyjna
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie przeglÄ…darki /api/cart/add/{productId} przy
+	 * pomocy metody PUT. Metoda wykorzystuje implementacjÄ™ interfejsu
+	 * CartItemService do dodania produktu o zadanym id do linii agregujÄ…cej
+	 * koszyka. Linia agregujÄ…ca rozumiana jako element koszyka, ktÃ³ry agreguje
+	 * wszytkie produkty tego samego typu. Jezeli istnieje linia agregacyjna
 	 * {@link CartItem} dla produktu o productId, to jest on dodawany do niej. W
 	 * przeciwnym przypadku jest tworzona nowa linia agregacyjna i produkt
 	 * {@link Product} jest dodawany do niej. linia agregacyjna jest utrwalana.
@@ -92,7 +92,7 @@ public class CartResources {
 		List<CartItem> cartItems = cart.getCartItems();
 
 		/*
-		 * przeliczenie iloœci produktów oraz ceny ca³kowitej dla linii
+		 * przeliczenie iloÅ›ci produktÃ³w oraz ceny caÅ‚kowitej dla linii
 		 * agregacyjnych
 		 */
 		for (int i = 0; i < cartItems.size(); i++) {
@@ -118,11 +118,11 @@ public class CartResources {
 	}
 
 	/**
-	 * Metoda wykorzystuj¹ca implementacjê interfejsu {@link CartItemService} do
-	 * usuniêcia linii agregacyjnej koszyka z produktami o zadanym productId
+	 * Metoda wykorzystujÄ…ca implementacjÄ™ interfejsu {@link CartItemService} do
+	 * usuniÄ™cia linii agregacyjnej koszyka z produktami o zadanym productId
 	 * 
 	 * @param productId
-	 *            id produktu, dla którego ma zostaæ usuniêta linia agregacyjna
+	 *            id produktu, dla ktÃ³rego ma zostaÄ‡ usuniÄ™ta linia agregacyjna
 	 *            koszyka
 	 * @see CartItemService
 	 */
@@ -135,9 +135,9 @@ public class CartResources {
 	}
 
 	/**
-	 * Metoda realizuj¹ca funkcjonalnoœæ wyczyszczenia koszyka polegaj¹c¹ na
-	 * usuniêciu wszytkich linii agregacyjnych koszyka. Metoda wykorzystuje
-	 * implementacjê interfejsu {@link CartItemService} do usuniêcia wszystkich
+	 * Metoda realizujÄ…ca funkcjonalnoÅ›Ä‡ wyczyszczenia koszyka polegajÄ…cÄ… na
+	 * usuniÄ™ciu wszytkich linii agregacyjnych koszyka. Metoda wykorzystuje
+	 * implementacjÄ™ interfejsu {@link CartItemService} do usuniÄ™cia wszystkich
 	 * linii agregacyjnych.
 	 * 
 	 * @param cartId
@@ -153,12 +153,12 @@ public class CartResources {
 
 	
 	@ExceptionHandler(IllegalArgumentException.class)
-	@ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "B³êdne ¿¹danie")
+	@ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "Bï¿½ï¿½dne ï¿½ï¿½danie")
 	public void handleClientErrors(Exception e) {
 	}
 
 	@ExceptionHandler(Exception.class)
-	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR, reason = "Wewnêtrzny b³¹d serwera")
+	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR, reason = "Wewnï¿½trzny bï¿½ï¿½d serwera")
 	public void handleServerErrors(Exception e) {
 	}
 

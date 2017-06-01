@@ -6,7 +6,7 @@ import pl.edu.pw.ii.eshop.model.Customer;
 import pl.edu.pw.ii.eshop.model.Order;
 
 /**
- * Interfejs dostêpu do obiektu {@link Order} DAO
+ * Interfejs dostÄ™pu do obiektu {@link Order} DAO
  * 
  * @author Krzysztof Trybus
  *
@@ -14,51 +14,51 @@ import pl.edu.pw.ii.eshop.model.Order;
 public interface OrderDao {
 
 	/**
-	 * Metoda utrwalaj¹ca nowe zamówienie {@link Order}
+	 * Metoda utrwalajÄ…ca nowe zamÃ³wienie {@link Order}
 	 * 
 	 * @param order
-	 *            zamówienie
+	 *            zamÃ³wienie
 	 */
 	void addOrder(Order order);
 
 	/**
-	 * Metoda zwracaj¹ca wszytkie zamówienia
+	 * Metoda zwracajÄ…ca wszytkie zamÃ³wienia
 	 * 
-	 * @return lista wszystkich zamówieñ {@link Order}
+	 * @return lista wszystkich zamÃ³wieÅ„ {@link Order}
 	 */
 	List<Order> getAllOrders();
 
 	/**
-	 * Metoda zwracaj¹ca zamówienie po zadanym statusie
+	 * Metoda zwracajÄ…ca zamÃ³wienie po zadanym statusie
 	 * 
 	 * @param status
-	 * @return lista zamówieñ {@link Order}
+	 * @return lista zamÃ³wieÅ„ {@link Order}
 	 */
 	List<Order> getOrdersByStatus(String status);
 
 	/**
-	 * Metoda zwracaj¹ca wszytskie zamówienia z³o¿one przez klienta o zadanym id
+	 * Metoda zwracajÄ…ca wszytskie zamÃ³wienia zÅ‚oÅ¼one przez klienta o zadanym id
 	 * 
 	 * @param customerId
 	 *            id klienta {@link Customer}
-	 * @return lista zamówieñ {@link Order}
+	 * @return lista zamï¿½wieï¿½ {@link Order}
 	 */
 	List<Order> getOrdersByCustomerId(int customerId);
 
 	/**
-	 * Metoda utrwalaj¹ca zmodyfikowane zamówienie {@link Order}
+	 * Metoda utrwalajÄ…ca zmodyfikowane zamÃ³wienie {@link Order}
 	 * 
 	 * @param order
-	 *            zamówienie {@link Order}
+	 *            zamÃ³wienie {@link Order}
 	 */
 	void updateOrder(Order order);
 
 	/**
-	 * Metoda zwracaj¹ca zamówienie Order o zadanym id
+	 * Metoda zwracajÄ…ca zamÃ³wienie Order o zadanym id
 	 * 
 	 * @param id
-	 *            id zamówienia
-	 * @return zamówienie {@link Order}
+	 *            id zamÃ³wienia
+	 * @return zamÃ³wienie {@link Order}
 	 */
 	Order getOrderById(int id);
 

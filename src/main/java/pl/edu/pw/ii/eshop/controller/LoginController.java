@@ -6,30 +6,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * Klasa realizuj¹ca funkcje kontrolera, który obs³uguje zapytania wysy³ane
- * poprzez przegl¹darkê od u¿ytkowników, zwi¹zane z logowaniem.
+ * Klasa realizujÄ…ca funkcje kontrolera, ktÃ³ry obsÅ‚uguje zapytania wysyÅ‚ane
+ * poprzez przeglÄ…darkÄ™ od uÅ¼ytkownikÃ³w, zwiÄ…zane z logowaniem.
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  * @version 1.0
  */
 @Controller
 public class LoginController {
 
 	/**
-	 * Metoda obs³uguj¹ca ¿¹danie /login typu GET. W przypadku kiedy w rz¹dniu
+	 * Metoda obsÅ‚ugujÄ…ca Å¼Ä…danie /login typu GET. W przypadku kiedy w Å¼Ä…daniu
 	 * jest przekazywany opcjonalny parametr error, do modelu jest dodawany
-	 * atrybut error, nios¹cy informacjê o problemach z logowaniem. Je¿eli w
-	 * rz¹daniu jest przekazywany parametr logout, do modelu jest przekazywany
-	 * atrybut msg nios¹cy informacjê o wylogowaniu. Metoda zwraca nazwê widoku
+	 * atrybut error, niosÄ…cy informacjÄ™ o problemach z logowaniem. JeÅ¼eli w
+	 * Å¼Ä…daniu jest przekazywany parametr logout, do modelu jest przekazywany
+	 * atrybut msg niosÄ…cy informacjÄ™ o wylogowaniu. Metoda zwraca nazwÄ™ widoku
 	 * do wygenerowania w odpowiedzi
 	 * 
 	 * @param error
-	 *            parametr rz¹dania
+	 *            parametr Å¼Ä…dania
 	 * @param logout
-	 *            parametr rz¹dania
+	 *            parametr Å¼Ä…dania
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacjê. Holder dla
-	 *            atrybutów modelu w MVC.
+	 *            interfejs, Spring dostarcza implementacjÄ™. Holder dla
+	 *            atrybutÃ³w modelu w MVC.
 	 * @return nazwa widoku
 	 */
 	@RequestMapping("/login")
@@ -37,10 +37,10 @@ public class LoginController {
 			@RequestParam(value = "logout", required = false) String logout, Model model) {
 
 		if (error != null) {
-			model.addAttribute("error", "Niepoprawny login lub has³o.");
+			model.addAttribute("error", "Niepoprawny login lub hasÅ‚o.");
 		}
 		if (logout != null) {
-			model.addAttribute("msg", "Wylogowano pomyœlnie.");
+			model.addAttribute("msg", "Wylogowano pomyÅ›lnie.");
 		}
 		return "login";
 	}

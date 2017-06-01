@@ -4,7 +4,7 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * Klasa pomocnicza reprezentuj¹ca informacje o kliencie. Klasa u¿yana w
+ * Klasa pomocnicza reprezentujÄ…ca informacje o kliencie. Klasa uÅ¼yana w
  * warstwie prezentacji.
  * 
  * @author Krzysztof Trybus
@@ -14,41 +14,41 @@ public class CustomerInfo {
 
 	private int customerId;
 
-	@NotEmpty(message = "Imiê nie mo¿e byæ puste.")
+	@NotEmpty(message = "ImiÄ™ nie moÅ¼e byÄ‡ puste.")
 	private String customerFirstName;
 
-	@NotEmpty(message = "Nazwisko nie mo¿e byæ puste.")
+	@NotEmpty(message = "Nazwisko nie moÅ¼e byÄ‡ puste.")
 	private String customerLastName;
 
-	@NotEmpty(message = "Email nie mo¿e byæ pusty.")
-	@Email(message = "Nieprawid³owy email")
+	@NotEmpty(message = "Email nie moÅ¼e byÄ‡ pusty.")
+	@Email(message = "NieprawidÅ‚owy email")
 	private String customerEmail;
 
 	private String customerPhone;
 
-	@NotEmpty(message = "Nazwa u¿ytkownika nie mo¿e byæ pusta.")
+	@NotEmpty(message = "Nazwa uÅ¼ytkownika nie moÅ¼e byÄ‡ pusta.")
 	private String username;
 
 	private String password;
 
 	private boolean enabled;
 
-	@NotEmpty(message = "Pole nie mo¿e byæ puste.")
+	@NotEmpty(message = "Pole nie moÅ¼e byÄ‡ puste.")
 	private String billingStreet;
-	@NotEmpty(message = "Pole nie mo¿e byæ puste.")
+	@NotEmpty(message = "Pole nie moÅ¼e byÄ‡ puste.")
 	private String billingApartmentNumber;
-	@NotEmpty(message = "Pole nie mo¿e byæ puste.")
+	@NotEmpty(message = "Pole nie moÅ¼e byÄ‡ puste.")
 	private String billingCity;
-	@NotEmpty(message = "Pole nie mo¿e byæ puste.")
+	@NotEmpty(message = "Pole nie moÅ¼e byÄ‡ puste.")
 	private String billingZipCode;
 
-	@NotEmpty(message = "Pole nie mo¿e byæ puste.")
+	@NotEmpty(message = "Pole nie moÅ¼e byÄ‡ puste.")
 	private String shippingStreet;
-	@NotEmpty(message = "Pole nie mo¿e byæ puste.")
+	@NotEmpty(message = "Pole nie moÅ¼e byÄ‡ puste.")
 	private String shippingApartmentNumber;
-	@NotEmpty(message = "Pole nie mo¿e byæ puste.")
+	@NotEmpty(message = "Pole nie moÅ¼e byÄ‡ puste.")
 	private String shippingCity;
-	@NotEmpty(message = "Pole nie mo¿e byæ puste.")
+	@NotEmpty(message = "Pole nie moÅ¼e byÄ‡ puste.")
 	private String shippingZipCode;
 
 	/**
@@ -59,7 +59,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca id klienta, którego dotycz¹ informacje
+	 * Metoda zwracajÄ…ca id klienta, ktÃ³rego dotyczÄ… informacje
 	 * 
 	 * @return id klienta
 	 */
@@ -68,7 +68,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca id klienta, którego dotzycz¹ informacje.
+	 * Metoda ustawiajÄ…ca id klienta, ktÃ³rego dotyczÄ… informacje.
 	 * 
 	 * @param customerId
 	 *            id klienta
@@ -78,26 +78,26 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracajca imiê klienta.
+	 * Metoda zwracajca imiÄ™ klienta.
 	 * 
-	 * @return imiê klienta
+	 * @return imiÄ™ klienta
 	 */
 	public String getCustomerFirstName() {
 		return customerFirstName;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca imiê klienta
+	 * Metoda ustawiajÄ…ca imiÄ™ klienta
 	 * 
 	 * @param customerFirstName
-	 *            imiê klienta
+	 *            imiÄ™ klienta
 	 */
 	public void setCustomerFirstName(String customerFirstName) {
 		this.customerFirstName = customerFirstName;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca nazwisko klienta.
+	 * Metoda zwracajÄ…ca nazwisko klienta.
 	 * 
 	 * @return nazwisko klienta
 	 */
@@ -116,7 +116,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca adres email klienta
+	 * Metoda zwracajÄ…ca adres email klienta
 	 * 
 	 * @return adres email klienta.
 	 */
@@ -125,7 +125,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca adres email klienta
+	 * Metoda ustawiajÄ…ca adres email klienta
 	 * 
 	 * @param customerEmail
 	 *            adres email klienta
@@ -135,7 +135,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca numer telefonu klienta
+	 * Metoda zwracajÄ…ca numer telefonu klienta
 	 * 
 	 * @return numer telefonu
 	 */
@@ -144,7 +144,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca numer telefonu klienta.
+	 * Metoda ustawiajÄ…ca numer telefonu klienta.
 	 * 
 	 * @param customerPhone
 	 *            numer telefonu klienta.
@@ -154,7 +154,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca login klienta
+	 * Metoda zwracajÄ…ca login klienta
 	 * 
 	 * @return login klienta
 	 */
@@ -163,7 +163,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca login klienta.
+	 * Metoda ustawiajÄ…ca login klienta.
 	 * 
 	 * @param username
 	 *            login klienta
@@ -173,26 +173,26 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca has³o klienta.
+	 * Metoda zwracajÄ…ca hasÅ‚o klienta.
 	 * 
-	 * @return has³o klienta
+	 * @return hasÅ‚o klienta
 	 */
 	public String getPassword() {
 		return password;
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca has³o klienta
+	 * Metoda ustawiajÄ…ca hasÅ‚o klienta
 	 * 
 	 * @param password
-	 *            has³o klienta
+	 *            hasÅ‚o klienta
 	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
 	/**
-	 * MEtoda zwracajac status klienta
+	 * Metoda zwracajaca status klienta
 	 * 
 	 * @return status klienta - true aktywny
 	 */
@@ -201,7 +201,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca status klienta
+	 * Metoda ustawiajÄ…ca status klienta
 	 * 
 	 * @param enabled
 	 *            status klienta - true aktywny
@@ -211,7 +211,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca ulicê adresu do faktury
+	 * Metoda zwracajÄ…ca ulicÄ™ adresu do faktury
 	 * 
 	 * @return ulica adresu do faktury
 	 */
@@ -220,7 +220,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca nazwê ulicy do faktury.
+	 * Metoda ustawiajÄ…ca nzawÄ™ ulicy do faktury.
 	 * 
 	 * @param billingStreet
 	 *            nazwa ulicy adresu do faktury.
@@ -230,7 +230,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca numer domu/mieszkania adresu do faktury
+	 * Metoda zwracajÄ…ca numer domu/mieszkania adresu do faktury
 	 * 
 	 * @return numer domu/mieszkania adresu do faktury
 	 */
@@ -239,7 +239,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca numer domu/mieszkania adresu do faktury
+	 * Metoda ustawiajÄ…ca numer domu/mieszkania adresu do faktury
 	 * 
 	 * @param billingApartmentNumber
 	 *            numer domu/mieszkania adresu do faktury
@@ -249,7 +249,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca nazwê miasta adresu do faktury
+	 * Metoda zwracajÄ…ca nzawÄ™ miasta adresu do faktury
 	 * 
 	 * @return nazwa miasta adresu do faktury
 	 */
@@ -258,7 +258,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca nazwê miasta adresu do faktury
+	 * Metoda ustawiajÄ…ca nzawÄ™ miasta adresu do faktury
 	 * 
 	 * @param billingCity
 	 *            nazwa miasta adresu do faktury
@@ -268,7 +268,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca kod pocztowy adresu do faktury
+	 * Metoda zwracajÄ…ca kod pocztowy adresu do faktury
 	 * 
 	 * @return kod pocztowy adresu do faktury
 	 */
@@ -277,7 +277,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca kod pocztowy adresu do faktury
+	 * Metoda ustawiajÄ…ca kod pocztowy adresu do faktury
 	 * 
 	 * @param billingZipCode
 	 *            kod pocztowy adresu do faktury
@@ -287,7 +287,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca nazwê ulicy adresu dostawy
+	 * Metoda zwracajÄ…ca nzawÄ™ ulicy adresu dostawy
 	 * 
 	 * @return nazwa ulicy adresu dostawy
 	 */
@@ -296,17 +296,17 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca nazwê ulicy adresu dostawy
+	 * Metoda ustawiajÄ…ca nzawÄ™ ulicy adresu dostawy
 	 * 
 	 * @param shippingStreet
-	 *            nazwê ulicy adresu dostawy
+	 *            nzawÄ™ ulicy adresu dostawy
 	 */
 	public void setShippingStreet(String shippingStreet) {
 		this.shippingStreet = shippingStreet;
 	}
 
 	/**
-	 * Metoda zwracaj¹ca numer domu/mieszkania adresu dostawy
+	 * Metoda zwracajÄ…ca numer domu/mieszkania adresu dostawy
 	 * 
 	 * @return numer domu/mieszkania adresu dostawy
 	 */
@@ -315,7 +315,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca numer domu/mieszkania adresu dostawy
+	 * Metoda ustawiajÄ…ca numer domu/mieszkania adresu dostawy
 	 * 
 	 * @param shippingApartmentNumber
 	 *            numer domu/mieszkania adresu dostawy
@@ -325,7 +325,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca miasto dostawy
+	 * Metoda zwracajÄ…ca miasto dostawy
 	 * 
 	 * @return miasto dostawy
 	 */
@@ -334,7 +334,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca miasto dostawy
+	 * Metoda ustawiajÄ…ca miasto dostawy
 	 * 
 	 * @param shippingCity
 	 *            miasto dostawy
@@ -344,7 +344,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca kod pocztowy dostawy
+	 * Metoda zwracajÄ…ca kod pocztowy dostawy
 	 * 
 	 * @return kod pocztowy dostawy
 	 */
@@ -353,7 +353,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracaj¹ca kod pocztowy dostawy
+	 * Metoda zwracajÄ…ca kod pocztowy dostawy
 	 * 
 	 * @param shippingZipCode
 	 *            kod pocztowy dostawy
@@ -363,7 +363,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiaj¹ca atrybuty obiektu {@link CustomerInfo} na podstawie
+	 * Metoda ustawiajÄ…ca atrybuty obiektu {@link CustomerInfo} na podstawie
 	 * obiektu {@link Customer}
 	 * 
 	 * @param customer

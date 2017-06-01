@@ -4,15 +4,15 @@ import pl.edu.pw.ii.eshop.model.Cart;
 import pl.edu.pw.ii.eshop.model.CartItem;
 
 /**
- * Interfejs dostêpu do obiektu {@link CartItemDao} DAO.
+ * Interfejs dostÄ™pu do obiektu {@link CartItemDao} DAO.
  * 
- * @author £ukasz Kruk
+ * @author Åukasz Kruk
  *
  */
 public interface CartItemDao {
 
 	/**
-	 * Metoda utrwalaj¹ca now¹ liniê agregacyjn¹ koszyka {@link CartItem}
+	 * Metoda utrwalajÄ…ca nowÄ… liniÄ™ agregacyjnÄ… koszyka {@link CartItem}
 	 * 
 	 * @param cartItem
 	 *            linia agregacyjna koszyka
@@ -20,15 +20,15 @@ public interface CartItemDao {
 	void addCartItem(CartItem cartItem);
 
 	/**
-	 * Metoda umo¿liwienie skasowanie linii agregacyjnej {@link CartItem}
+	 * Metoda umoÅ¼liwia skasowanie linii agregacyjnej {@link CartItem}
 	 * 
 	 * @param cartItem
-	 *            linia agregacyjna koszyka do usuniêcia.
+	 *            linia agregacyjna koszyka do usuniÄ™cia.
 	 */
 	void deleteCartItem(CartItem cartItem);
 
 	/**
-	 * Metoda umo¿liwiaj¹ca usuniêcie wszystkich lini agregacyjnych
+	 * Metoda umoÅ¼liwiajÄ…ca usuniÄ™cie wszystkich lini agregacyjnych
 	 * {@link CartItem} dla zadanego koszyka {@link Cart}
 	 * 
 	 * @param cart
@@ -37,7 +37,7 @@ public interface CartItemDao {
 	void deleteAllCartItems(Cart cart);
 
 	/**
-	 * Metoda zwracaj¹ca liniê agregacyjn¹ z produktem o zadanym id
+	 * Metoda zwracajÄ…ca liniÄ™ agregacyjnÄ… z produktem o zadanym id
 	 * 
 	 * @param productId
 	 *            id produktu
