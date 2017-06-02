@@ -28,12 +28,29 @@ public class ShippingAddress implements Serializable {
 
 	@OneToOne
 	private Customer customer;
+	
+	@OneToOne
+	private Order order;
 
 	/**
 	 * Konstruktor bezparametryczny.
 	 */
 	public ShippingAddress() {
 	}
+	
+	
+
+	public Order getOrder() {
+		return order;
+	}
+
+
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
+
 
 	/**
 	 * Metoda zwracająca klucz główny

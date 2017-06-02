@@ -10,7 +10,11 @@ import org.springframework.stereotype.Service;
 import pl.edu.pw.ii.eshop.model.Order;
 import pl.edu.pw.ii.eshop.model.OrderItem;
 import pl.edu.pw.ii.eshop.service.MailService;
-
+/**
+ * Klasa implementująca interfejs {@link MailService}
+ * @author Łukasz Kruk
+ *
+ */
 @Service
 public class MailServiceImpl implements MailService {
 
@@ -53,6 +57,7 @@ public class MailServiceImpl implements MailService {
 	@Override
 	public void sendPaymentConfirmation(Order order) {
 		double payment = 0;
+		//Obliczenie należności za zamówienie
 		List<OrderItem> orderItems = order.getOrderItems();
 		for (OrderItem item : orderItems) {
 			payment = +item.getTotalPrice();
@@ -76,6 +81,7 @@ public class MailServiceImpl implements MailService {
 	@Override
 	public void sendDeliveryConfirmation(Order order) {
 		double payment = 0;
+		//wyliczenie należności za zamówienie
 		List<OrderItem> orderItems = order.getOrderItems();
 		for (OrderItem item : orderItems) {
 			payment = +item.getTotalPrice();

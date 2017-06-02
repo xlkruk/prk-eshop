@@ -19,7 +19,7 @@ public interface OrderDao {
 	 * @param order
 	 *            zamówienie
 	 */
-	void addOrder(Order order);
+	int addOrder(Order order);
 
 	/**
 	 * Metoda zwracająca wszytkie zamówienia

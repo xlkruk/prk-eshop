@@ -12,12 +12,20 @@ import pl.edu.pw.ii.eshop.model.Product;
 import pl.edu.pw.ii.eshop.model.ProductInfo;
 import pl.edu.pw.ii.eshop.service.ProductService;
 
+/**
+ * Klasa implementująca inteffejs {@link ProductService}. Wykorzystuje
+ * implementację intefejsu {@link ProductDao} do komunikaacji z warstwą dostępu
+ * do danych.
+ * 
+ * @author Agnieszka Świderska
+ *
+ */
 @Service
-public class ProductServiceImpl implements ProductService{
-	
+public class ProductServiceImpl implements ProductService {
+
 	@Autowired
 	private ProductDao productDao;
-	
+
 	@Override
 	public List<Product> getProductList() {
 		return productDao.getAllProducts();
@@ -31,30 +39,29 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public void addProduct(Product product) {
 		productDao.addProduct(product);
-		
+
 	}
 
 	@Override
 	public void editProduct(Product product) {
-		productDao.editProduct(product);		
+		productDao.editProduct(product);
 	}
 
 	@Override
 	public void deleteProduct(Product product) {
 		productDao.deleteProduct(product);
-		
-	}
 
+	}
 
 	@Override
 	public void editProduct(ProductInfo productInfo) {
-		importImage(productInfo);		
+		importImage(productInfo);
 		byte[] oldImage = getProductById(productInfo.getId()).getProductImage();
 		Product product = productInfoToProduct(productInfo);
 		if (product.getProductImage() == null) {
 			product.setProductImage(oldImage);
 		}
-		productDao.editProduct(product);		
+		productDao.editProduct(product);
 	}
 
 	private void importImage(ProductInfo productInfo) {
@@ -68,7 +75,7 @@ public class ProductServiceImpl implements ProductService{
 			}
 		}
 	}
-	
+
 	private Product productInfoToProduct(ProductInfo productInfo) {
 		Product product = new Product();
 		product.setCategory(productInfo.getCategory());
@@ -81,6 +88,7 @@ public class ProductServiceImpl implements ProductService{
 		product.setPrice(productInfo.getPrice());
 		product.setStatus(productInfo.getStatus());
 		product.setStock(productInfo.getStock());
+		// sprawdzenie czy dodano obrazek do modyfikacji
 		if (productInfo.getProductImageAsArray() != null && productInfo.getProductImageAsArray().length > 0) {
 			product.setProductImage(productInfo.getProductImageAsArray());
 		}
@@ -90,7 +98,7 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public void addProduct(ProductInfo productInfo) {
 		importImage(productInfo);
-		addProduct(productInfoToProduct(productInfo));		
+		addProduct(productInfoToProduct(productInfo));
 	}
 
 	@Override

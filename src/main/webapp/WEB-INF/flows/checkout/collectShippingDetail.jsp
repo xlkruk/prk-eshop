@@ -11,41 +11,46 @@
 		</div>
 		<form:form commandName="order" class="form-horizontal">
 
-			<h3>Adres dostawy</h3>
+			<h2>Adres dostawy</h2>
+			<section>
+				<div class="jumbotron">
+					<div class="container">
+						<div class="form-group">
+							<label for="shippingStreet">Ulica:</label>
+							<form:errors path="cart.customer.shippingAddress.street"
+								cssStyle="color: red;" />
+							<form:input path="cart.customer.shippingAddress.street"
+								id="shippingStreet" class="form-control" />
+						</div>
 
-			<div class="form-group">
-				<label for="shippingStreet">Ulica:</label>
-				<form:errors path="cart.customer.shippingAddress.street"
-					cssStyle="color: red;" />
-				<form:input path="cart.customer.shippingAddress.street"
-					id="shippingStreet" class="form-control" />
-			</div>
+						<div class="form-group">
+							<label for="shipingApartamentNumber">Numer domu:</label>
+							<form:errors path="cart.customer.shippingAddress.apartmentNumber"
+								cssStyle="color: red;" />
+							<form:input path="cart.customer.shippingAddress.apartmentNumber"
+								id="shippingApartamentNumber" class="form-control" />
+						</div>
 
-			<div class="form-group">
-				<label for="shipingApartamentNumber">Numer domu:</label>
-				<form:errors path="cart.customer.shippingAddress.apartmentNumber"
-					cssStyle="color: red;" />
-				<form:input path="cart.customer.shippingAddress.apartmentNumber"
-					id="shippingApartamentNumber" class="form-control" />
-			</div>
+						<div class="form-group">
+							<label for="shippingCity">Miasto:</label>
+							<form:errors path="cart.customer.shippingAddress.city"
+								cssStyle="color: red;" />
+							<form:input path="cart.customer.shippingAddress.city"
+								id="shippingCity" class="form-control" />
+						</div>
 
-			<div class="form-group">
-				<label for="shippingCity">Miasto:</label>
-				<form:errors path="cart.customer.shippingAddress.city"
-					cssStyle="color: red;" />
-				<form:input path="cart.customer.shippingAddress.city"
-					id="shippingCity" class="form-control" />
-			</div>
+						<div class="form-group">
+							<label for="shippingZipCode">Kod pocztowy:</label>
+							<form:errors path="cart.customer.shippingAddress.zipCode"
+								cssStyle="color: red;" />
+							<form:input path="cart.customer.shippingAddress.zipCode"
+								id="shippingZipCode" class="form-control" />
+						</div>
 
-			<div class="form-group">
-				<label for="shippingZipCode">Kod pocztowy:</label>
-				<form:errors path="cart.customer.shippingAddress.zipCode"
-					cssStyle="color: red;" />
-				<form:input path="cart.customer.shippingAddress.zipCode"
-					id="shippingZipCode" class="form-control" />
-			</div>
-
-			<input type="hidden" name="_flowExecutionKey" />
+						<input type="hidden" name="_flowExecutionKey" />
+					</div>
+				</div>
+			</section>
 
 			<br>
 			<br>

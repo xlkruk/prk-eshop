@@ -38,11 +38,12 @@
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 col-md-6">
 				<address>
+				<h3>${order.customer.customerFirstName} ${order.customer.customerLastName}</h3><br>
 					<strong>Adres dostawy</strong><br>
-					${order.cart.customer.shippingAddress.street} <br>
-					${order.cart.customer.shippingAddress.apartmentNumber} <br>
-					${order.cart.customer.shippingAddress.city},
-					${order.cart.customer.shippingAddress.zipCode} <br>
+					${order.shippingAddress.street} 
+					${order.shippingAddress.apartmentNumber} <br>
+					${order.shippingAddress.city},
+					${order.shippingAddress.zipCode} <br>
 				</address>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-6 text-right">
@@ -57,10 +58,10 @@
 			<div class="col-xs-6 col-sm-6 col-md-6">
 				<address>
 					<strong>Adres do faktury</strong><br>
-					${order.cart.customer.billingAddress.street} <br>
-					${order.cart.customer.billingAddress.apartmentNumber} <br>
-					${order.cart.customer.billingAddress.city},
-					${order.cart.customer.billingAddress.zipCode} <br>
+					${order.billingAddress.street} 
+					${order.billingAddress.apartmentNumber} <br>
+					${order.billingAddress.city},
+					${order.billingAddress.zipCode} <br>
 				</address>
 			</div>
 		</div>

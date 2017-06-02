@@ -8,16 +8,24 @@ import pl.edu.pw.ii.eshop.model.Cart;
 import pl.edu.pw.ii.eshop.model.CartItem;
 import pl.edu.pw.ii.eshop.service.CartService;
 
+/**
+ * Klasa implementująca interfejs {@link CartService}. wykorzystuje
+ * implementację interfejsu {@link CartDao} do komunikacji z warstwą dostępu do
+ * danych.
+ * 
+ * @author Krzysztof Trybus
+ *
+ */
 
 @Service
 public class CartServiceImpl implements CartService {
 
 	@Autowired
 	private CartDao cartDao;
-	
+
 	@Override
 	public Cart getCartById(int cartId) {
-				return cartDao.getCartById(cartId);
+		return cartDao.getCartById(cartId);
 	}
 
 	@Override
@@ -25,7 +33,5 @@ public class CartServiceImpl implements CartService {
 		cartDao.update(cart);
 
 	}
-
-
 
 }

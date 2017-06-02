@@ -12,12 +12,20 @@ import pl.edu.pw.ii.eshop.model.CustomerInfo;
 import pl.edu.pw.ii.eshop.model.Users;
 import pl.edu.pw.ii.eshop.service.CustomerService;
 
+/**
+ * Klasa implementująca interfejs {@link CustomerService}. Wykorzystuje
+ * implementacje interfejsów {@link CustomerDao} oraz {@link UserDao} do
+ * komunikacji z warstwą dostępu do danych.
+ * 
+ * @author Krzysztof Trybus
+ *
+ */
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
 	private CustomerDao customerDao;
-	
+
 	@Autowired
 	private UserDao userDao;
 
@@ -36,11 +44,11 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<Customer> getAllCustomers() {
 		return customerDao.getAllCustomers();
 	}
-	
+
 	@Override
 	public Customer getCustomerByUsername(String username) {
 		return customerDao.getCustomerByUsername(username);
-		
+
 	}
 
 	@Override
@@ -48,14 +56,15 @@ public class CustomerServiceImpl implements CustomerService {
 		Customer customer = customerDao.getCustomerById(customerInfo.getCustomerId());
 		customer.setCustomerEmail(customerInfo.getCustomerEmail());
 		customer.setCustomerPhone(customerInfo.getCustomerPhone());
-		System.out.println("@@@@@@@@@@@@@@@@@@@"+customerInfo.getPassword());
-		if((customerInfo.getPassword() != null) && !customerInfo.getPassword().equals("")){
-			System.out.println("###############"+customerInfo.getPassword());
+		// sprawdzenei czy hasło w formularzu jest puste. Jeżeli puste to nie
+		// modyfikuję hasłą.
+		if ((customerInfo.getPassword() != null) && !customerInfo.getPassword().equals("")) {
 			customer.setPassword(customerInfo.getPassword());
 			Users user = userDao.getUserByUsername(customerInfo.getUsername());
 			user.setPassword(customerInfo.getPassword());
 			userDao.updateUser(user);
 		}
+		//modyfikacja adresów do fatury oraz do wysyłki
 		customer.getBillingAddress().setApartmentNumber(customerInfo.getBillingApartmentNumber());
 		customer.getBillingAddress().setCity(customerInfo.getBillingCity());
 		customer.getBillingAddress().setStreet(customerInfo.getBillingStreet());
@@ -65,7 +74,7 @@ public class CustomerServiceImpl implements CustomerService {
 		customer.getShippingAddress().setStreet(customerInfo.getShippingStreet());
 		customer.getShippingAddress().setZipCode(customerInfo.getShippingZipCode());
 		customerDao.editCustomer(customer);
-		
+
 	}
 
 	@Override

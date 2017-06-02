@@ -8,6 +8,14 @@ import pl.edu.pw.ii.eshop.model.Cart;
 import pl.edu.pw.ii.eshop.model.CartItem;
 import pl.edu.pw.ii.eshop.service.CartItemService;
 
+/**
+ * Klasa implementująca interfejs {@link CartItemServiceImpl} Klasa korzysta z
+ * obiektu implementującego {@link CartItemDao} do komunikacji z warstwą dostępu
+ * do danych.
+ * 
+ * @author Agnieszka Świderska
+ *
+ */
 @Service
 public class CartItemServiceImpl implements CartItemService {
 
@@ -31,9 +39,9 @@ public class CartItemServiceImpl implements CartItemService {
 		cartItemDao.deleteAllCartItems(cart);
 
 	}
+
 	@Override
 	public CartItem getCartItemByProductId(int productId) {
-		
 		return cartItemDao.getCartItemByProductId(productId);
 	}
 }

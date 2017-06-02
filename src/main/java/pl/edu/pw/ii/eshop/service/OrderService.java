@@ -2,6 +2,8 @@ package pl.edu.pw.ii.eshop.service;
 
 import java.util.List;
 
+import pl.edu.pw.ii.eshop.model.BillingAddress;
+import pl.edu.pw.ii.eshop.model.Cart;
 import pl.edu.pw.ii.eshop.model.Customer;
 import pl.edu.pw.ii.eshop.model.Order;
 
@@ -21,7 +23,7 @@ public interface OrderService {
 	 * @param order
 	 *            zamówienie
 	 */
-	void addOrder(Order customerOrder);
+	int addOrder(Order customerOrder);
 
 	/**
 	 * Metoda zwracająca cenę całkowitą koszyka
@@ -96,4 +98,16 @@ public interface OrderService {
 	 * @return zamówienie {@link Order}
 	 */
 	Order getOrderById(int id);
+	
+	/**
+	 * Metoda aktualizująca adres do faktury
+	 * @param order
+	 */
+	void updateBillingAddress(Order order);
+	/**
+	 * Metoda aktualizująca adres do faktury
+	 * @param order
+	 */
+	void updateShippingAddress(Order order);
+	
 }

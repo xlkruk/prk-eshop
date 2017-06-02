@@ -6,6 +6,9 @@
 	<var name="order" class="pl.edu.pw.ii.eshop.model.Order" />
 
 	<action-state id="addCartToOrder">
+		<on-entry>
+			<set name="order.orderId" value="requestParameters.orderId" />
+		</on-entry>
 		<evaluate expression="cartDaoImpl.validate(requestParameters.cartId)"
 			result="order.cart" />
 		<transition to="invalidCartWarning" on-exception="java.io.IOException" />
@@ -14,12 +17,18 @@
 
 	<view-state id="collectCustomerInfo" view="collectCustomerInfo.jsp"
 		model="order">
-		<transition on="customerInfoCollected" to="collectShippingDetail" />
+		<transition on="customerInfoCollected" to="collectShippingDetail">
+			<evaluate
+				expression="orderServiceImpl.updateBillingAddress(order)" />
+		</transition>
 	</view-state>
 
 	<view-state id="collectShippingDetail" view="collectShippingDetail.jsp"
 		model="order">
-		<transition on="shippingDetailCollected" to="orderConfirmation" />
+		<transition on="shippingDetailCollected" to="orderConfirmation">
+			<evaluate
+				expression="orderServiceImpl.updateShippingAddress(order)" />
+		</transition>
 		<transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
 	</view-state>
 
@@ -30,8 +39,10 @@
 
 	<action-state id="processOrder">
 		<evaluate expression="cartItemDaoImpl.deleteAllCartItems(order.cart)" />
-		
-		<transition to="thankCustomer"><evaluate expression="mailServiceImpl.sendOrderConfirmation(order)" /></transition>
+
+		<transition to="thankCustomer">
+			<evaluate expression="mailServiceImpl.sendOrderConfirmation(order)" />
+		</transition>
 	</action-state>
 
 	<view-state id="thankCustomer" model="order">

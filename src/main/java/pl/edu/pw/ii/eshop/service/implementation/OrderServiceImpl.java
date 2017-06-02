@@ -16,36 +16,35 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-
-
 @Service
 public class OrderServiceImpl implements OrderService {
 
-    @Autowired
-    private OrderDao customerOrderDao;
+	@Autowired
+	private OrderDao customerOrderDao;
 
-    @Autowired
-    private CartService cartService;
-    
-    @Autowired MailService mailService;
+	@Autowired
+	private CartService cartService;
 
-    @Override
-    public void addOrder(Order customerOrder) {
-        customerOrderDao.addOrder(customerOrder);
-    }
+	@Autowired
+	MailService mailService;
 
-    @Override
-    public double getOrderGrandTotal(int cartId) {
-        double grandTotal=0;
-        Cart cart = cartService.getCartById(cartId);
-        List<CartItem> cartItems = cart.getCartItems();
+	@Override
+	public int addOrder(Order customerOrder) {
+		return customerOrderDao.addOrder(customerOrder);
+	}
 
-        for (CartItem item : cartItems) {
-            grandTotal+=item.getTotalPrice();
-        }
+	@Override
+	public double getOrderGrandTotal(int cartId) {
+		double grandTotal = 0;
+		Cart cart = cartService.getCartById(cartId);
+		List<CartItem> cartItems = cart.getCartItems();
 
-        return grandTotal;
-    }
+		for (CartItem item : cartItems) {
+			grandTotal += item.getTotalPrice();
+		}
+
+		return grandTotal;
+	}
 
 	@Override
 	public List<Order> getAllOrders() {
@@ -68,7 +67,7 @@ public class OrderServiceImpl implements OrderService {
 		customerOrder.setStatus(Status.PAYMENT_RECEIVED.getDescription());
 		customerOrderDao.updateOrder(customerOrder);
 		mailService.sendPaymentConfirmation(customerOrder);
-		
+
 	}
 
 	@Override
@@ -77,7 +76,7 @@ public class OrderServiceImpl implements OrderService {
 		customerOrder.setStatus(Status.SENT.getDescription());
 		customerOrderDao.updateOrder(customerOrder);
 		mailService.sendDeliveryConfirmation(customerOrder);
-		
+
 	}
 
 	@Override
@@ -85,7 +84,7 @@ public class OrderServiceImpl implements OrderService {
 		customerOrder.setStatusChangeDate(new Date());
 		customerOrder.setStatus(Status.COMPLETED.getDescription());
 		customerOrderDao.updateOrder(customerOrder);
-		
+
 	}
 
 	@Override
@@ -98,6 +97,28 @@ public class OrderServiceImpl implements OrderService {
 		customerOrder.setStatusChangeDate(new Date());
 		customerOrder.setStatus(Status.NEW.getDescription());
 		customerOrderDao.updateOrder(customerOrder);
-		
+
+	}
+
+	@Override
+	public void updateBillingAddress(Order order) {
+		Order ord = customerOrderDao.getOrderById(order.getOrderId());
+		ord.getBillingAddress()
+				.setApartmentNumber(order.getCart().getCustomer().getBillingAddress().getApartmentNumber());
+		ord.getBillingAddress().setCity(order.getCart().getCustomer().getBillingAddress().getCity());
+		ord.getBillingAddress().setStreet(order.getCart().getCustomer().getBillingAddress().getStreet());
+		ord.getBillingAddress().setZipCode(order.getCart().getCustomer().getBillingAddress().getZipCode());
+		customerOrderDao.updateOrder(ord);
+	}
+
+	@Override
+	public void updateShippingAddress(Order order) {
+		Order ord = customerOrderDao.getOrderById(order.getOrderId());
+		ord.getShippingAddress()
+				.setApartmentNumber(order.getCart().getCustomer().getShippingAddress().getApartmentNumber());
+		ord.getShippingAddress().setCity(order.getCart().getCustomer().getShippingAddress().getCity());
+		ord.getShippingAddress().setStreet(order.getCart().getCustomer().getShippingAddress().getStreet());
+		ord.getShippingAddress().setZipCode(order.getCart().getCustomer().getShippingAddress().getZipCode());
+		customerOrderDao.updateOrder(ord);
 	}
 }

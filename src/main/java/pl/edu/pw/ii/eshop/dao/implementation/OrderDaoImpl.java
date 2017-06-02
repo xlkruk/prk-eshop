@@ -10,8 +10,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import pl.edu.pw.ii.eshop.dao.OrderDao;
+import pl.edu.pw.ii.eshop.model.BillingAddress;
 import pl.edu.pw.ii.eshop.model.Order;
 import pl.edu.pw.ii.eshop.model.Product;
+import pl.edu.pw.ii.eshop.model.ShippingAddress;
 
 /**
  * Klasa implementująca {@link OrderDao}
@@ -27,10 +29,23 @@ public class OrderDaoImpl implements OrderDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public void addOrder(Order customerOrder) {
+	public int addOrder(Order customerOrder) {
 		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(customerOrder);
+		BillingAddress ba = new BillingAddress();		
+		ShippingAddress sa = new ShippingAddress();
+				
+		customerOrder.setBillingAddress(ba);
+		ba.setOrder(customerOrder);
+
+		customerOrder.setShippingAddress(sa);
+		sa.setOrder(customerOrder);
+		// utrwalenie zmian
+		Integer id = (Integer) session.save(customerOrder);
+		session.saveOrUpdate(customerOrder.getBillingAddress());
+		session.saveOrUpdate(customerOrder.getShippingAddress());
 		session.flush();
+		
+		return id;
 	}
 
 	@Override
@@ -70,8 +85,10 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public void updateOrder(Order order) {
 		Session session = sessionFactory.getCurrentSession();
-		// utrwalenie zam�wienia
+		// utrwalenie zamówienia
 		session.saveOrUpdate(order);
+		session.saveOrUpdate(order.getBillingAddress());
+		session.saveOrUpdate(order.getShippingAddress());
 		session.flush();
 
 	}
