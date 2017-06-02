@@ -79,6 +79,8 @@ public class CartResources {
 	 * 
 	 * @param productId
 	 *            id produktu
+	 * @param user
+	 *            użytkownik
 	 * @see CartService
 	 * @see CartItemService
 	 */
@@ -151,7 +153,6 @@ public class CartResources {
 		cartItemService.deleteAllCartItems(cart);
 	}
 
-	
 	@ExceptionHandler(IllegalArgumentException.class)
 	@ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "B��dne ��danie")
 	public void handleClientErrors(Exception e) {

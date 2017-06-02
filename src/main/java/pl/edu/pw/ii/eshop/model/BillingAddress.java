@@ -28,7 +28,7 @@ public class BillingAddress implements Serializable {
 
 	@OneToOne
 	private Customer customer;
-	
+
 	@OneToOne
 	private Order order;
 
@@ -59,6 +59,7 @@ public class BillingAddress implements Serializable {
 	 * Metoda ustawia id adresu
 	 * 
 	 * @param billingAddressId
+	 *            id adresu do faktury
 	 */
 	public void setBillingAddressId(int billingAddressId) {
 		this.billingAddressId = billingAddressId;
@@ -165,5 +166,4 @@ public class BillingAddress implements Serializable {
 				+ apartmentNumber + ", city=" + city + ", zipCode=" + zipCode + "]";
 	}
 
-	
 }

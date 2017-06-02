@@ -18,6 +18,7 @@ public interface OrderDao {
 	 * 
 	 * @param order
 	 *            zamówienie
+	 * @return id wykreowanego zamówienia
 	 */
 	int addOrder(Order order);
 
@@ -32,6 +33,7 @@ public interface OrderDao {
 	 * Metoda zwracająca zamówienie po zadanym statusie
 	 * 
 	 * @param status
+	 *            status zamówienia
 	 * @return lista zamówień {@link Order}
 	 */
 	List<Order> getOrdersByStatus(String status);

@@ -59,6 +59,8 @@ public class ProductController {
 	 *            interfejs, Spring dostarcza implementację. Holder dla
 	 *            atrybutów modelu w MVC.
 	 * @return nazwa widoku.
+	 * @throws Exception
+	 *             metoda może rzucać wyjątek.
 	 */
 	@RequestMapping("/viewProduct/{id}")
 	public String viewProduct(@PathVariable int id, Model model) throws Exception {

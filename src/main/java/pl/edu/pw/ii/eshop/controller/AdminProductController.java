@@ -37,8 +37,8 @@ public class AdminProductController {
 	private OrderService orderService;
 
 	/**
-	 * Metoda obsługująca żądanie przeglądarki /admin/product/addProduct.
-	 * Zwraca nazwę widoku do wygenerowania odpowiedzi.
+	 * Metoda obsługująca żądanie przeglądarki /admin/product/addProduct. Zwraca
+	 * nazwę widoku do wygenerowania odpowiedzi.
 	 * 
 	 * @param model
 	 *            interfejs, Spring dostarcza implementacją. Holder dla
@@ -127,9 +127,9 @@ public class AdminProductController {
 	 * jako obiekt klasy Product. W przypadku braku błędów walidacji, product
 	 * jest utrwalany i żądanie jest przekierowywane do /order/viewOrder/{id}.
 	 * 
-	 * @param order
-	 *            obiekt klasy {@link Order}. Encja reprezentująca zamówienie
-	 *            klienta
+	 * @param product
+	 *            obiekt klasy {@link Product}. Encja reprezentująca produkt w
+	 *            sklepie.
 	 * @param result
 	 *            interfejs rozszerzający interfejs umożliwiający rejestrowanie
 	 *            błędów, zastosowanie walidatora {@link Valid}.
@@ -155,14 +155,17 @@ public class AdminProductController {
 	}
 
 	/**
-	 * Metoda obsługująca żądanie przeglądarki
-	 * /admin/product/deleteProduct/{id} przy pomocy metody GET. Metoda
-	 * wykorzystuje implementacją interfejsu ProductService do usunięcia
-	 * produktu o zadanym id, reprezentowanego jako obiekt klasy Product.
-	 * żądanie jest przekierowywane do /admin/productInventory.
+	 * Metoda obsługująca żądanie przeglądarki /admin/product/deleteProduct/{id}
+	 * przy pomocy metody GET. Metoda wykorzystuje implementacją interfejsu
+	 * ProductService do usunięcia produktu o zadanym id, reprezentowanego jako
+	 * obiekt klasy Product. żądanie jest przekierowywane do
+	 * /admin/productInventory.
 	 * 
 	 * @param id
 	 *            id produktu do usunięcia
+	 * @param model
+	 *            interfejs, Spring dostarcza implementacją. Holder dla
+	 *            atrybutów modelu w MVC.
 	 * @param request
 	 *            obiekt klasy {@link HttpServletRequest}, reprezentujący
 	 *            żądanie HTTP.

@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.condition.ProducesRequestCondition;
 import pl.edu.pw.ii.eshop.dao.ProductDao;
 import pl.edu.pw.ii.eshop.model.Product;
 import pl.edu.pw.ii.eshop.service.ProductService;
+
 /**
  * Klasa realizująca funkcje kontrolera, który obsługuje zapytania wysyłane
  * poprzez przeglądarkę od użytkowników.
@@ -35,18 +36,18 @@ public class HomeController {
 	 * Metoda obsługująca żądanie / typu GET. zwraca nazwę widoku do
 	 * wygenerowania
 	 * 
-	 * @return
+	 * @return nazwa widoku.
 	 */
 	@RequestMapping("/")
 	public String home() {
 		return "home";
 	}
-	
+
 	/**
 	 * Metoda obsługująca żądanie /contact typu GET. zwraca nazwę widoku do
 	 * wygenerowania
 	 * 
-	 * @return
+	 * @return nazwa widoku
 	 */
 	@RequestMapping("/contact")
 	public String contact() {
@@ -86,6 +87,7 @@ public class HomeController {
 	 *            atrybutów modelu w MVC.
 	 * @return nazwa widoku.
 	 * @throws IOException
+	 *             ,etota może wyrzucić wujątek {@link IOException}
 	 */
 	@RequestMapping("/productList/viewProduct/{id}")
 	public String viewProduct(@PathVariable int id, Model model) throws IOException {
@@ -110,6 +112,7 @@ public class HomeController {
 	 * @param id
 	 *            id produktu, dla którego ma zostać pobrany obrazek.
 	 * @throws IOException
+	 *             metoda może rzucić wyjątek.
 	 */
 	@RequestMapping(value = { "/productImage" }, method = RequestMethod.GET)
 	public void productImage(HttpServletRequest request, HttpServletResponse response, Model model,

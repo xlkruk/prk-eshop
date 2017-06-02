@@ -189,6 +189,7 @@ public class ProductInfo {
 	 * Metoda ustawiająca status produktu
 	 * 
 	 * @param status
+	 *            status produktu
 	 */
 	public void setStatus(String status) {
 		this.status = status;

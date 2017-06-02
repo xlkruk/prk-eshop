@@ -1,0 +1,6 @@
+pl.edu.pw.ii.eshop.controller
+pl.edu.pw.ii.eshop.dao
+pl.edu.pw.ii.eshop.dao.implementation
+pl.edu.pw.ii.eshop.model
+pl.edu.pw.ii.eshop.service
+pl.edu.pw.ii.eshop.service.implementation

@@ -22,8 +22,9 @@ public interface OrderService {
 	 * 
 	 * @param order
 	 *            zamówienie
+	 * @return id utworzonego zamówienia
 	 */
-	int addOrder(Order customerOrder);
+	int addOrder(Order order);
 
 	/**
 	 * Metoda zwracająca cenę całkowitą koszyka
@@ -45,6 +46,7 @@ public interface OrderService {
 	 * Metoda zwracająca zamówienie o zadanym statusie
 	 * 
 	 * @param status
+	 *            status zamówienia.
 	 * @return lista zamówień {@link Order}
 	 */
 	List<Order> getOrdersByStatus(String status);
@@ -98,16 +100,21 @@ public interface OrderService {
 	 * @return zamówienie {@link Order}
 	 */
 	Order getOrderById(int id);
-	
+
 	/**
 	 * Metoda aktualizująca adres do faktury
+	 * 
 	 * @param order
+	 *            zamówienie klienta
 	 */
 	void updateBillingAddress(Order order);
+
 	/**
 	 * Metoda aktualizująca adres do faktury
+	 * 
 	 * @param order
+	 *            zamówienie klienta.
 	 */
 	void updateShippingAddress(Order order);
-	
+
 }

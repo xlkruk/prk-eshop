@@ -1,4 +1,4 @@
-﻿package pl.edu.pw.ii.eshop.model;
+package pl.edu.pw.ii.eshop.model;
 
 import java.io.Serializable;
 
@@ -178,7 +178,7 @@ public class Customer implements Serializable {
 	/**
 	 * Metoda ustawiająca login klienta.
 	 * 
-	 * @param username
+	 * @param username login/nazwa użytkownika
 	 */
 	public void setUsername(String username) {
 		this.username = username;
@@ -287,5 +287,4 @@ public class Customer implements Serializable {
 				+ billingAddress + ", shippingAddress=" + shippingAddress + ", cart=" + cart + "]";
 	}
 
-	
 }

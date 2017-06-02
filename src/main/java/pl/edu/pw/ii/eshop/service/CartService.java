@@ -24,6 +24,7 @@ public interface CartService {
 	 * Metoda realizująca utrwalenie zmodyfikowanego koszyka {@link Cart}
 	 * 
 	 * @param cart
+	 *            koszyk klienta {@link Cart}
 	 */
 	void update(Cart cart);
 

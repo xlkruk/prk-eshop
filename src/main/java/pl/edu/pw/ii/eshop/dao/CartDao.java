@@ -27,14 +27,14 @@ public interface CartDao {
 	 * @param cartId
 	 *            id koszyka klienta
 	 * @return koszyk klienta
-	 * @throws IOException
+	 * @throws IOException klasa może rzucać wyjątek {@link IOException}
 	 */
 	Cart validate(int cartId) throws IOException;
 
 	/**
 	 * Metoda realizująca utrwalenie zmodyfikowanego koszyka {@link Cart}
 	 * 
-	 * @param cart
+	 * @param cart koszyk {@link Cart}
 	 */
 	void update(Cart cart);
 

@@ -163,6 +163,7 @@ public class Product implements Serializable {
 	 * Metoda ustawiająca opis produktu
 	 * 
 	 * @param description
+	 *            opis
 	 */
 	public void setDescription(String description) {
 		this.description = description;
@@ -238,6 +239,7 @@ public class Product implements Serializable {
 	 * Metoda zwracająca status magazynu
 	 * 
 	 * @param stock
+	 *            stan magazynu - obecnie nieużywane.
 	 */
 	public void setStock(int stock) {
 		this.stock = stock;

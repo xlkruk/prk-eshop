@@ -71,7 +71,7 @@ public class OrderController {
 	 *            interfejs, Spring dostarcza implementację. Holder dla
 	 *            atrybutów modelu w MVC.
 	 * @return nazwa widoku.
-	 * @throws Exception
+	 * @throws Exception metoda może rzucić wyjątek.
 	 */
 	@RequestMapping("viewOrder/{id}")
 	public String viewOrder(@PathVariable int id, Model model) throws Exception {

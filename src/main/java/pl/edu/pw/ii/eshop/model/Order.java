@@ -75,6 +75,7 @@ public class Order implements Serializable {
 	 * pozycjami z linii agregujących koszyka klienta.
 	 * 
 	 * @param cart
+	 *            koszyk użytkownika
 	 */
 	public Order(Cart cart) {
 		this();
@@ -195,6 +196,7 @@ public class Order implements Serializable {
 	 * Metoda ustawiająca adres dostawy {@link ShippingAddress}
 	 * 
 	 * @param shippingingAddress
+	 *            obiekt reprezentujący adres dostawy {@link ShippingAddress}
 	 */
 	public void setShippingAddress(ShippingAddress shippingingAddress) {
 		this.shippingAddress = shippingingAddress;
