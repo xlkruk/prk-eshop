@@ -72,10 +72,10 @@ public class CartResources {
 	 * pomocy metody PUT. Metoda wykorzystuje implementację interfejsu
 	 * CartItemService do dodania produktu o zadanym id do linii agregującej
 	 * koszyka. Linia agregująca rozumiana jako element koszyka, który agreguje
-	 * wszytkie produkty tego samego typu. Jezeli istnieje linia agregacyjna
+	 * wszytkie produkty tego samego typu. Jeżeli istnieje linia agregacyjna
 	 * {@link CartItem} dla produktu o productId, to jest on dodawany do niej. W
 	 * przeciwnym przypadku jest tworzona nowa linia agregacyjna i produkt
-	 * {@link Product} jest dodawany do niej. linia agregacyjna jest utrwalana.
+	 * {@link Product} jest dodawany do niej. Linia agregacyjna jest utrwalana.
 	 * 
 	 * @param productId
 	 *            id produktu

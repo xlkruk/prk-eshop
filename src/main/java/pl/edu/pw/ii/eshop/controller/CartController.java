@@ -37,7 +37,7 @@ public class CartController {
 
 	/**
 	 * Metoda obsługująca żądanie przeglądarki /customer/cart przy pomocy
-	 * metody GET. Metoda wykorzystuje implementację interfejsu CustomerService
+	 * metody GET. Metoda wykorzystuje implementację interfejsu {@link CustomerService}
 	 * do pobrania id Koszyka użytkownika, przekazanego w parametrze wywołania
 	 * metody. żądanie jest przekierowywane do /customer/cart/{id}.
 	 * 

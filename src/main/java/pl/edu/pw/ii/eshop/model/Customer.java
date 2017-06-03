@@ -204,7 +204,7 @@ public class Customer implements Serializable {
 	}
 
 	/**
-	 * Metoda testujca czy klient jest aktywny. Obecnnie niewykorzystywana.
+	 * Metoda testująca czy klient jest aktywny. Obecnie niewykorzystywana.
 	 * 
 	 * @return wynik testy=u czy klient jest aktywny.
 	 */

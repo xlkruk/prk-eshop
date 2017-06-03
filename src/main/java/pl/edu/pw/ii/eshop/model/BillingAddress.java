@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
  * Klasa reprezentująca adres do wystawienia faktury za zakup. Jest to encja
  * reprezentowana jako tabela BILLINADDRESS
  * 
- * @author LucaR
+ * @author Lukasz Kruk
  *
  */
 @Entity
@@ -104,7 +104,7 @@ public class BillingAddress implements Serializable {
 	}
 
 	/**
-	 * Metoda pobierają nazwę miasta.
+	 * Metoda zwracająca nazwę miasta.
 	 * 
 	 * @return nazwma miasta.
 	 */

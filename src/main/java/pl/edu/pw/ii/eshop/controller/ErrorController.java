@@ -19,7 +19,7 @@ public class ErrorController {
 
 	/**
 	 * Metoda realizująca przekierowanie na stronę errorPage.jsp w przypadku
-	 * odpowiedzi HTTP reprezentjącej niepowodzenie obsługi żądania.
+	 * odpowiedzi HTTP reprezentującej niepowodzenie obsługi żądania.
 	 * 
 	 * @param httpRequest
 	 *            obiekt żądania {@link HttpServletRequest}
@@ -62,7 +62,7 @@ public class ErrorController {
 
 	/**
 	 * Metoda realizująca przekierowanie na stronę errorPage.jsp w przypadku
-	 * odpowiedzi HTTP reprezentjącej niepowodzenie obsługi żądania POST.
+	 * odpowiedzi HTTP reprezentującej niepowodzenie obsługi żądania POST.
 	 * 
 	 * @param httpRequest
 	 *            obiekt żądania {@link HttpServletRequest}

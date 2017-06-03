@@ -1,12 +1,13 @@
 package pl.edu.pw.ii.eshop.service.implementation;
 
+import pl.edu.pw.ii.eshop.dao.CustomerDao;
 import pl.edu.pw.ii.eshop.dao.OrderDao;
 import pl.edu.pw.ii.eshop.model.Cart;
 import pl.edu.pw.ii.eshop.model.CartItem;
-import pl.edu.pw.ii.eshop.model.Customer;
 import pl.edu.pw.ii.eshop.model.Order;
 import pl.edu.pw.ii.eshop.model.Status;
 import pl.edu.pw.ii.eshop.service.CartService;
+import pl.edu.pw.ii.eshop.service.CustomerService;
 import pl.edu.pw.ii.eshop.service.MailService;
 import pl.edu.pw.ii.eshop.service.OrderService;
 
@@ -16,6 +17,15 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Klasa implementująca interfejs {@link OrderService}. Wykorzystuje
+ * implementację interfejsu {@link CustomerDao} do komunikacji z warstwą dostę[u
+ * do danych. Wykorzystuje implementacje interfejsów {@link CartService} oraz
+ * {@link MailService} do logiki biznesowej zaimplementowanej w klasie.
+ * 
+ * @author Agnieszka Świderska
+ *
+ */
 @Service
 public class OrderServiceImpl implements OrderService {
 

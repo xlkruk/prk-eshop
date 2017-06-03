@@ -31,12 +31,12 @@ public class RegisterController {
 	/**
 	 * Metoda obsługująca żądanie /register typu GET. Tworzy nową instancję
 	 * obieku {@link Customer}, reprezentującego Klienta sklepu. Następnie
-	 * dodaje go do modeku jako atrybut. Metoda zwraca nazwę widoku generowanego
+	 * dodaje go do modelu jako atrybut. Metoda zwraca nazwę widoku generowanego
 	 * w odpoweidzi.
 	 * 
 	 * @param model
 	 *            interfejs, Spring dostarcza implementację. Holder dla
-	 *            atrybut�w modelu w MVC.
+	 *            atrybutów modelu w MVC.
 	 * @return nazwa widoku.
 	 */
 	@RequestMapping("/register")
@@ -48,10 +48,10 @@ public class RegisterController {
 	}
 
 	/**
-	 * Metoda obsąuguje żądanie /register typu POST. Dane wprowadzone przez
+	 * Metoda obsługuje żądanie /register typu POST. Dane wprowadzone przez
 	 * klienta są walidowane i w przypadku błędów, metoda zwraca nazwę widoku
-	 * registerCustomer. Walidowane są dane wprowadzoe w formularzu oraz
-	 * werifikowana unikalność adresu email i nazwy użytkownika. W przypadku
+	 * registerCustomer. Walidowane są dane wprowadzone w formularzu oraz
+	 * weryfikowana unikalność adresu email i nazwy użytkownika. W przypadku
 	 * pozytywnej weryfikacji, nowy klient {@link Customer} jest utrwalany przy
 	 * użyciu implementacji interfejsu {@link CustomerService}. Metoda zwraca
 	 * nazwę widoku, generowanego w odpowiedzi.

@@ -45,7 +45,7 @@ public class CustomerHomeController {
 	 * reprezentujący klienta sklepu. Customer jest dodawany do modelu.
 	 * 
 	 * @param username
-	 *            nazwa użytkownika serwisu dla, którego ma zosta� wygenerowana
+	 *            nazwa użytkownika serwisu, dla którego ma zostaż wygenerowana
 	 *            strona.
 	 * @param model
 	 *            interfejs, Spring dostarcza implementację. Holder dla
@@ -149,7 +149,7 @@ public class CustomerHomeController {
 	 * "PAYMENT_RECEIVED". Następnie pobierana jest lista wszystkich zamówień
 	 * dla klienta o id zwróconego poprzez wywołanie
 	 * order.getCustomer().getCustomerId(). Lista zamówień jest dodawana do
-	 * modelu. żądanie jest przekierowywane do
+	 * modelu. Żądanie jest przekierowywane do
 	 * redirect:/customer/orderList/{customerId}
 	 * 
 	 * @param id

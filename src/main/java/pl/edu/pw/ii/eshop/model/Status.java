@@ -16,10 +16,21 @@ public enum Status {
 		this.description = description;
 	}
 
+	/**
+	 * Metoda zwracająca opis
+	 * 
+	 * @return opis
+	 */
 	public String getDescription() {
 		return description;
 	}
 
+	/**
+	 * Metoda ustawiająca opis
+	 * 
+	 * @param description
+	 *            opis
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}

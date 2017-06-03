@@ -13,7 +13,6 @@ import pl.edu.pw.ii.eshop.dao.CustomerDao;
 import pl.edu.pw.ii.eshop.model.Authorities;
 import pl.edu.pw.ii.eshop.model.Cart;
 import pl.edu.pw.ii.eshop.model.Customer;
-import pl.edu.pw.ii.eshop.model.Product;
 import pl.edu.pw.ii.eshop.model.Users;
 
 /**

@@ -33,7 +33,7 @@ public class HomeController {
 	private ProductService productService;
 
 	/**
-	 * Metoda obsługująca żądanie / typu GET. zwraca nazwę widoku do
+	 * Metoda obsługująca żądanie / typu GET. Zwraca nazwę widoku do
 	 * wygenerowania
 	 * 
 	 * @return nazwa widoku.
@@ -44,7 +44,7 @@ public class HomeController {
 	}
 
 	/**
-	 * Metoda obsługująca żądanie /contact typu GET. zwraca nazwę widoku do
+	 * Metoda obsługująca żądanie /contact typu GET. Zwraca nazwę widoku do
 	 * wygenerowania
 	 * 
 	 * @return nazwa widoku

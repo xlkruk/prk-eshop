@@ -34,10 +34,10 @@ public class OrderController {
 	 * {@link Order}. Metoda przy wykorzystaniu implementacji interfejsu
 	 * {@link CartService} pobiera koszyk {@link Cart} o zadanym cartId.
 	 * Nastepnie tworzy nowe zamówienie {@link Order}, do którego przypisuje
-	 * koszyk klienta. Następnie pobiera Klienta {@link Customer} za instancji
+	 * koszyk klienta. Następnie pobiera Klienta {@link Customer} z instancji
 	 * Koszyka {@link Cart}. Informacje pobrane z obiektu klienta
-	 * {@link Customer}, sąustawiane jako atrybuty zamówienia. zamówienie jest
-	 * utrwalane przy pomocy {@link OrderService}. żądanie jest przekierowywane
+	 * {@link Customer}, są ustawiane jako atrybuty zamówienia. Zamówienie jest
+	 * utrwalane przy pomocy {@link OrderService}. Żądanie jest przekierowywane
 	 * do redirect:/checkout?cartId={cartId}
 	 * 
 	 * @param cartId
@@ -61,7 +61,7 @@ public class OrderController {
 
 	/**
 	 * Metoda obsługująca żądanie /order/viewOrder/{id} typu GET. Przy użyciu
-	 * implementacji interfejsu {@link OrderService} bobierane jest zamówienie
+	 * implementacji interfejsu {@link OrderService} pobierane jest zamówienie
 	 * {@link Order} od id przekazanym w parametrach wywołania. Następnie
 	 * zamówienie order jest zapisywane jako atrybut modelu {@link Model}
 	 * 

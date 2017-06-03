@@ -70,7 +70,7 @@ public class Order implements Serializable {
 	}
 
 	/**
-	 * Kokstruktor przyjmujący koszyk klienta {@link Cart} jako parametr.
+	 * Konstruktor przyjmujący koszyk klienta {@link Cart} jako parametr.
 	 * Wywołuje konstruktor bezparametrowy. Wypełnia listę pozycji zamówienia
 	 * pozycjami z linii agregujących koszyka klienta.
 	 * 
@@ -165,7 +165,7 @@ public class Order implements Serializable {
 	}
 
 	/**
-	 * MEtoda zwracająca adres do faktury {@link BillingAddress}
+	 * Metoda zwracająca adres do faktury {@link BillingAddress}
 	 * 
 	 * @return adres do faktury {@link BillingAddress}
 	 */

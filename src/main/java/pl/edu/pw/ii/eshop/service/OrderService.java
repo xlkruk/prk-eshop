@@ -11,7 +11,7 @@ import pl.edu.pw.ii.eshop.model.Order;
  * Interfejs warstwy serwisu, definiujący metody związane z logiką biznesową
  * związaną z obsługą zamówienia
  * 
- * @author ąukasz Kruk
+ * @author Łukasz Kruk
  *
  */
 
@@ -36,7 +36,7 @@ public interface OrderService {
 	double getOrderGrandTotal(int cartId);
 
 	/**
-	 * Metoda zwracająca wszytkie zamówienia
+	 * Metoda zwracająca wszystkie zamówienia
 	 * 
 	 * @return lista wszystkich zamówień {@link Order}
 	 */
@@ -52,7 +52,7 @@ public interface OrderService {
 	List<Order> getOrdersByStatus(String status);
 
 	/**
-	 * Metoda zwracająca wszytskie zamówienia złożone przez klienta o zadanym id
+	 * Metoda zwracająca wszystkie zamówienia złożone przez klienta o zadanym id
 	 * 
 	 * @param customerId
 	 *            id klienta {@link Customer}
@@ -61,7 +61,7 @@ public interface OrderService {
 	List<Order> getOrdersByCustomerId(int customerId);
 
 	/**
-	 * Metoda ustawiający status zamówienia na PAYMENT_RECEIVED
+	 * Metoda ustawiająca status zamówienia na PAYMENT_RECEIVED
 	 * 
 	 * @param customerOrder
 	 *            zamówienie klienta

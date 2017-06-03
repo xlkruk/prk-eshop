@@ -75,7 +75,7 @@ public class AdminHomeController {
 	 * /admin/productListByCategory/{category}. Metoda wykorzystuje
 	 * implementację interfejsu ProductService do pobrania listy produktów z
 	 * zadaną kategorią. Produkty reprezentowane jako obiekty klasy Product.
-	 * Lista produktów jest dodawana do modelu. Metoda Zwraca nazwę widoku do
+	 * Lista produktów jest dodawana do modelu. Metoda zwraca nazwę widoku do
 	 * wygenerowania odpowiedzi.
 	 * 
 	 * @param category

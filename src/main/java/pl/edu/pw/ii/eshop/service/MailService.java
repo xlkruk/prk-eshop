@@ -43,7 +43,7 @@ public interface MailService {
 	public void sendPaymentConfirmation(Order order);
 
 	/**
-	 * Metoda realizująca wysłanie wiadomości email z informujące o wysłaniu
+	 * Metoda realizująca wysłanie wiadomości email informującej o wysłaniu
 	 * przesyłki.
 	 * 
 	 * @param order

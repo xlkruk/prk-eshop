@@ -31,7 +31,7 @@ public interface CustomerDao {
 	Customer getCustomerById(int id);
 
 	/**
-	 * Metoda zwracająca list� wszystkich klientów
+	 * Metoda zwracająca listę wszystkich klientów
 	 * 
 	 * @return lista wszystkich klientów {@link Customer} sklepu
 	 */

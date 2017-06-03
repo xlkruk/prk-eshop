@@ -9,7 +9,7 @@ import pl.edu.pw.ii.eshop.model.CartItem;
 import pl.edu.pw.ii.eshop.service.CartService;
 
 /**
- * Klasa implementująca interfejs {@link CartService}. wykorzystuje
+ * Klasa implementująca interfejs {@link CartService}. Wykorzystuje
  * implementację interfejsu {@link CartDao} do komunikacji z warstwą dostępu do
  * danych.
  * 

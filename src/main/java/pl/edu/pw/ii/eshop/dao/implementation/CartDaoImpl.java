@@ -55,7 +55,7 @@ public class CartDaoImpl implements CartDao {
 	}
 
 	/**
-	 * Metoda waidująca czy koszyk o danym id istnieje. Jeżeli tak, to zwraca
+	 * Metoda walidująca czy koszyk o danym id istnieje. Jeżeli tak, to zwraca
 	 * koszyk {@link Cart}, w przeciwnym wypadku rzucany jest wyjątek
 	 * IOException
 	 * 

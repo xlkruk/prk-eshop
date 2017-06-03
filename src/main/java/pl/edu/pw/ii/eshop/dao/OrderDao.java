@@ -23,7 +23,7 @@ public interface OrderDao {
 	int addOrder(Order order);
 
 	/**
-	 * Metoda zwracająca wszytkie zamówienia
+	 * Metoda zwracająca wszystkie zamówienia
 	 * 
 	 * @return lista wszystkich zamówień {@link Order}
 	 */
@@ -39,7 +39,7 @@ public interface OrderDao {
 	List<Order> getOrdersByStatus(String status);
 
 	/**
-	 * Metoda zwracająca wszytskie zamówienia złożone przez klienta o zadanym id
+	 * Metoda zwracająca wszystkie zamówienia złożone przez klienta o zadanym id
 	 * 
 	 * @param customerId
 	 *            id klienta {@link Customer}

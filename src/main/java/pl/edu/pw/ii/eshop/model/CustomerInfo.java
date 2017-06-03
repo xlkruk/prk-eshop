@@ -106,7 +106,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiajaca nazwisko klienta
+	 * Metoda ustawiająca nazwisko klienta
 	 * 
 	 * @param customerLastName
 	 *            nazwisko klienta.
@@ -249,7 +249,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda zwracająca nzawę miasta adresu do faktury
+	 * Metoda zwracająca nazwę miasta adresu do faktury
 	 * 
 	 * @return nazwa miasta adresu do faktury
 	 */
@@ -296,7 +296,7 @@ public class CustomerInfo {
 	}
 
 	/**
-	 * Metoda ustawiająca nzawę ulicy adresu dostawy
+	 * Metoda ustawiająca nazwę ulicy adresu dostawy
 	 * 
 	 * @param shippingStreet
 	 *            nzawę ulicy adresu dostawy

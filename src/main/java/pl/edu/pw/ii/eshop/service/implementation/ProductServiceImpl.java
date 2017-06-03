@@ -13,7 +13,7 @@ import pl.edu.pw.ii.eshop.model.ProductInfo;
 import pl.edu.pw.ii.eshop.service.ProductService;
 
 /**
- * Klasa implementująca inteffejs {@link ProductService}. Wykorzystuje
+ * Klasa implementująca interfejs {@link ProductService}. Wykorzystuje
  * implementację intefejsu {@link ProductDao} do komunikaacji z warstwą dostępu
  * do danych.
  * 

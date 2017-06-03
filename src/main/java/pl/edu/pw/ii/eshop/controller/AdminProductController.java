@@ -37,11 +37,11 @@ public class AdminProductController {
 	private OrderService orderService;
 
 	/**
-	 * Metoda obsługująca żądanie przeglądarki /admin/product/addProduct. Zwraca
+	 * Metoda obsługująca żądanie przeglądarki /admin/product/addProduct typu GET. Zwraca
 	 * nazwę widoku do wygenerowania odpowiedzi.
 	 * 
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacją. Holder dla
+	 *            interfejs, Spring dostarcza implementację. Holder dla
 	 *            atrybutów modelu w MVC.
 	 * @return nazwa widoku.
 	 * @see Product
@@ -59,7 +59,7 @@ public class AdminProductController {
 
 	/**
 	 * Metoda obsługująca żądanie przeglądarki /admin/product/addProduct przy
-	 * pomocy metody POST. Metoda wykorzystuje implementacją interfejsu
+	 * pomocy metody POST. Metoda wykorzystuje implementację interfejsu
 	 * ProductService do utrwalenia nowego produktu reprezentowanego jako obiekt
 	 * klasy Product. W przypadku udanego pobrania produktu do edycji, żądanie
 	 * jest przekierowywane do /admin/productInventory. W przeciwnym wypadku
@@ -98,7 +98,7 @@ public class AdminProductController {
 
 	/**
 	 * Metoda obsługująca żądanie przeglądarki GET /admin/editProduct/{id}.
-	 * Metoda wykorzystuje implementacją interfejsu ProductService do pobrania
+	 * Metoda wykorzystuje implementację interfejsu ProductService do pobrania
 	 * produktu o zadanym id. Produkt reprezentowany jako obiekt klasy Product.
 	 * Produkt produktów jest dodawany do modelu. Metoda zwraca nazwę widoku do
 	 * wygenerowania odpowiedzi.
@@ -106,7 +106,7 @@ public class AdminProductController {
 	 * @param id
 	 *            id produktu do edycji
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacją. Holder dla
+	 *            interfejs, Spring dostarcza implementację. Holder dla
 	 *            atrybutów modelu w MVC.
 	 * @return nazwa widoku.
 	 * @see Product
@@ -122,7 +122,7 @@ public class AdminProductController {
 
 	/**
 	 * Metoda obsługująca żądanie przeglądarki /admin/product/editProduct przy
-	 * pomocy metody POST. Metoda wykorzystuje implementacją interfejsu
+	 * pomocy metody POST. Metoda wykorzystuje implementację interfejsu
 	 * ProductService do utrwalenia modyfikowanego produktu reprezentowanego
 	 * jako obiekt klasy Product. W przypadku braku błędów walidacji, product
 	 * jest utrwalany i żądanie jest przekierowywane do /order/viewOrder/{id}.
@@ -156,15 +156,15 @@ public class AdminProductController {
 
 	/**
 	 * Metoda obsługująca żądanie przeglądarki /admin/product/deleteProduct/{id}
-	 * przy pomocy metody GET. Metoda wykorzystuje implementacją interfejsu
+	 * przy pomocy metody GET. Metoda wykorzystuje implementację interfejsu
 	 * ProductService do usunięcia produktu o zadanym id, reprezentowanego jako
-	 * obiekt klasy Product. żądanie jest przekierowywane do
+	 * obiekt klasy Product. Żądanie jest przekierowywane do
 	 * /admin/productInventory.
 	 * 
 	 * @param id
 	 *            id produktu do usunięcia
 	 * @param model
-	 *            interfejs, Spring dostarcza implementacją. Holder dla
+	 *            interfejs, Spring dostarcza implementację. Holder dla
 	 *            atrybutów modelu w MVC.
 	 * @param request
 	 *            obiekt klasy {@link HttpServletRequest}, reprezentujący
@@ -184,14 +184,14 @@ public class AdminProductController {
 
 	/**
 	 * Metoda obsługująca żądanie przeglądarki /admin/order/changeStatus przy
-	 * pomocy metody POST. Metoda wykorzystuje implementacją interfejsu
+	 * pomocy metody POST. Metoda wykorzystuje implementację interfejsu
 	 * OrderService do zmiany statusu zamówienia reprezentowanego jako obiekt
-	 * klasy {@link Order}. żądanie jest przekierowywane do
+	 * klasy {@link Order}. Żądanie jest przekierowywane do
 	 * /admin/productInventory. W przeciwnym wypadku zwracany jest widok
 	 * editProduct
 	 * 
 	 * @param order
-	 *            obiekt klasy {@link Order}. Encaj reprezentująca zamówienie
+	 *            obiekt klasy {@link Order}. Encja reprezentująca zamówienie
 	 *            klienta
 	 * @param result
 	 *            interfejs rozszerzający interfejs umożliwiający rejestrowanie

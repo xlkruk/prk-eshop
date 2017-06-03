@@ -33,7 +33,7 @@ public class Cart implements Serializable {
 	private int cartId;
 
 	/**
-	 * Koszyk może zawieraćwiele linii agregujących.
+	 * Koszyk może zawierać 	wiele linii agregujących.
 	 */
 	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<CartItem> cartItems;
