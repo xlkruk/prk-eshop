@@ -8,6 +8,12 @@ import pl.edu.pw.ii.eshop.model.ShippingAddress;
 
 import org.junit.Test;
 
+/**
+ * @author Krzysztof Trybus
+ * @version 1.0
+ *
+ */
+
 public class ShippingAddressTest extends ShippingAddress{
 	
 	private static final long serialVersionUID = 6878764671149014282L;
@@ -24,31 +30,36 @@ public class ShippingAddressTest extends ShippingAddress{
 	public void testGetBillingAddressId() {
 		setBillingAddressId(billingAddressId);
 		assertEquals(billingAddressId,getBillingAddressId());
+		assertFalse("123434".equals(getBillingAddressId()));
 		
 	}
 
 	@Test
 	public void testGetStreet() {
-		setBillingAddressId(billingAddressId);
-		assertEquals(billingAddressId,getBillingAddressId());
+		setStreet(street);
+		assertEquals(street,getStreet());
+		assertFalse("".equals(getStreet()));
 	}
 
 	@Test
 	public void testGetApartmentNumber() {
 		setApartmentNumber(apartmentNumber);
 		assertEquals(apartmentNumber,getApartmentNumber());
+		assertFalse("12".equals(getApartmentNumber()));
 	}
 
 	@Test
 	public void testGetCity() {
 		setCity(city);
 		assertEquals(city,getCity());
+		assertFalse("Warszawa".equals(getCity()));
 	}
 
 	@Test
 	public void testGetZipCode() {
 		setZipCode(zipCode);
 		assertEquals(zipCode,getZipCode());
+		assertFalse("01234".equals(getZipCode()));
 	}
 
 	@Test

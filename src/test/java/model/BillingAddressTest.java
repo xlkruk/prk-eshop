@@ -2,6 +2,12 @@ package model;
 
 import static org.junit.Assert.*;
 
+/**
+ * @author Krzysztof Trybus
+ * @version 1.0
+ *
+ */
+
 import org.junit.Test;
 import pl.edu.pw.ii.eshop.model.BillingAddress;
 
@@ -16,31 +22,36 @@ public class BillingAddressTest extends BillingAddress{
 	@Test
 	public void testGetBillingAddressId() {
 		setBillingAddressId(billingAddressId);
-		assertEquals(billingAddressId,getBillingAddressId());		
+		assertEquals(billingAddressId,getBillingAddressId());
+		assertFalse("92387".equals(getBillingAddressId()));	
 	}
 
 	@Test
 	public void testGetStreet() {
 		setStreet(street);
-		assertEquals(street,getStreet());	
+		assertEquals(street,getStreet());
+		assertFalse("Test Maja".equals(getStreet()));
 	}
 
 	@Test
 	public void testGetApartmentNumber() {
 		setApartmentNumber(apartmentNumber);
 		assertEquals(apartmentNumber,getApartmentNumber());	
+		assertFalse("9/6".equals(getStreet()));
 	}
 
 	@Test
 	public void testGetCity() {
 		setCity(city);
-		assertEquals(city,getCity());	
+		assertEquals(city,getCity());
+		assertFalse("Warsaw".equals(getStreet()));
 	}
 
 	@Test
 	public void testGetZipCode() {
 		setZipCode(zipCode);
 		assertEquals(zipCode,getZipCode());
+		assertFalse("02-123".equals(getStreet()));
 	}
 
 

@@ -24,6 +24,12 @@ import pl.edu.pw.ii.eshop.model.OrderItem;
 import pl.edu.pw.ii.eshop.model.ShippingAddress;
 import pl.edu.pw.ii.eshop.model.Order;
 
+/**
+ * @author Krzysztof Trybus
+ * @version 1.0
+ *
+ */
+
 public class OrderTest extends Order{
 	
 	private static final long serialVersionUID = -3298918499516179338L;
@@ -65,6 +71,7 @@ public class OrderTest extends Order{
 	public void testGetStatus() {
 		setStatus(status);
 		assertEquals(status, getStatus());
+		assertFalse("status".equals(getStatus()));
 	}
 
 
@@ -72,11 +79,13 @@ public class OrderTest extends Order{
 	public void testGetCreationDate() {
 		setCreationDate(creationDate);
 		assertEquals(creationDate,getCreationDate());
+		assertFalse("creationDate".equals(getCreationDate()));
 	}
 
 	@Test
 	public void testGetStatusChangeDate() {
 		setStatusChangeDate(statusChangeDate);
 		assertEquals(statusChangeDate,getStatusChangeDate());
+		assertFalse(creationDate.equals(getStatus()));
 	}
 }
