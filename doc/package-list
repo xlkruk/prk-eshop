@@ -1,3 +1,4 @@
+model
 pl.edu.pw.ii.eshop.controller
 pl.edu.pw.ii.eshop.dao
 pl.edu.pw.ii.eshop.dao.implementation

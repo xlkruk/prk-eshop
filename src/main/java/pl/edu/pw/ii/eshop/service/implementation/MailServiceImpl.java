@@ -1,5 +1,6 @@
 package pl.edu.pw.ii.eshop.service.implementation;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,11 +44,15 @@ public class MailServiceImpl implements MailService {
 
 	@Override
 	public void sendOrderConfirmation(Order order) {
+		String pattern = "########.##";
+		DecimalFormat myFormatter = new DecimalFormat(pattern);
+		
+				
 		try {
 			if (order != null) {
 				String subject = "Potwierdzenie złożenia zamówienia";
 				String msg = "Witamy\n\nDziękujemy za złożenie zamówienia.\n\nPrzedmioty wyślemy po otrzymaniu wpłaty "
-						+ order.getCart().getGrantTotal() + "zł.\n\nPozdrawiamy" + "\nAgnieszka, Krzysiek i Łukasz";
+						+ myFormatter.format(order.getCart().getGrantTotal()) + "zł.\n\nPozdrawiamy" + "\nAgnieszka, Krzysiek i Łukasz";
 				sendMail("PRK-eshop", order.getCart().getCustomer().getCustomerEmail(), subject, msg);
 			}
 		} catch (Exception e) {
@@ -56,17 +61,22 @@ public class MailServiceImpl implements MailService {
 
 	@Override
 	public void sendPaymentConfirmation(Order order) {
+		String pattern = "########.##";
+		DecimalFormat myFormatter = new DecimalFormat(pattern);
+		
+				
 		double payment = 0;
 		//Obliczenie należności za zamówienie
 		List<OrderItem> orderItems = order.getOrderItems();
 		for (OrderItem item : orderItems) {
-			payment = +item.getTotalPrice();
+			payment += item.getTotalPrice();
+			//System.out.println("#############"+item.getTotalPrice());
 		}
 
 		try {
 			if (order != null) {
 				String subject = "Potwierdzenie otrzymania wpłaty";
-				String msg = "Witamy\n\nDziękujemy za dokonanie wpłaty " + payment + "zł za zamówienie nr: "
+				String msg = "Witamy\n\nDziękujemy za dokonanie wpłaty " + myFormatter.format(payment) + "zł za zamówienie nr: "
 						+ order.getOrderId() + ".\n\nPrzesyłkę wyślemy w ciągu 3 dni roboczych na adres:\n"
 						+ order.getShippingAddress().getStreet() + " " + order.getShippingAddress().getApartmentNumber()
 						+ "\n" + order.getShippingAddress().getZipCode() + " " + order.getShippingAddress().getCity()
@@ -84,7 +94,7 @@ public class MailServiceImpl implements MailService {
 		//wyliczenie należności za zamówienie
 		List<OrderItem> orderItems = order.getOrderItems();
 		for (OrderItem item : orderItems) {
-			payment = +item.getTotalPrice();
+			payment += item.getTotalPrice();
 		}
 
 		try {
