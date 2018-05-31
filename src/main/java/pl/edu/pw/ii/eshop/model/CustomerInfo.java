@@ -7,7 +7,7 @@ import org.hibernate.validator.constraints.NotEmpty;
  * Klasa pomocnicza reprezentująca informacje o kliencie. Klasa użyana w
  * warstwie prezentacji.
  * 
- * @author Krzysztof Trybus
+ * @author Łukasz Kruk
  *
  */
 public class CustomerInfo {

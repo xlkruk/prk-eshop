@@ -8,7 +8,7 @@ import pl.edu.pw.ii.eshop.model.Order;
 /**
  * Interfejs dostępu do obiektu {@link Order} DAO
  * 
- * @author Krzysztof Trybus
+ * @author Łukasz Kruk
  *
  */
 public interface OrderDao {

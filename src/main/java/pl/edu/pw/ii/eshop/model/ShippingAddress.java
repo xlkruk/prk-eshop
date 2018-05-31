@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 /**
  * Klasa reprezentująca encję SHIPPINGADDRESS, adres dostawy.
  * 
- * @author Krzysztof Trybus
+ * @author Łukasz Kruk
  *
  */
 @Entity

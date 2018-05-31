@@ -13,7 +13,7 @@ import pl.edu.pw.ii.eshop.service.CartService;
  * implementację interfejsu {@link CartDao} do komunikacji z warstwą dostępu do
  * danych.
  * 
- * @author Krzysztof Trybus
+ * @author Łukasz Kruk
  *
  */
 

@@ -5,8 +5,7 @@ import pl.edu.pw.ii.eshop.model.Users;
 /**
  * Interfejs dostępu do obiektu {@link Users} DAO
  * 
- * @author Agnieszka Świderska
- *
+ * @author Łukasz Kruk
  */
 public interface UserDao {
 

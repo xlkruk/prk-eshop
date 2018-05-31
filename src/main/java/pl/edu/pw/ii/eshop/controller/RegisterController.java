@@ -19,7 +19,7 @@ import pl.edu.pw.ii.eshop.service.CustomerService;
  * Klasa realizująca funkcje kontrolera, który obsługuje zapytania wysyłane
  * poprzez przeglądarkę od użytkowników.
  * 
- * @author Agnieszka Świderska
+ * @author Łukasz Kruk
  * @version 1.0
  */
 @Controller

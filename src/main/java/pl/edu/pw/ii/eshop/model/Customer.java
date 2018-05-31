@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 /**
  * Klasa reprezentująca encję CUSTOMER, klienta sklepu.
  * 
- * @author Krzysztof Trybus.
+ * @author Łukasz Kruk
  *
  */
 @Entity

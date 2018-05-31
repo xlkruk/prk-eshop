@@ -13,7 +13,7 @@ import pl.edu.pw.ii.eshop.model.Users;
 /**
  * Klasa implementująca interfejs {@link UserDao}, wykorzystuje ORM hibernate
  * 
- * @author Krzysztof Trybus
+ * @author Łukasz Kruk
  *
  */
 @Repository

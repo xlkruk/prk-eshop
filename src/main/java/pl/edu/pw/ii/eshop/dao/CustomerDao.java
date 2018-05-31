@@ -8,7 +8,7 @@ import pl.edu.pw.ii.eshop.model.Customer;
  * 
  * Interfejs dostępu do obiektu {@link Customer} DAO.
  * 
- * @author Krzysztof Trybus
+ * @author Łukasz Kruk
  * 
  */
 public interface CustomerDao {

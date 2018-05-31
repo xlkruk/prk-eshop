@@ -7,7 +7,7 @@ import pl.edu.pw.ii.eshop.model.Product;
 /**
  * Interfejs dostępu do obiektu {@link Product} DAO
  * 
- * @author Agnieszka Świderska
+ * @author Łukasz Kruk
  *
  */
 public interface ProductDao {

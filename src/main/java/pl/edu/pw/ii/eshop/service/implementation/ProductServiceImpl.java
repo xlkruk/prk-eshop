@@ -17,7 +17,7 @@ import pl.edu.pw.ii.eshop.service.ProductService;
  * implementację intefejsu {@link ProductDao} do komunikaacji z warstwą dostępu
  * do danych.
  * 
- * @author Agnieszka Świderska
+ * @author Łukasz Kruk
  *
  */
 @Service

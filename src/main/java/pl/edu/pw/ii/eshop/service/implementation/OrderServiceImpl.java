@@ -23,7 +23,7 @@ import java.util.List;
  * do danych. Wykorzystuje implementacje interfejsów {@link CartService} oraz
  * {@link MailService} do logiki biznesowej zaimplementowanej w klasie.
  * 
- * @author Agnieszka Świderska
+ * @author Łukasz Kruk
  *
  */
 @Service

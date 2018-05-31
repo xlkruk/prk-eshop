@@ -3,7 +3,7 @@ package pl.edu.pw.ii.eshop.model;
 /**
  * Klasa wyliczeniowa reprezentująca kategorie produktów.
  * 
- * @author Agnieszka Świderska
+ * @author Łukasz Kruk
  *
  */
 public enum Categories {

@@ -23,7 +23,7 @@ import pl.edu.pw.ii.eshop.service.ProductService;
  * Klasa realizująca funkcje kontrolera, który obsługuje zapytania wysyłane
  * poprzez przeglądarkę od użytkowników.
  * 
- * @author Krzysztof Trybus
+ * @author Łukasz Kruk
  * @version 1.0
  */
 @Controller

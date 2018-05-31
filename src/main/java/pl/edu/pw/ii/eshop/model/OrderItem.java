@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 /**
  * Klasa reprezentująca encją ORDITEM, pozycje zamówienia.
  * 
- * @author Agnieszka Świderska
+ * @author Łukasz Kruk
  *
  */
 @Entity

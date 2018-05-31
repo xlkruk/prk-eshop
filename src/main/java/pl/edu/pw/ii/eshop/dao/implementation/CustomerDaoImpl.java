@@ -18,7 +18,7 @@ import pl.edu.pw.ii.eshop.model.Users;
 /**
  * Klasa implementująca interfejs {@link CustomerDao}
  * 
- * @author Krzysztof Trybus
+ * @author Łukasz Kruk
  *
  */
 @Repository

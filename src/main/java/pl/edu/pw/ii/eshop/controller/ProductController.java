@@ -18,7 +18,7 @@ import pl.edu.pw.ii.eshop.model.Categories;
  * Klasa realizująca funkcje kontrolera, który obsługuje zapytania wysyłane
  * poprzez przeglądarkę od użytkowników.
  * 
- * @author Agnieszka Świderska
+ * @author Łukasz Kruk
  * @version 1.0
  */
 @Controller

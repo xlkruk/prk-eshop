@@ -18,7 +18,7 @@ import javax.persistence.OneToOne;
 /**
  * Klasa reprezentująca encję ORDERS, zamówienie klienta
  * 
- * @author Agnieszka Świderska
+ * @author Łukasz Kruk
  *
  */
 @Entity(name = "ORDERS")

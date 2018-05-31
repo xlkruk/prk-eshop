@@ -13,7 +13,7 @@ import pl.edu.pw.ii.eshop.service.CartItemService;
  * obiektu implementującego {@link CartItemDao} do komunikacji z warstwą dostępu
  * do danych.
  * 
- * @author Agnieszka Świderska
+ * @author Łukasz Kruk
  *
  */
 @Service

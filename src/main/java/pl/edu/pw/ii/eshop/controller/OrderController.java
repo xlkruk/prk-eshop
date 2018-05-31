@@ -16,7 +16,7 @@ import pl.edu.pw.ii.eshop.service.OrderService;
  * Klasa realizująca funkcje kontrolera, który obsługuje zapytania wysyłane
  * poprzez przeglądarkę od użytkowników, związane zamówieniami.
  * 
- * @author Krzysztof Trybus
+ * @author Łukasz Kruk
  * @version 1.0
  */
 @Controller

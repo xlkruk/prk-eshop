@@ -9,7 +9,7 @@ import pl.edu.pw.ii.eshop.model.ProductInfo;
  * Interfejs warstwy serwisu, definiujący metody związane z logiką biznesową
  * związaną z obsługą Produktu
  * 
- * @author Krzysztof Trybus
+ * @author Łukasz Kruk
  *
  */
 

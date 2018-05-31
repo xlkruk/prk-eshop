@@ -3,7 +3,7 @@ package pl.edu.pw.ii.eshop.model;
 /**
  * Klasa wyliczeniowa, reprezentująca status zamówienia
  * 
- * @author Agnieszka Świderska
+ * @author Łukasz Kruk
  *
  */
 
